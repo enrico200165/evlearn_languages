@@ -1,7 +1,8 @@
 """
 prompt chatGPT
 -------------------------------------------------
-... programma in modo che riconosca sia l'Inglese sia il Tedesco, e salvi ogni frase completa in un file. 
+... programma in modo che riconosca sia l'Inglese sia il Tedesco, 
+e salvi ogni frase completa in un file. 
 Il nome file deve terminare con il numero della frase
 
 answer:
@@ -19,7 +20,8 @@ from tqdm import tqdm
 
 
 
-def extract_and_save_phrases(model_native, model_foreign, input_mp3_path, output_dir):
+def extract_and_save_phrases(model_native, model_foreign, 
+                             input_mp3_path, output_dir):
 
     # Convert mp3 to wav
     audio = AudioSegment.from_mp3(input_mp3_path)
