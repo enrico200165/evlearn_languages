@@ -60,7 +60,7 @@ my_addon/
     gui.py
 ```
 
-Il file ****init**.py** è obbligatorio ed è il punto di ingresso.
+Il file **\_\_init\_\_.py** è obbligatorio ed è il punto di ingresso.
 
 ---
 
@@ -68,7 +68,7 @@ Il file ****init**.py** è obbligatorio ed è il punto di ingresso.
 
 1. avvio di Anki
 2. scansione directory addons21
-3. import di ogni **init**.py
+3. import di ogni \_\_init\_\_.py  
 4. esecuzione del codice top-level
 5. registrazione di hook, menu, azioni
 
