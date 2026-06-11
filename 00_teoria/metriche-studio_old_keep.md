@@ -1,7 +1,7 @@
 
 ## Sizing apprendimento (nr. di parole)
 
-"devo creare un programma di supporto allo studio delle lingue, con una parte core indipendente dallo specifico linguaggio. In generale qual è il numero di parole da imparare che porta il miglior rapporto fra sforzo e utilità, cioè il miglior ritorno sull'investimento dellìimparare?"
+"devo creare un programma di supporto allo studio delle lingue, con una parte core indipendente dallo specifico linguaggio. In generale qual è il numero di parole da imparare che porta il miglior rapporto fra sforzo e utilità, cioè il miglior ritorno sull'investimento dell' imparare?"
 
 
 In linguistica applicata e didattica delle lingue esiste un consenso abbastanza solido su **ordini di grandezza** che massimizzano il rapporto fra **sforzo di studio** e **utilità reale** (copertura dei testi, comprensione, comunicazione).
@@ -51,7 +51,7 @@ Valori indicativi riferiti a **lemmi** (parola base, non tutte le forme flesse).
 * Soglia tipica per lettura fluida senza dizionario
 * Sforzo richiesto molto più elevato
 
-#### >8.000 parole
+#### > 8.000 parole
 
 * Benefici incrementali piccoli
 * Necessarie per ambiti accademici o professionali specifici
