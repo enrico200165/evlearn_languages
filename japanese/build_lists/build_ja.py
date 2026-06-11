@@ -55,6 +55,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import logging
 import sys
 from pathlib import Path
 
@@ -90,6 +91,67 @@ POS_CANDIDATES = [
 ]
 
 
+def resolve_output_dir(
+    input_path: Path,
+    output_dir_arg: str | None
+) -> Path:
+    """
+    Determinare la directory di output.
+
+    Regola predefinita:
+    - se --output-dir non viene specificato, creare una directory figlia
+      della directory che contiene il file di input;
+    - il nome della directory è:
+
+          out_<radice del filename di input, senza estensione>
+
+    Esempio:
+    - input:  dati/BCCWJ_frequency_list.xlsx
+    - output: dati/out_BCCWJ_frequency_list
+
+    Se --output-dir viene specificato, viene rispettato il percorso indicato.
+    """
+
+    if output_dir_arg:
+        return Path(output_dir_arg).expanduser().resolve()
+
+    input_path = input_path.expanduser().resolve()
+
+    return input_path.parent / f"out_{input_path.stem}"
+
+
+def setup_logging(
+    output_dir: Path
+) -> Path:
+    """
+    Configurare logging dettagliato su file.
+
+    La console resta volutamente sintetica:
+    - file elaborato;
+    - informazioni essenziali;
+    - errori.
+
+    Il file di log contiene informazioni più dettagliate.
+    """
+
+    output_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    log_path = output_dir / "build_core_ja.log"
+
+    logging.basicConfig(
+        filename=log_path,
+        filemode="w",
+        level=logging.DEBUG,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        encoding="utf-8"
+    )
+
+    return log_path
+
+
 def read_table(path: Path) -> pd.DataFrame:
     """
     Leggere un file BCCWJ in formato comune.
@@ -104,29 +166,38 @@ def read_table(path: Path) -> pd.DataFrame:
 
     suffix = path.suffix.lower()
 
+    logging.info("Lettura file input: %s", path)
+    logging.info("Formato rilevato da estensione: %s", suffix)
+
     if suffix in {
         ".xlsx",
         ".xls"
     }:
-        return pd.read_excel(
+        df = pd.read_excel(
             path
         )
+        logging.info("File Excel letto: righe=%s colonne=%s", len(df), len(df.columns))
+        return df
 
     if suffix == ".csv":
-        return pd.read_csv(
+        df = pd.read_csv(
             path,
             encoding="utf-8"
         )
+        logging.info("File CSV letto: righe=%s colonne=%s", len(df), len(df.columns))
+        return df
 
     if suffix in {
         ".tsv",
         ".txt"
     }:
-        return pd.read_csv(
+        df = pd.read_csv(
             path,
             sep="\t",
             encoding="utf-8"
         )
+        logging.info("File TSV/TXT letto: righe=%s colonne=%s", len(df), len(df.columns))
+        return df
 
     raise RuntimeError(
         f"Formato non supportato: {suffix}"
@@ -236,6 +307,11 @@ def select_columns(
             f"Colonne disponibili: {columns}"
         )
 
+    logging.info("Colonne disponibili: %s", columns)
+    logging.info("Colonna lemma selezionata: %s", lemma)
+    logging.info("Colonna frequenza selezionata: %s", frequency)
+    logging.info("Colonna POS selezionata: %s", pos)
+
     return lemma, frequency, pos
 
 
@@ -274,6 +350,10 @@ def build_frequency_rows(
     """
 
     records = {}
+    skipped_empty_lemma = 0
+    skipped_bad_frequency = 0
+
+    logging.info("Avvio aggregazione frequenze.")
 
     for _, row in df.iterrows():
 
@@ -282,6 +362,7 @@ def build_frequency_rows(
         )
 
         if not lemma:
+            skipped_empty_lemma += 1
             continue
 
         try:
@@ -289,6 +370,7 @@ def build_frequency_rows(
                 row[freq_col]
             )
         except Exception:
+            skipped_bad_frequency += 1
             continue
 
         pos = ""
@@ -321,6 +403,13 @@ def build_frequency_rows(
         ):
             records[lemma]["pos"] = pos
 
+    logging.info(
+        "Aggregazione completata: lemmi_unici=%s righe_senza_lemma=%s righe_frequenza_non_valida=%s",
+        len(records),
+        skipped_empty_lemma,
+        skipped_bad_frequency
+    )
+
     sorted_items = sorted(
         records.values(),
         key=lambda item: item["frequency"],
@@ -347,6 +436,8 @@ def build_frequency_rows(
             }
         )
 
+    logging.info("Righe ordinate generate: %s", len(rows))
+
     return rows
 
 
@@ -371,6 +462,8 @@ def write_csv(
         "core_band",
         "language"
     ]
+
+    logging.info("Scrittura CSV: %s righe=%s", path, len(rows))
 
     with path.open(
         "w",
@@ -442,8 +535,11 @@ def parse_args() -> argparse.Namespace:
 
     parser.add_argument(
         "--output-dir",
-        default="output_ja",
-        help="Directory output."
+        default=None,
+        help=(
+            "Directory output. Se non specificata, viene creata accanto "
+            "al file input come out_<radice_filename_input>."
+        )
     )
 
     parser.add_argument(
@@ -479,59 +575,97 @@ def main() -> None:
 
     input_path = Path(
         args.input
+    ).expanduser().resolve()
+
+    output_dir = resolve_output_dir(
+        input_path=input_path,
+        output_dir_arg=args.output_dir
     )
 
-    if not input_path.exists():
-        raise SystemExit(
-            f"File non trovato: {input_path}"
+    log_path = setup_logging(
+        output_dir=output_dir
+    )
+
+    try:
+        logging.info("Working directory: %s", Path.cwd())
+        logging.info("Input richiesto: %s", input_path)
+        logging.info("Output directory: %s", output_dir)
+        logging.info("File log: %s", log_path)
+        logging.info("Argomenti: %s", vars(args))
+
+        print(
+            f"File elaborato: {input_path}",
+            file=sys.stderr
         )
 
-    df = read_table(
-        input_path
-    )
+        if not input_path.exists():
+            message = f"File non trovato: {input_path}"
+            logging.error(message)
+            print(
+                f"ERRORE: {message}",
+                file=sys.stderr
+            )
+            raise SystemExit(
+                message
+            )
 
-    lemma_col, freq_col, pos_col = select_columns(
-        df=df,
-        lemma_column=args.lemma_column,
-        frequency_column=args.frequency_column,
-        pos_column=args.pos_column
-    )
+        df = read_table(
+            input_path
+        )
 
-    print(
-        f"Colonna lemma: {lemma_col}",
-        file=sys.stderr
-    )
+        lemma_col, freq_col, pos_col = select_columns(
+            df=df,
+            lemma_column=args.lemma_column,
+            frequency_column=args.frequency_column,
+            pos_column=args.pos_column
+        )
 
-    print(
-        f"Colonna frequenza: {freq_col}",
-        file=sys.stderr
-    )
+        print(
+            f"Colonna lemma: {lemma_col}",
+            file=sys.stderr
+        )
 
-    print(
-        f"Colonna POS: {pos_col}",
-        file=sys.stderr
-    )
+        print(
+            f"Colonna frequenza: {freq_col}",
+            file=sys.stderr
+        )
 
-    rows = build_frequency_rows(
-        df=df,
-        lemma_col=lemma_col,
-        freq_col=freq_col,
-        pos_col=pos_col,
-        max_rank=args.max_rank
-    )
+        print(
+            f"Colonna POS: {pos_col}",
+            file=sys.stderr
+        )
 
-    output_dir = Path(
-        args.output_dir
-    )
+        rows = build_frequency_rows(
+            df=df,
+            lemma_col=lemma_col,
+            freq_col=freq_col,
+            pos_col=pos_col,
+            max_rank=args.max_rank
+        )
 
-    write_core_bands(
-        output_dir=output_dir,
-        rows=rows
-    )
+        write_core_bands(
+            output_dir=output_dir,
+            rows=rows
+        )
 
-    print(
-        f"Generate {len(rows)} righe in {output_dir}"
-    )
+        logging.info("Elaborazione completata: righe_generate=%s output_dir=%s", len(rows), output_dir)
+
+        print(
+            f"Generate {len(rows)} righe in {output_dir}"
+        )
+
+        print(
+            f"Log dettagliato: {log_path}",
+            file=sys.stderr
+        )
+
+    except Exception as exc:
+        logging.exception("Errore durante l'elaborazione.")
+        print(
+            f"ERRORE: {exc}",
+            file=sys.stderr
+        )
+        raise
 
 
 if __name__ == "__main__":

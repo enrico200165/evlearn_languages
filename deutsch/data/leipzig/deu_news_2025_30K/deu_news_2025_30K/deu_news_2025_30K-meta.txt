@@ -1,0 +1,8 @@
+8	build date	2026-01-07
+22	WORD_TYPES	76739
+26	de.uni_leipzig.asv.medusa.filter.sidx.IDXNeighbourhoodFilterImpl.COOCCURRENCE_TYPES	22598
+27	WORD_TOKENS	523853
+28	SOURCES	29555
+33	SENTENCES	30000
+201	git revision toolchain	406a2d7824b1a2b4b2f4b79be729fd2b7b8296ec
+202	git revision resources	681b682caa6c3c8250f8ab2c51ba3acc1c579959
