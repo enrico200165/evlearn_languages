@@ -1,30 +1,8 @@
-# Lezione 0 - Progettazione del Lessico Core
 
 ## Parte 2 - Quanti lemmi conviene imparare e come costruire un vocabolario ad alto ROI
 
 ## Obiettivo della lezione
 
-Nella prima parte sono stati introdotti i concetti fondamentali di:
-
-* token;
-* forme flesse;
-* lemmi;
-* famiglie lessicali;
-* significato reale di espressioni come:
-
-  ```
-  1000 parole
-  2000 parole
-  3000 parole
-  ```
-
-È stato inoltre stabilito che, per il progetto software che verrà sviluppato nelle lezioni successive, l'unità didattica fondamentale sarà:
-
-```
-il lemma
-```
-
-In questa seconda parte verranno affrontati:
 
 * la copertura lessicale;
 * il rapporto tra frequenza e utilità;
@@ -39,11 +17,7 @@ In questa seconda parte verranno affrontati:
 
 # Il concetto di copertura lessicale
 
-Quando si legge un testo, non tutte le parole hanno la stessa importanza.
-
-Alcune parole compaiono continuamente.
-
-Altre compaiono raramente.
+Quando si legge un testo, non tutte le parole hanno la stessa importanza. Alcune parole compaiono continuamente. Altre compaiono raramente.
 
 La copertura lessicale misura:
 
@@ -53,32 +27,11 @@ può essere riconosciuta
 conoscendo un certo numero di lemmi
 ```
 
----
+Supporre di leggere un articolo di giornale. Se si conoscono soltanto 100 lemmi la maggior parte del testo sarà incomprensibile se si conoscono 1000 lemmi molto frequenti una parte significativa del testo
+diventa riconoscibile.  
+Se si conoscono 3000 lemmi gran parte del testo può essere compresa
 
-## Esempio intuitivo
-
-Supporre di leggere un articolo di giornale.
-
-Se si conoscono soltanto 100 lemmi:
-
-```
-la maggior parte del testo sarà incomprensibile
-```
-
-Se si conoscono 1000 lemmi molto frequenti:
-
-```
-una parte significativa del testo
-diventa riconoscibile
-```
-
-Se si conoscono 3000 lemmi:
-
-```
-gran parte del testo può essere compresa
-```
-
-La relazione non è lineare.
+La relazione non è lineare.  
 
 Le prime parole producono benefici enormemente superiori alle successive.
 
@@ -93,74 +46,13 @@ rendimento decrescente
 ```
 
 Le prime parole apprese sono estremamente utili.
-
 Le parole successive continuano a essere utili ma con benefici progressivamente minori.
 
 ---
 
-## Esempio semplificato
-
-Immaginare una lingua con:
-
-```
-100000 lemmi
-```
-
-Le prime:
-
-```
-1000
-```
-
-producono un miglioramento enorme.
-
-Passare da:
-
-```
-1000
-a
-2000
-```
-
-produce ancora un beneficio molto elevato.
-
-Passare da:
-
-```
-2000
-a
-3000
-```
-
-produce ancora un miglioramento importante.
-
-Passare da:
-
-```
-10000
-a
-11000
-```
-
-produce invece un beneficio molto minore.
-
----
-
-# Livello Core-1000
-
 ## Significato
 
-Core-1000 indica:
-
-```
-i 1000 lemmi più frequenti
-```
-
-di una lingua.
-
----
-
-## Cosa comprende
+Core-1000 indica i 1000 lemmi più frequenti di una lingua.
 
 Comprende normalmente:
 
@@ -194,37 +86,11 @@ Molti testi reali risultano ancora difficili.
 
 # Livello Core-2000
 
-## Significato
-
-Core-2000 indica:
-
-```
-i 2000 lemmi più frequenti
-```
-
-della lingua.
-
----
-
-## Perché è importante
 
 Molti studi considerano questa fascia il punto di massimo rendimento.
 
-Il motivo è semplice:
-
-```
-lo sforzo richiesto
-è relativamente contenuto
-```
-
-mentre
-
-```
-il beneficio ottenuto
-è molto elevato
-```
-
----
+lo sforzo richiesto è relativamente contenuto mentre
+il beneficio ottenuto è molto elevato
 
 ## Cosa permette di fare
 
@@ -237,31 +103,13 @@ il beneficio ottenuto
 
 ## ROI
 
-Dal punto di vista del rapporto:
-
-```
-beneficio / sforzo
-```
-
-Core-2000 rappresenta spesso il punto migliore.
+Dal punto di vista del rapporto beneficio / sforzo Core-2000 rappresenta spesso il punto migliore.
 
 ---
 
 # Livello Core-3000
 
-## Significato
-
-Core-3000 indica:
-
-```
-i 3000 lemmi più frequenti
-```
-
-della lingua.
-
----
-
-## Perché è considerato il miglior compromesso
+è considerato il miglior compromesso. 
 
 Con circa 3000 lemmi:
 
@@ -275,29 +123,13 @@ Lo studente possiede ormai una base sufficientemente ampia per imparare nuove pa
 
 ## Per il progetto software
 
-Se fosse necessario scegliere un solo obiettivo iniziale, la scelta più ragionevole sarebbe:
-
-```
+Se fosse necessario scegliere un solo obiettivo iniziale, la scelta più ragionevole sarebbe:  
 Core-3000
-```
 
 ---
 
 # Livello Core-5000
 
-## Significato
-
-Core-5000 indica:
-
-```
-i 5000 lemmi più frequenti
-```
-
-della lingua.
-
----
-
-## Benefici
 
 Permette:
 
@@ -305,17 +137,15 @@ Permette:
 * comprensione molto elevata dei testi generali;
 * accesso a una grande quantità di contenuti autentici.
 
----
 
 ## Problema
 
 Lo sforzo richiesto aumenta significativamente.
-
 Molti studenti raggiungono un ottimo livello pratico molto prima.
 
 ---
 
-# Oltre il Core-5000
+# Oltre Core-5000
 
 A questo punto il lessico diventa sempre più dipendente dagli interessi personali.
 
@@ -335,80 +165,31 @@ Qui non esiste più un unico vocabolario ottimale.
 
 # Tutte le parole sono ugualmente utili?
 
-No.
+No. Due parole con la stessa frequenza possono avere utilità molto diversa.
 
-Due parole con la stessa frequenza possono avere utilità molto diversa.
+Esempio: progetto e aerostazione potrebbero avere frequenze simili in alcuni corpora.
 
-Esempio:
-
-```
-progetto
-```
-
-e
-
-```
-aerostazione
-```
-
-potrebbero avere frequenze simili in alcuni corpora.
-
-Tuttavia:
-
-```
-progetto
-```
-
-è utilizzabile in moltissimi contesti.
-
-```
-aerostazione
-```
-
-in molti meno.
+Tuttavia progetto è utilizzabile in moltissimi contesti, aerostazione in molti meno.
 
 ---
 
-# Il concetto di trasferibilità
+# Trasferibilità
 
 Una parola è trasferibile quando può essere utilizzata in molti contesti diversi.
 
----
 
-## Alta trasferibilità
+Alta trasferibilità, esempi:  
+fare, andare, vedere, problema, soluzione, tempo, persona 
 
-Esempi:
 
-```
-fare
-andare
-vedere
-problema
-soluzione
-tempo
-persona
-```
+Bassa trasferibilità, esempi:  
+accelerometro, anestesista, fusoliera
 
 ---
 
-## Bassa trasferibilità
+# La frequenza non basta
 
-Esempi:
-
-```
-accelerometro
-anestesista
-fusoliera
-```
-
----
-
-# Perché la frequenza non basta
-
-La frequenza è il criterio principale.
-
-Ma non è sufficiente.
-
+La frequenza è il criterio principale ma non è sufficiente.  
 Una buona parola core dovrebbe avere:
 
 * alta frequenza;
@@ -495,15 +276,13 @@ Per un adulto che lavora, viaggia, usa tecnologia e segue l'attualità, i contes
 
 # Dalle situazioni alle categorie lessicali
 
-I contesti non sono indipendenti.
-
-Molte parole compaiono in contesti differenti.
-
-Per questo è preferibile ragionare in termini di categorie lessicali.
+I contesti non sono indipendenti.  
+Molte parole compaiono in contesti differenti.  
+Per questo è preferibile ragionare in termini di categorie lessicali.  
 
 ---
 
-# Categoria A - Lessico strutturale
+### Categoria A - Lessico strutturale
 
 Comprende:
 
@@ -514,47 +293,16 @@ Comprende:
 * verbi fondamentali;
 * avverbi frequenti.
 
----
 
-## Esempi
+#### Peso consigliato
 
-Tedesco:
-
-```
-der
-die
-das
-und
-weil
-sein
-haben
-```
-
-Giapponese:
-
-```
-は
-が
-を
-に
-です
-する
-ある
-```
-
----
-
-## Peso consigliato
-
-```
 35-40%
-```
 
 È la categoria più importante.
 
 ---
 
-# Categoria B - Interazione sociale
+### Categoria B - Interazione sociale
 
 Comprende:
 
@@ -564,15 +312,11 @@ Comprende:
 * opinioni;
 * accordo e disaccordo.
 
-Peso indicativo:
-
-```
-15%
-```
+Peso indicativo: 15%
 
 ---
 
-# Categoria C - Vita professionale
+### Categoria C - Vita professionale
 
 Comprende:
 
@@ -583,15 +327,11 @@ Comprende:
 * problema;
 * soluzione.
 
-Peso indicativo:
-
-```
-15%
-```
+Peso indicativo: 15%  
 
 ---
 
-# Categoria D - Vita quotidiana
+### Categoria D - Vita quotidiana
 
 Comprende:
 
@@ -602,15 +342,11 @@ Comprende:
 * cibo;
 * servizi.
 
-Peso indicativo:
-
-```
-15%
-```
+Peso indicativo: 15%  
 
 ---
 
-# Categoria E - Media e società
+### Categoria E - Media e società
 
 Comprende:
 
@@ -620,11 +356,7 @@ Comprende:
 * sport;
 * tecnologia.
 
-Peso indicativo:
-
-```
-10%
-```
+Peso indicativo: 10%  
 
 ---
 
@@ -638,11 +370,7 @@ Comprende:
 * errore;
 * correzione.
 
-Peso indicativo:
-
-```
-5-10%
-```
+Peso indicativo: 5-10%  
 
 ---
 

@@ -1,24 +1,18 @@
 # Lezione 0 - Progettazione del Lessico Core
 
-## Parte 1 - Cosa significa realmente "N parole" e perché conta
+## Parte 1 - Cosa significa "N parole"  
 
 ## Obiettivo della lezione
 
-Prima di costruire software per l'apprendimento delle lingue è necessario chiarire un punto fondamentale:
-
-Quando si parla di:
+Spesso si parla di:
 
 ```
-1000 parole
+1000 parole core
 2000 parole
 3000 parole
 ```
 
-che cosa si sta contando esattamente?
-
-La domanda può sembrare banale, ma in realtà è uno dei problemi più importanti dell'intera progettazione.
-
-Se non si definisce con precisione cosa significa "parola", diventa impossibile:
+Se non si definisce con precisione cosa significa "parola", diventa impossibile contare le parole e:
 
 * costruire correttamente liste di frequenza;
 * confrontare lingue diverse;
@@ -28,34 +22,9 @@ Se non si definisce con precisione cosa significa "parola", diventa impossibile:
 * progettare filtri di frequenza;
 * costruire deck Anki coerenti.
 
-Questa lezione introduce quindi i concetti teorici necessari per comprendere:
-
-* come viene misurato il vocabolario;
-* cosa significa conoscere una parola;
-* perché le prime migliaia di parole producono il massimo ritorno sull'investimento;
-* quali sono le implicazioni pratiche per il software che verrà sviluppato nelle lezioni successive.
-
 ---
 
-# Il problema del ritorno sull'investimento (ROI)
-
-Supporre di avere 10 anni per imparare una lingua.
-
-In teoria sarebbe possibile studiare:
-
-```
-10000 parole
-20000 parole
-30000 parole
-```
-
-o più.
-
-Tuttavia il tempo disponibile è limitato.
-
-Ogni ora dedicata allo studio di una parola è un'ora che non può essere dedicata ad altro.
-
-Occorre quindi chiedersi:
+# Ritorno sull'investimento (ROI)
 
 ```
 Quali parole producono il maggior beneficio?
@@ -63,44 +32,6 @@ Quali parole producono il maggior beneficio?
 
 Questa domanda è alla base della moderna linguistica applicata e della progettazione di sistemi di apprendimento.
 
----
-
-## Un esempio intuitivo
-
-Supporre di leggere un giornale tedesco.
-
-Le parole:
-
-```
-und
-der
-die
-das
-sein
-haben
-können
-gehen
-```
-
-compaiono continuamente.
-
-Le parole:
-
-```
-Schifffahrtsgesellschaft
-Haftpflichtversicherung
-Wiederaufbereitungsanlage
-```
-
-compaiono molto più raramente.
-
-Imparare una parola rara può richiedere lo stesso sforzo necessario per imparare una parola frequente.
-
-Tuttavia il beneficio ottenuto è molto diverso.
-
-Per questo motivo il lessico non deve essere scelto casualmente.
-
----
 
 ## Frequenza e utilità
 
@@ -129,19 +60,7 @@ Questo principio è sorprendentemente stabile tra lingue molto diverse.
 
 # Cosa significa realmente "parola"
 
-La maggior parte delle persone usa il termine:
-
-```
-parola
-```
-
-come se avesse un significato unico.
-
-In realtà esistono diversi modi di contare il vocabolario.
-
-Questa distinzione è fondamentale.
-
----
+Esistono diversi modi di contare il vocabolario.
 
 ## Primo livello: token
 
@@ -152,51 +71,15 @@ Un token è una singola occorrenza di una parola in un testo.
 Esempio:
 
 ```
-Ich gehe nach Hause.
-Du gehst nach Hause.
+Ich gehe  nach Hause.
+Du  gehst nach Hause.
 Wir gehen nach Hause.
 ```
 
-Se si contano tutte le parole presenti si ottiene:
+Ci sono 12 token
 
-```
-Ich
-gehe
-nach
-Hause
-
-Du
-gehst
-nach
-Hause
-
-Wir
-gehen
-nach
-Hause
-```
-
-Numero totale:
-
-```
-12 token
-```
-
-In questo conteggio:
-
-```
-gehe
-```
-
-e
-
-```
-gehst
-```
-
-sono considerati elementi diversi.
-
----
+In questo conteggio gehe e gehst sono considerati elementi diversi.
+EV: sembra che ogni occorrenza di nach sia conteggiata
 
 ## A cosa servono i token
 
@@ -214,9 +97,7 @@ Non sono però la misura normalmente utilizzata quando si parla del vocabolario 
 
 # Secondo livello: forma lessicale
 
-Un altro modo di contare consiste nel considerare ogni forma grammaticale come distinta.
-
-Prendere il verbo tedesco:
+Consideriamo il verbo tedesco:
 
 ```
 gehen
@@ -233,43 +114,10 @@ ging
 gegangen
 gehend
 ```
+7 forme lessicali
 
 In questo approccio ogni forma viene contata separatamente.
 
-Numero:
-
-```
-7 forme
-```
-
----
-
-## Esempio italiano
-
-Verbo:
-
-```
-andare
-```
-
-Forme:
-
-```
-andare
-vado
-vai
-va
-andiamo
-andate
-vanno
-andavo
-andai
-andrò
-```
-
-e molte altre.
-
-In questo approccio ogni forma viene contata separatamente.
 
 ---
 
@@ -337,40 +185,7 @@ vengono ricondotte a:
 gehen
 ```
 
-Conteggio:
-
-```
-1 lemma
-```
-
----
-
-## Esempio italiano
-
-Le forme:
-
-```
-andare
-vado
-vai
-va
-andiamo
-andate
-vanno
-andrò
-```
-
-diventano:
-
-```
-andare
-```
-
-Conteggio:
-
-```
-1 lemma
-```
+Conteggio: 1 lemma  
 
 ---
 
@@ -394,11 +209,7 @@ diventano:
 食べる
 ```
 
-Conteggio:
-
-```
-1 lemma
-```
+Conteggio: 1 lemma
 
 ---
 
@@ -423,17 +234,7 @@ quasi sempre si riferisce a:
 3000 lemmi
 ```
 
-e non a:
-
-```
-2000 token
-```
-
-oppure:
-
-```
-2000 forme flesse
-```
+e non a 2000 token oppure 2000 forme flesse
 
 Questa distinzione è fondamentale.
 
@@ -491,33 +292,14 @@ Anche questa espressione è più complessa di quanto sembri.
 
 ---
 
-## Livello 1 - Riconoscimento
+## Livello 1 - Riconoscimento  
 
-Sapere che:
+Sapere che: gehen significa andare  
 
-```
-gehen
-```
 
-significa:
+## Livello 2 - Riconoscimento delle forme  
 
-```
-andare
-```
-
----
-
-## Livello 2 - Riconoscimento delle forme
-
-Capire automaticamente:
-
-```
-ging
-
-gegangen
-```
-
-senza dover consultare un dizionario.
+Capire automaticamente: ging gegangen senza dover consultare un dizionario.
 
 ---
 
@@ -525,13 +307,7 @@ senza dover consultare un dizionario.
 
 Saper utilizzare la parola correttamente in una frase.
 
-Esempio:
-
-```
-Ich gehe nach Hause.
-```
-
----
+Esempio: Ich gehe nach Hause.
 
 ## Livello 4 - Padronanza
 
@@ -547,160 +323,28 @@ Saper usare correttamente:
 
 # Tutti i tipi di parole vengono contati?
 
-Sì.
+Sì. Quando si parla di: 2000 lemmi si intendono normalmente tutte le categorie grammaticali.
+Sostantivi, Verbi, Aggettivi, Avverbi, Pronomi, Preposizioni, Congiunzioni
 
-Quando si parla di:
+le parole più frequenti di una lingua sono spesso:
+articoli; pronomi; preposizioni; verbi molto comuni; connettivi.
 
-```
-2000 lemmi
-```
-
-si intendono normalmente tutte le categorie grammaticali.
-
----
-
-## Sostantivi
-
-Esempi:
-
-```
-Haus
-Hund
-Schule
-```
-
----
-
-## Verbi
-
-Esempi:
-
-```
-gehen
-essen
-schlafen
-```
-
----
-
-## Aggettivi
-
-Esempi:
-
-```
-groß
-klein
-schön
-```
-
----
-
-## Avverbi
-
-Esempi:
-
-```
-heute
-morgen
-immer
-```
-
----
-
-## Pronomi
-
-Esempi:
-
-```
-ich
-du
-wir
-```
-
----
-
-## Preposizioni
-
-Esempi:
-
-```
-mit
-für
-von
-```
-
----
-
-## Congiunzioni
-
-Esempi:
-
-```
-und
-oder
-weil
-```
-
----
-
-# Un errore molto comune
-
-Molte persone immaginano che il vocabolario sia composto soprattutto da sostantivi.
-
-In realtà le parole più frequenti di una lingua sono spesso:
-
-* articoli;
-* pronomi;
-* preposizioni;
-* verbi molto comuni;
-* connettivi.
-
-Esempio tedesco:
-
-```
-der
-die
-das
-und
-oder
-aber
-weil
-dass
-mit
-für
-```
-
-Sono tra gli elementi più importanti dell'intera lingua.
+Esempio: in tedesco:
+`der, die, das, und, oder, aber, weil, dass, mit, für`  
+sono tra gli elementi più importanti dell'intera lingua.
 
 ---
 
 # Implicazioni per il progetto software
 
-Per il software che verrà sviluppato nelle lezioni successive è opportuno adottare una convenzione chiara.
-
-Definizione:
-
+Per il software che verrà sviluppato nelle lezioni successive:
 ```
 unità didattica fondamentale = lemma
 ```
 
-Questo significa che:
-
-```
-gehen
-```
-
-è una voce.
-
+Questo significa che: `gehen` è una voce.  
 Non sono voci separate:
-
-```
-gehe
-gehst
-geht
-ging
-gegangen
-```
+`gehe gehst geht ging gegangen ... `  
 
 Queste forme saranno memorizzate come proprietà del lemma.
 
@@ -738,33 +382,3 @@ e per la maggior parte delle lingue supportate dal sistema.
 
 ---
 
-# Preparazione alla parte 2
-
-Ora che è chiaro cosa significhi realmente:
-
-```
-1000 parole
-2000 parole
-3000 parole
-```
-
-si può affrontare la domanda successiva:
-
-```
-Quanti lemmi conviene imparare?
-```
-
-Nella seconda parte verranno analizzati:
-
-* copertura lessicale;
-* Core-1000;
-* Core-2000;
-* Core-3000;
-* Core-5000;
-* contesti comunicativi;
-* categorie lessicali;
-* pesi;
-* priorità;
-* modello quantitativo per il filtro di frequenza;
-* implicazioni specifiche per tedesco e giapponese;
-* progettazione delle liste core per il software.
