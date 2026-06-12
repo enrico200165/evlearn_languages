@@ -65,43 +65,47 @@ Di conseguenza, la relazione lemma-deck indica che il lemma è stato registrato 
 
 ## Visione generale
 
-    @startuml
+```plantuml  
 
-    title NLP Deck Management Platform - visione generale
+@startuml
 
-    artifact "Input testuali\nCorpora, TXT, CSV, sottotitoli" as INPUT
+title NLP Deck Management Platform - visione generale
 
-    component "Input Readers" as READERS
-    component "Text Normalizer" as NORMALIZER
-    component "NLP Analyzer" as NLP
+artifact "Input testuali\nCorpora, TXT, CSV, sottotitoli" as INPUT
 
-    database "Language Reference DB\nuno per lingua" as REFDB
+component "Input Readers" as READERS
+component "Text Normalizer" as NORMALIZER
+component "NLP Analyzer" as NLP
 
-    component "Deck Manager" as DECKMAN
-    component "Note Processing Pipeline" as NOTEPIPE
-    component "Custom Processors" as PROCESSORS
+database "Language Reference DB\nuno per lingua" as REFDB
 
-    artifact "CSV intermedi" as CSV
-    artifact "Anki export\nCSV / APKG" as ANKI
+component "Deck Manager" as DECKMAN
+component "Note Processing Pipeline" as NOTEPIPE
+component "Custom Processors" as PROCESSORS
 
-    INPUT --> READERS
-    READERS --> NORMALIZER
-    NORMALIZER --> NLP
+artifact "CSV intermedi" as CSV
+artifact "Anki export\nCSV / APKG" as ANKI
 
-    NLP --> REFDB
-    NLP --> CSV
+INPUT --> READERS
+READERS --> NORMALIZER
+NORMALIZER --> NLP
 
-    REFDB --> DECKMAN
-    CSV --> DECKMAN
+NLP --> REFDB
+NLP --> CSV
 
-    DECKMAN --> NOTEPIPE
-    NOTEPIPE --> PROCESSORS
-    PROCESSORS --> NOTEPIPE
+REFDB --> DECKMAN
+CSV --> DECKMAN
 
-    NOTEPIPE --> CSV
-    NOTEPIPE --> ANKI
+DECKMAN --> NOTEPIPE
+NOTEPIPE --> PROCESSORS
+PROCESSORS --> NOTEPIPE
 
-    @enduml
+NOTEPIPE --> CSV
+NOTEPIPE --> ANKI
+
+@enduml
+```
+
 
 ## Tipi di deck
 
@@ -257,51 +261,54 @@ Campi:
 
 ### Diagramma
 
-    @startuml
+```plantuml
+@startuml
 
-    title Costruzione progressiva deck Core senza overlap
+title Costruzione progressiva deck Core senza overlap
 
-    artifact "Ranking 1..5000" as RANKING
+artifact "Ranking 1..5000" as RANKING
 
-    component "Core 1000 Builder" as C1000
-    component "Core 2000 Builder" as C2000
-    component "Core 3000 Builder" as C3000
-    component "Core 4000 Builder" as C4000
-    component "Core 5000 Builder" as C5000
+component "Core 1000 Builder" as C1000
+component "Core 2000 Builder" as C2000
+component "Core 3000 Builder" as C3000
+component "Core 4000 Builder" as C4000
+component "Core 5000 Builder" as C5000
 
-    database "Selected Lemmas Set" as SET
+database "Selected Lemmas Set" as SET
 
-    artifact "Core 1000" as O1000
-    artifact "Core 2000" as O2000
-    artifact "Core 3000" as O3000
-    artifact "Core 4000" as O4000
-    artifact "Core 5000" as O5000
+artifact "Core 1000" as O1000
+artifact "Core 2000" as O2000
+artifact "Core 3000" as O3000
+artifact "Core 4000" as O4000
+artifact "Core 5000" as O5000
 
-    RANKING --> C1000
-    C1000 --> SET
-    C1000 --> O1000
+RANKING --> C1000
+C1000 --> SET
+C1000 --> O1000
 
-    RANKING --> C2000
-    SET --> C2000
-    C2000 --> SET
-    C2000 --> O2000
+RANKING --> C2000
+SET --> C2000
+C2000 --> SET
+C2000 --> O2000
 
-    RANKING --> C3000
-    SET --> C3000
-    C3000 --> SET
-    C3000 --> O3000
+RANKING --> C3000
+SET --> C3000
+C3000 --> SET
+C3000 --> O3000
 
-    RANKING --> C4000
-    SET --> C4000
-    C4000 --> SET
-    C4000 --> O4000
+RANKING --> C4000
+SET --> C4000
+C4000 --> SET
+C4000 --> O4000
 
-    RANKING --> C5000
-    SET --> C5000
-    C5000 --> SET
-    C5000 --> O5000
+RANKING --> C5000
+SET --> C5000
+C5000 --> SET
+C5000 --> O5000
 
-    @enduml
+@enduml
+```
+
 
 ### Output
 
@@ -382,35 +389,38 @@ Per ogni lemma candidato:
 
 ### Diagramma
 
-    @startuml
+```plantuml
+@startuml
 
-    title Generazione deck contestuale con controllo Core
+title Generazione deck contestuale con controllo Core
 
-    artifact "Corpus contestuale" as CORPUS
-    component "NLP Analyzer" as NLP
-    database "Reference DB" as REFDB
-    component "Candidate Selector" as SELECTOR
-    component "Intentional Duplicate Checker" as DUPCHECK
-    component "Deck Builder" as BUILDER
+artifact "Corpus contestuale" as CORPUS
+component "NLP Analyzer" as NLP
+database "Reference DB" as REFDB
+component "Candidate Selector" as SELECTOR
+component "Intentional Duplicate Checker" as DUPCHECK
+component "Deck Builder" as BUILDER
 
-    artifact "Context candidates CSV" as CAND
-    artifact "Intentional duplicates report" as DUPREP
-    artifact "Context Deck" as DECK
+artifact "Context candidates CSV" as CAND
+artifact "Intentional duplicates report" as DUPREP
+artifact "Context Deck" as DECK
 
-    CORPUS --> NLP
-    NLP --> REFDB
-    NLP --> SELECTOR
+CORPUS --> NLP
+NLP --> REFDB
+NLP --> SELECTOR
 
-    REFDB --> SELECTOR
-    SELECTOR --> DUPCHECK
+REFDB --> SELECTOR
+SELECTOR --> DUPCHECK
 
-    DUPCHECK --> CAND
-    DUPCHECK --> DUPREP
-    DUPCHECK --> BUILDER
+DUPCHECK --> CAND
+DUPCHECK --> DUPREP
+DUPCHECK --> BUILDER
 
-    BUILDER --> DECK
+BUILDER --> DECK
 
-    @enduml
+@enduml
+```
+
 
 ### Output
 
@@ -444,49 +454,51 @@ Campi consigliati per intentional_duplicates_report:
 
 ## Pipeline generale
 
-    @startuml
+```plantuml
+@startuml
 
-    title Pipeline generale
+title Pipeline generale
 
-    artifact "Input file / directory" as INPUT
+artifact "Input file / directory" as INPUT
 
-    component "Detect Input Type" as DETECT
-    component "Reader" as READER
-    component "Text Normalizer" as NORMALIZER
-    component "NLP Analyzer" as NLP
-    component "Frequency Counter" as FREQ
+component "Detect Input Type" as DETECT
+component "Reader" as READER
+component "Text Normalizer" as NORMALIZER
+component "NLP Analyzer" as NLP
+component "Frequency Counter" as FREQ
 
-    database "Reference DB" as REFDB
+database "Reference DB" as REFDB
 
-    component "Core Ranking" as RANK
-    component "Deck Candidate Selector" as SELECTOR
-    component "Deck Manager" as DECKMAN
-    component "Note Processor Pipeline" as NOTEPIPE
+component "Core Ranking" as RANK
+component "Deck Candidate Selector" as SELECTOR
+component "Deck Manager" as DECKMAN
+component "Note Processor Pipeline" as NOTEPIPE
 
-    artifact "CSV Core" as CORECSV
-    artifact "Reports" as REPORTS
-    artifact "Deck output" as DECKOUT
+artifact "CSV Core" as CORECSV
+artifact "Reports" as REPORTS
+artifact "Deck output" as DECKOUT
 
-    INPUT --> DETECT
-    DETECT --> READER
-    READER --> NORMALIZER
-    NORMALIZER --> NLP
-    NLP --> FREQ
+INPUT --> DETECT
+DETECT --> READER
+READER --> NORMALIZER
+NORMALIZER --> NLP
+NLP --> FREQ
 
-    FREQ --> REFDB
-    FREQ --> RANK
+FREQ --> REFDB
+FREQ --> RANK
 
-    RANK --> CORECSV
-    RANK --> SELECTOR
+RANK --> CORECSV
+RANK --> SELECTOR
 
-    REFDB --> SELECTOR
-    SELECTOR --> REPORTS
-    SELECTOR --> DECKMAN
+REFDB --> SELECTOR
+SELECTOR --> REPORTS
+SELECTOR --> DECKMAN
 
-    DECKMAN --> NOTEPIPE
-    NOTEPIPE --> DECKOUT
+DECKMAN --> NOTEPIPE
+NOTEPIPE --> DECKOUT
 
-    @enduml
+@enduml
+```
 
 ## Formati di input
 
@@ -675,83 +687,87 @@ Il lemma può essere presente nel Reference DB anche se non è mai stato osserva
 
 ### Diagramma dati principale
 
-    @startuml
+```plantuml
+@startuml
 
-    title Modello dati Reference DB
+title Modello dati Reference DB
 
-    entity vocab_items {
-        id
-        language
-        lemma
-        normalized_lemma
-        observed_count
-        first_observed_at
-        last_observed_at
-        origin_type
-        created_at
-        updated_at
-    }
+entity vocab_items {
+    id
+    language
+    lemma
+    normalized_lemma
+    observed_count
+    first_observed_at
+    last_observed_at
+    origin_type
+    created_at
+    updated_at
+}
 
-    entity lemma_tags {
-        id
-        vocab_id
-        tag
-        created_at
-    }
+entity lemma_tags {
+    id
+    vocab_id
+    tag
+    created_at
+}
 
-    entity decks {
-        id
-        language
-        deck_name
-        description
-        created_at
-        updated_at
-    }
+entity decks {
+    id
+    language
+    deck_name
+    description
+    created_at
+    updated_at
+}
 
-    entity lemma_deck_relations {
-        vocab_id
-        deck_id
-        deck_description
-        created_at
-        updated_at
-    }
+entity lemma_deck_relations {
+    vocab_id
+    deck_id
+    deck_description
+    created_at
+    updated_at
+}
 
-    entity info_lemma {
-        id
-        vocab_id
-        nome_informazione
-        informazione
-        origine
-        tstamp
-    }
+entity info_lemma {
+    id
+    vocab_id
+    nome_informazione
+    informazione
+    origine
+    tstamp
+}
 
-    entity input_sources {
-        id
-        language
-        source_name
-        source_type
-        source_path
-        created_at
-    }
+entity input_sources {
+    id
+    language
+    source_name
+    source_type
+    source_path
+    created_at
+}
 
-    entity source_observations {
-        source_id
-        vocab_id
-        observed_count
-        created_at
-        updated_at
-    }
+entity source_observations {
+    source_id
+    vocab_id
+    observed_count
+    created_at
+    updated_at
+}
 
-    vocab_items ||--o{ lemma_tags
-    vocab_items ||--o{ lemma_deck_relations
-    decks ||--o{ lemma_deck_relations
+vocab_items ||--o{ lemma_tags
+vocab_items ||--o{ lemma_deck_relations
+decks ||--o{ lemma_deck_relations
 
-    vocab_items ||--o{ info_lemma
+vocab_items ||--o{ info_lemma
 
-    input_sources ||--o{ source_observations
-    vocab_items ||--o{ source_observations
+input_sources ||--o{ source_observations
+vocab_items ||--o{ source_observations
 
-    @enduml
+@enduml
+```
+
+
 
 ### Tabella vocab_items
 
@@ -1097,27 +1113,31 @@ Flusso:
 
 ### Diagramma
 
-    @startuml
+```plantuml
+@startuml
 
-    title Cache info_lemma prima di chiamata API
+title Cache info_lemma prima di chiamata API
 
-    component "Note Processor" as PROCESSOR
-    database "Reference DB" as DB
-    database "info_lemma" as CACHE
-    cloud "API / AI / Dizionario" as API
+component "Note Processor" as PROCESSOR
+database "Reference DB" as DB
+database "info_lemma" as CACHE
+cloud "API / AI / Dizionario" as API
 
-    PROCESSOR --> DB : trova lemma
-    PROCESSOR --> CACHE : cerca nome_informazione
+PROCESSOR --> DB : trova lemma
+PROCESSOR --> CACHE : cerca nome_informazione
 
-    CACHE --> PROCESSOR : informazione presente
+CACHE --> PROCESSOR : informazione presente
 
-    PROCESSOR --> API : chiamata solo se cache assente
-    API --> PROCESSOR : risultato
+PROCESSOR --> API : chiamata solo se cache assente
+API --> PROCESSOR : risultato
 
-    PROCESSOR --> CACHE : salva o aggiorna informazione
-    PROCESSOR --> PROCESSOR : aggiorna note
+PROCESSOR --> CACHE : salva o aggiorna informazione
+PROCESSOR --> PROCESSOR : aggiorna note
 
-    @enduml
+@enduml
+```
+
+
 
 ### Esempio operativo
 
@@ -1202,25 +1222,29 @@ Campi consigliati:
 
 ### Diagramma
 
-    @startuml
+```plantuml
+@startuml
 
-    title Note Processing Pipeline
+title Note Processing Pipeline
 
-    entity Note
+entity Note
 
-    interface NoteProcessor
+interface NoteProcessor
 
-    NoteProcessor <|.. GermanInflectionProcessor
-    NoteProcessor <|.. GermanVerbConjugationProcessor
-    NoteProcessor <|.. ExampleSentencesProcessor
-    NoteProcessor <|.. TranslationProcessor
-    NoteProcessor <|.. JapaneseReadingProcessor
-    NoteProcessor <|.. AIEnrichmentProcessor
-    NoteProcessor <|.. CustomPythonProcessor
+NoteProcessor <|.. GermanInflectionProcessor
+NoteProcessor <|.. GermanVerbConjugationProcessor
+NoteProcessor <|.. ExampleSentencesProcessor
+NoteProcessor <|.. TranslationProcessor
+NoteProcessor <|.. JapaneseReadingProcessor
+NoteProcessor <|.. AIEnrichmentProcessor
+NoteProcessor <|.. CustomPythonProcessor
 
-    Note --> NoteProcessor
+Note --> NoteProcessor
 
-    @enduml
+@enduml
+```
+
+
 
 ### Processor previsti per il tedesco
 
