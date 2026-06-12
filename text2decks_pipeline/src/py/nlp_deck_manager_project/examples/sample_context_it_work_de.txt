@@ -1,0 +1,4 @@
+Der Server ist langsam.
+Ich arbeite mit Docker.
+Die Datenbank ist nicht erreichbar.
+Wir deployen die Anwendung morgen.

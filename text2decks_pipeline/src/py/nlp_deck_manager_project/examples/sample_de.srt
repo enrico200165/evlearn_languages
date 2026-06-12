@@ -1,0 +1,11 @@
+1
+00:00:01,000 --> 00:00:03,000
+Das Haus ist klein.
+
+2
+00:00:04,000 --> 00:00:06,000
+Ich arbeite heute zu Hause.
+
+3
+00:00:07,000 --> 00:00:09,000
+Wir gehen morgen zur Schule.

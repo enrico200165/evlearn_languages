@@ -1,0 +1,18 @@
+[project]
+name = "nlp-deck-manager"
+version = "0.4.0"
+description = "Gestore di deck linguistici con Reference DB per lingua, pipeline NLP, processor custom ed export CSV/APKG."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+nlp = ["spacy"]
+anki = ["genanki"]
+test = ["pytest"]
+
+[project.scripts]
+nlp-deck-manager = "nlp_deck_manager.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
