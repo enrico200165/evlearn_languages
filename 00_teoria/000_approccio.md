@@ -1,7 +1,13 @@
-# Obiettivi
+# Prospettiva e Obiettivi
 
-Gli obiettivi sono:
-- generare decks a partire da una lista di parole  
+Alcuni esempi di obiettivi sono
+- generare un deck con i N vocaboli più frequenti in assoluto (cioè secondo una fonte che non ci interessa dato che le frequenze non saranno mai veramente assolute)  
+- dato un testo generare un deck con i suoi vocaboli (o con i vocaboli che in esso hanno frequenza da m a N, nel caso si voglia studiare per tranch)
+- dato un video/film generare un deck con tutti i suoi vocaboli (o frasi), eventualmente che non compaiano già in altri decks
+
+Questi obiettivi sono a complessità altissima, molto superiore anche a quella stimata da informatici senior senza competenze elaborazione di testo e linguaggi, quindi:
+- vanno scomposti in sottobiettivi focalizzati, cioè steps di elaborazione modulari, con input e output generali e standard, definiti con estrema cura
+- goi steps vanno inquadrati in una pipeline il più generale possibile, nella pipeline alcuni steps saranno opzionali, per alcuni steps saranno possibii elaborazioni alternative, l'importante è che ogni passo abbia input ed output standard generali e flessibili, in alcuni casi sarà necessario più di un formato ma sempre in numero ridotto, ognuno giustificato da logica di business.
 
 
 ## Tipologie di deck da generare
@@ -31,34 +37,45 @@ Per lingue come il tedesco e il giapponese questa separazione è particolarmente
 Nel tedesco occorre gestire genere, plurale, casi, reggenze, preposizioni e posizione del verbo.  Nel giapponese occorre invece prestare attenzione a particelle, forme verbali, livelli di cortesia, kanji, kana e segmentazione delle frasi.  
 
 
-## Pipeline generale per la preparazione dell’input dei deck
+## Pipeline 
 
-### Macrofase: estrazione raw-input + metadati
+### Macrofase 1: estrazione raw-input + metadati
 
-Questa macro-fase avrà lo scopo di estrarre il testo da fonti eterogenee, come audio, video, sottotitoli, documenti e file testuali, in formati intermedi semplici, controllabili e riutilizzabili.
+#### Obiettivo:  
+estrarre il testo da fonti eterogenee, come audio, video, sottotitoli, documenti e file testuali, 
+scriverlo in formati standard, relativamente semplici. generali e flessibili, autodescrittivi e riutilizzabili.
 
-Le tipologie di deck considerate nella progettazione generale saranno almeno tre: 
-deck orientati ai lemmi, deck orientati alle frasi e deck orientati alle strutture grammaticali.   Nella prima fase di sviluppo l’attenzione sarà posta soprattutto sui deck di lemmi e sui deck di frasi, ma l’architettura dovrà essere sufficientemente generale da poter supportare in seguito anche i deck grammaticali o strutturali.
+#### Precisazioni
 
-La pipeline può essere organizzata in una sequenza di passi.
+L’obiettivo della mnon è ancora generare direttamente le carte Anki complete. 
+L’obiettivo è preparare input puliti, coerenti e separati per le diverse tipologie di deck.
 
-#### 1. Acquisizione della fonte
+La generazione delle carte, con aggiunta di informazioni come traduzioni, spiegazioni, esempi, pronuncia, categoria grammaticale, frequenza, note d’uso o audio, dovrà appartenere a una fase successiva della pipeline.
 
-La fonte iniziale potrà essere costituita da file audio, video, file di sottotitoli, documenti strutturati, pagine HTML, file Markdown, file DOCX oppure normali file di testo. In questa fase il sistema dovrà solo identificare il tipo di input e prepararlo per il passo successivo.
+Questa separazione consente di mantenere il sistema più controllabile: prima si estraggono e normalizzano i target, poi si arricchiscono, poi si generano le carte.
 
-#### 2. Speech-to-text, quando necessario
+
+La fase può essere andrà organizzata in una sequenza di passi.
+
+#### 1. Step: Identificazione della fonte
+
+La fonte iniziale potrà essere costituita da file audio, video, file di sottotitoli, documenti strutturati, pagine HTML, file Markdown, file DOCX oppure normali file di testo. 
+In questa fase il sistema dovrà solo identificare il tipo di input e prepararlo per il passo successivo.
+
+#### 2. Step: Speech-to-text (opzionale)
 
 Se l’input è un file audio o video, il primo passo sarà il riconoscimento automatico del parlato.  L’output preferibile di questo passaggio non dovrebbe essere un semplice file di testo, ma un file di sottotitoli, perché i sottotitoli permettono di conservare anche la segmentazione temporale del parlato.
 
-L’output consigliato di questo passo è quindi un file di sottotitoli, per esempio in formato SRT o VTT. 
-Al momento si sceglie .srt per semplicità.
-In seguito sarà possibile estrarre il testo, ma mantenere inizialmente le informazioni temporali è utile per eventuali controlli, revisioni, allineamenti audio-testo o generazione di esempi collegati al punto esatto del video o dell’audio.
+L’output consigliato di questo passo è quindi un file di sottotitoli, per esempio in formato SRT o VTT. In seguito sarà possibile estrarre il testo, ma mantenere inizialmente le informazioni temporali è utile per eventuali controlli, revisioni, allineamenti audio-testo o generazione di esempi collegati al punto esatto del video o dell’audio.
 
-#### 3. Estrazione del testo dai formati sorgente
+**Al momento si sceglie SRT per semplicità.**
 
-Il passo successivo consiste nell’estrarre testo leggibile dai diversi formati supportati: sottotitoli, DOCX, Markdown, HTML, TXT e altri formati testuali o documentali.
+#### 3. Step: Estrazione testo (opzioni alternative) 
 
-L’output di questo passo può essere un file plain text in UTF-8. 
+Estrarre testo leggibile dai diversi formati supportati: sottotitoli, DOCX, Markdown, HTML, TXT e altri formati testuali o documentali.
+
+##### Output:  
+file plain text in UTF-8. 
 UTF-8 è adatto per rappresentare testi in lingue diverse, compresi tedesco e giapponese.  
 È però opportuno prevedere alcune regole tecniche: usare UTF-8 senza BOM, normalizzare Unicode quando necessario, conservare correttamente gli a-capo e gestire in modo esplicito eventuali caratteri di controllo, spazi anomali o simboli non testuali.  
 
@@ -67,25 +84,49 @@ Questo primo testo estratto non dovrebbe ancora essere considerato materiale did
 
 #### 4. Normalizzazione del testo
 
-Dopo l’estrazione è opportuno prevedere un passaggio di normalizzazione. Questo passaggio serve a rendere il testo più stabile e più adatto alle elaborazioni successive.
+Serve a rendere il testo più stabile e più adatto alle elaborazioni successive.
 
-La normalizzazione può includere la conversione coerente degli spazi, la rimozione di elementi tecnici non linguistici, la gestione degli a-capo, la normalizzazione Unicode, l’eliminazione di markup residuo e la correzione di artefatti tipici dei sottotitoli o dell’OCR, se presenti.
+La normalizzazione può includere: 
+- la conversione coerente degli spazi, 
+- la rimozione di elementi tecnici non linguistici, 
+- la gestione degli a-capo, 
+- la normalizzazione Unicode, 
+- l’eliminazione di markup residuo e 
+- la correzione di artefatti tipici dei sottotitoli o dell’OCR, se presenti.
 
-Per il giapponese occorre particolare attenzione alla normalizzazione Unicode, alla punteggiatura, agli spazi eventualmente introdotti artificialmente e alla successiva segmentazione in token.  
-Per il tedesco occorre preservare correttamente maiuscole, umlaut, ß, segni di punteggiatura e apostrofi significativi.
+Per il giapponese: 
+occorre particolare attenzione alla normalizzazione Unicode, alla punteggiatura, agli spazi eventualmente introdotti artificialmente e alla successiva segmentazione in token.  
+
+Per il tedesco: 
+occorre preservare correttamente maiuscole, umlaut, ß, segni di punteggiatura e apostrofi significativi.
+
 
 #### 5. Segmentazione in unità linguistiche
 
+##### input:
+
+##### output:
+
 Il testo normalizzato deve poi essere segmentato in unità linguistiche adatte alle diverse tipologie di deck.
 
-Per i deck di frasi, l’unità principale sarà la frase o un segmento testuale equivalente. Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti. L’obiettivo è produrre unità abbastanza complete da avere senso come esempi didattici.
+###### deck di frasi  
+l’unità principale sarà la frase o un segmento testuale equivalente. Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti. L’obiettivo è produrre unità abbastanza complete da avere senso come esempi didattici.
 
-Per i deck di lemmi, l’unità principale sarà invece il token o il lemma.  
-Il testo dovrà quindi essere tokenizzato e, quando possibile, lemmatizzato. In questa fase non è opportuno rimuovere automaticamente le stopword, perché parole funzionali come articoli, pronomi, preposizioni, particelle, ausiliari e connettivi sono importanti nelle liste lessicali di base. La rimozione o il filtraggio delle stopword potrà essere eventualmente previsto come opzione successiva, non come comportamento predefinito.
+###### deck di lemmi  
+l’unità principale sarà invece il token o il lemma.  
+Il testo dovrà quindi essere tokenizzato e, quando possibile, lemmatizzato. 
+In questa fase non è opportuno rimuovere automaticamente le stopword, perché parole funzionali come articoli, pronomi, preposizioni, particelle, ausiliari e connettivi sono importanti nelle liste lessicali di base. 
+La rimozione o il filtraggio delle stopword potrà essere eventualmente previsto come opzione successiva, non come comportamento predefinito.
 
 #### 6. Estrazione dei target per tipologia di deck
 
+##### descrizione:  
 A questo punto la pipeline dovrà produrre file di target separati per ciascuna tipologia di deck.
+
+##### input:
+
+
+##### output:
 
 
 Per i deck di lemmi, il formato iniziale può essere un file UTF-8 con un elemento per riga.  
@@ -98,6 +139,7 @@ Va tenuta presente la possibilità di generare piccoli files audio corrispondent
 
 
 Per i futuri deck grammaticali o strutturali, il sistema dovrà prevedere la possibilità di estrarre pattern o costruzioni ricorrenti. In questa fase non è necessario implementare completamente tale funzione, ma l’architettura non deve impedirla. Per questo motivo è importante conservare, quando possibile, il legame tra frase, fonte, posizione nel testo ed eventuali metadati.
+
 
 #### 7. Conservazione dei metadati
 
@@ -226,10 +268,3 @@ In sintesi, il sistema dovrà supportare due livelli:
 
 Questa scelta permette di mantenere semplice l’uso iniziale, ma lascia spazio a informazioni più ricche quando saranno necessarie.
 
-#### 9. Obiettivo della macro-sezione elaborativa
-
-L’obiettivo della macro-sezione non è ancora generare direttamente le carte Anki complete. L’obiettivo è preparare input puliti, coerenti e separati per le diverse tipologie di deck.
-
-La generazione delle carte, con aggiunta di informazioni come traduzioni, spiegazioni, esempi, pronuncia, categoria grammaticale, frequenza, note d’uso o audio, dovrà appartenere a una fase successiva della pipeline.
-
-Questa separazione consente di mantenere il sistema più controllabile: prima si estraggono e normalizzano i target, poi si arricchiscono, poi si generano le carte.
