@@ -76,10 +76,10 @@ Du  gehst nach Hause.
 Wir gehen nach Hause.
 ```
 
+Ogni occorrenza di nach e Hause è conteggiata
+
 Ci sono 12 token
 
-In questo conteggio gehe e gehst sono considerati elementi diversi.
-EV: sembra che ogni occorrenza di nach sia conteggiata
 
 ## A cosa servono i token
 
@@ -216,27 +216,7 @@ Conteggio: 1 lemma
 # Perché il lemma è importante
 
 Quando la ricerca scientifica afferma:
-
-```
-conoscere 2000 parole
-```
-
-oppure:
-
-```
-conoscere 3000 parole
-```
-
-quasi sempre si riferisce a:
-
-```
-2000 lemmi
-3000 lemmi
-```
-
-e non a 2000 token oppure 2000 forme flesse
-
-Questa distinzione è fondamentale.
+*conoscere N parole* quasi sempre si riferisce a *N lemmi*
 
 ---
 
@@ -282,7 +262,7 @@ La famiglia lessicale è utilizzata soprattutto negli studi sulla:
 copertura lessicale
 ```
 
-ovvero sulla percentuale di testo comprensibile da un lettore.
+ovvero sulla percentuale di testo **comprensibile** da un lettore.
 
 ---
 
@@ -292,24 +272,24 @@ Anche questa espressione è più complessa di quanto sembri.
 
 ---
 
-## Livello 1 - Riconoscimento  
+### Livello 1 - Riconoscimento  
 
 Sapere che: gehen significa andare  
 
 
-## Livello 2 - Riconoscimento delle forme  
+### Livello 2 - Riconoscimento delle forme  
 
 Capire automaticamente: ging gegangen senza dover consultare un dizionario.
 
 ---
 
-## Livello 3 - Produzione
+### Livello 3 - Produzione
 
 Saper utilizzare la parola correttamente in una frase.
 
 Esempio: Ich gehe nach Hause.
 
-## Livello 4 - Padronanza
+### Livello 4 - Padronanza
 
 Saper usare correttamente:
 

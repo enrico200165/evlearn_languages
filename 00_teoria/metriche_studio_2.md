@@ -27,8 +27,9 @@ può essere riconosciuta
 conoscendo un certo numero di lemmi
 ```
 
-Supporre di leggere un articolo di giornale. Se si conoscono soltanto 100 lemmi la maggior parte del testo sarà incomprensibile se si conoscono 1000 lemmi molto frequenti una parte significativa del testo
-diventa riconoscibile.  
+Supporre di leggere un articolo di giornale.  
+Se si conoscono soltanto 100 lemmi la maggior parte del testo sarà incomprensibile,   
+se si conoscono 1000 lemmi molto frequenti una parte significativa del testo diventa riconoscibile.  
 Se si conoscono 3000 lemmi gran parte del testo può essere compresa
 
 La relazione non è lineare.  
@@ -117,14 +118,14 @@ Con circa 3000 lemmi:
 * la lettura autonoma diventa molto più semplice;
 * l'apprendimento successivo accelera.
 
-Lo studente possiede ormai una base sufficientemente ampia per imparare nuove parole dal contesto.
+Lo studente possiede ormai una **base sufficientemente ampia per imparare nuove parole dal contesto**.
 
 ---
 
 ## Per il progetto software
 
 Se fosse necessario scegliere un solo obiettivo iniziale, la scelta più ragionevole sarebbe:  
-Core-3000
+**Core-3000**
 
 ---
 
@@ -167,8 +168,8 @@ Qui non esiste più un unico vocabolario ottimale.
 
 No. Due parole con la stessa frequenza possono avere utilità molto diversa.
 
-Esempio: progetto e aerostazione potrebbero avere frequenze simili in alcuni corpora.
-
+Esempio:  
+progetto e aerostazione potrebbero avere frequenze simili in alcuni corpora.  
 Tuttavia progetto è utilizzabile in moltissimi contesti, aerostazione in molti meno.
 
 ---
@@ -473,19 +474,7 @@ Questo richiede attenzione nella costruzione delle liste core.
 
 Nel giapponese il problema principale è la normalizzazione.
 
-La stessa voce può apparire come:
-
-```
-食べる
-```
-
-oppure:
-
-```
-たべる
-```
-
-oppure in altre varianti.
+La stessa voce può apparire come: `食べる` oppure: `たべる` oppure in altre varianti.
 
 ---
 
