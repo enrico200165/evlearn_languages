@@ -1,0 +1,32 @@
+# --- Data Science & Analisi Dati ---
+numpy           # Calcolo numerico ad alte prestazioni e gestione array
+pandas          # Manipolazione e analisi di dataset strutturati
+scipy           # Algoritmi matematici, statistici e di ottimizzazione
+matplotlib      # Libreria standard per la visualizzazione dei dati
+seaborn         # Grafica statistica avanzata basata su matplotlib
+
+# --- AI, Machine Learning & Deep Learning ---
+scikit-learn    # Algoritmi classici di machine learning e preprocessing
+torch           # PyTorch: framework per reti neurali e Deep Learning
+transformers    # Modelli linguistici pre-addestrati (HuggingFace) per NLP
+
+# --- NLP & Analisi Testuale ---
+spacy           # NLP industriale per parsing, tokenizzazione e analisi morfologica
+nltk            # Tool classici per elaborazione linguaggio naturale
+langdetect      # Identificazione automatica della lingua di un testo
+deep-translator # Interfaccia semplice per traduzioni via API (DeepL, Google, ecc.)
+sudachipy       # Tokenizer specializzato per la grammatica giapponese
+
+# --- Studio, Bibbia e Database ---
+sqlalchemy      # ORM per gestire database locali (SQLITE) in modo professionale
+
+
+# --- Bibbia ---
+pythonbible    # Tool per interrogare e referenziare testi biblici
+
+# --- Multimedia: Audio, Video e Sottotitoli ---
+yt-dlp          # Download video e estrazione tracce sottotitoli (YouTube, ecc.)
+openai-whisper  # Stato dell'arte per trascrizione audio/video in testo
+pysrt           # Lettura, scrittura e manipolazione file .srt
+moviepy         # Editing video programmatico: estrazione frame e tagli
+ffmpeg-python   # Wrapper per FFmpeg: manipolazione audio/video a basso livello

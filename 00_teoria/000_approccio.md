@@ -2,12 +2,17 @@
 
 Alcuni esempi di obiettivi sono
 - generare un deck con i N vocaboli più frequenti in assoluto (cioè secondo una fonte che non ci interessa dato che le frequenze non saranno mai veramente assolute)  
-- dato un testo generare un deck con i suoi vocaboli (o con i vocaboli che in esso hanno frequenza da m a N, nel caso si voglia studiare per tranch)
-- dato un video/film generare un deck con tutti i suoi vocaboli (o frasi), eventualmente che non compaiano già in altri decks
+- dato un testo generare un deck con i vocaboli che in esso hanno frequenza fra M+1 e N, entrambe inclusive
+- dato un video/film/audio generare un deck con i vocaboli che in esso hanno frequenza fra M+1 e N, entrambe inclusive
+- dato un testo generare un deck con le frasi che in esso hanno frequenza fra M+1 e N, entrambe inclusive
+- dato un testo generare un deck con le frasi che in esso hanno frequenza fra M+1 e N, entrambe inclusive
+- dato un video/film/audio generare un deck le frasi che in esso hanno frequenza fra M+1 e N, entrambe inclusive
 
-Questi obiettivi sono a complessità altissima, molto superiore anche a quella stimata da informatici senior senza competenze elaborazione di testo e linguaggi, quindi:
-- vanno scomposti in sottobiettivi focalizzati, cioè steps di elaborazione modulari, con input e output generali e standard, definiti con estrema cura
-- goi steps vanno inquadrati in una pipeline il più generale possibile, nella pipeline alcuni steps saranno opzionali, per alcuni steps saranno possibii elaborazioni alternative, l'importante è che ogni passo abbia input ed output standard generali e flessibili, in alcuni casi sarà necessario più di un formato ma sempre in numero ridotto, ognuno giustificato da logica di business.
+
+Questi obiettivi sono ridondanti e a complessità molto alta,  superiore anche a quella stimata da informatici senior senza competenze elaborazione di testo e linguaggi, quindi:
+- vanno scomposti in sottobiettivi focalizzati, cioè steps di elaborazione modulari e riusabili, con input e output generali e standard, definiti con estrema cura
+- gli steps vanno inquadrati in una pipeline il più generale possibile, 
+nella pipeline alcuni steps saranno opzionali, per alcuni steps saranno possibii elaborazioni alternative, l'importante è che ogni step abbia input ed output standard generali e flessibili. In alcuni casi sarà necessario più di un formato ma i formati dovranno sempre in numero minimo, ogni formato giustificato da logica di "business", non per semplificazione tecnica, formati utili a fini tecnici sono possibili ma solo all'interno di eventuali sottosteps, come formati intermedi non standard.
 
 
 ## Tipologie di deck da generare
@@ -35,7 +40,7 @@ Senza questa distinzione, si rischierebbe di inserire troppa grammatica nei deck
 
 Per lingue come il tedesco e il giapponese questa separazione è particolarmente importante.  
 Nel tedesco occorre gestire genere, plurale, casi, reggenze, preposizioni e posizione del verbo.  Nel giapponese occorre invece prestare attenzione a particelle, forme verbali, livelli di cortesia, kanji, kana e segmentazione delle frasi.  
-
+n
 
 ## Pipeline 
 
