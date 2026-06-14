@@ -4,7 +4,8 @@
 
  
 # escludi dati 
-pipeline_data/
+pipe_data/
+*.jpg
 *.mkv
 *.mp4
 *.avi
