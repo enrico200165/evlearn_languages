@@ -1,6 +1,15 @@
 
 005_authoring_gen/
 
+
+ 
+# escludi dati 
+pipeline_data/
+*.mkv
+*.mp4
+*.avi
+*.srt
+
 ############################
 # Regole generali
 ############################
