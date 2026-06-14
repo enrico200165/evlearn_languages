@@ -1,0 +1,32 @@
+@startuml
+title Pipeline - Step con input e output
+
+left to right direction
+skinparam linetype ortho
+
+rectangle "010_video_in\nfile video originali" as input_video <<input>>
+
+rectangle "Step 015\nvideo/audio/subtitles extract" as step015 <<step>>
+
+rectangle "015_video_out/audio\nMP3, OGG" as audio_out <<output>>
+rectangle "015_video_out/subtitles\nSRT/VTT copiati" as subs_out <<output>>
+rectangle "015_video_out/frames\nfotogrammi" as frames_out <<output>>
+rectangle "015_video_out/phrases\nfrasi da sottotitoli" as phrases_out <<output>>
+
+rectangle "Step 020\ntext extract / normalize" as step020 <<step>>
+
+rectangle "020_text_out\nfrasi normalizzate" as text_out <<output>>
+
+input_video --> step015
+
+step015 --> audio_out
+step015 --> subs_out
+step015 --> frames_out
+step015 --> phrases_out
+
+phrases_out --> step020
+subs_out --> step020
+
+step020 --> text_out
+
+@enduml

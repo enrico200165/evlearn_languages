@@ -8,7 +8,10 @@ Questo documento descrive il funzionamento del gestore generale della pipeline i
 
 Il gestore della pipeline ha il compito di coordinare l'esecuzione ordinata delle varie tratte elaborative necessarie per trasformare materiali sorgente, come video, audio, sottotitoli o testi, in materiali intermedi utilizzabili per la successiva generazione di deck Anki.
 
-Il gestore non contiene la logica tecnica dettagliata dei singoli step. Ogni step deve essere implementato in un modulo dedicato o in una funzione dedicata. Il gestore si occupa invece di:
+Il gestore non contiene la logica tecnica dettagliata dei singoli step.  
+Ogni step deve essere implementato in un modulo dedicato o in una funzione dedicata.  
+
+Il gestore si occupa invece di:
 
 - definire la configurazione generale della pipeline;
 - individuare quali step devono essere eseguiti;
