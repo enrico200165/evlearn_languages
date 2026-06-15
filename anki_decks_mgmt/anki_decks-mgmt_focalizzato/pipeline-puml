@@ -1,0 +1,33 @@
+@startuml
+
+title Pipeline
+
+skinparam linetype ortho
+
+component "step video" as step_010
+component "step audio" as step_020
+
+
+'circle "preexisting" as none
+rectangle "video" as video
+rectangle "audio" as audio
+rectangle "sottotitoli" as sottotitoli
+rectangle "frasi txt" as frasi_txt
+rectangle "frasi sound" as frasi_aud
+rectangle "fotogrammi" as fotogrammi
+
+
+video --> step_010
+step_010 --> audio
+step_010 --> fotogrammi
+
+
+' none --> audio
+' none --> sottotitoli
+
+audio --> step_020
+step_020 --> frasi_txt
+step_020 --> frasi_aud
+step_020 --> sottotitoli
+
+@enduml

@@ -28,7 +28,7 @@ Funzione principale per script master
 Output controllabili singolarmente
 ----------------------------------
 - write_mp3: estrazione audio MP3.
-- write_ogg: estrazione audio OGG Vorbis.
+- write_ogg: estrazione audio OGG Vorbis, disattivata per default.
 - write_frames: estrazione fotogrammi da timestamp sottotitoli.
 - write_phrase_files: scrittura file testo per ogni frase/segmento.
 
@@ -44,8 +44,10 @@ Note
   quando target è un singolo video.
 - Se subtitles è una directory, per ogni video viene cercato un file .srt o .vtt
   con lo stesso nome base del video.
-- Se subtitles è None e auto_find_subtitles=True, viene cercato un file .srt o
-  .vtt accanto al video.
+- Se subtitles è None e auto_find_subtitles=True, vengono cercati file .srt o
+  .vtt accanto al video. Sono riconosciuti sia <video>.srt sia
+  <video>_<codice_lingua>.srt, per esempio mymovie_en.srt, mymovie_ja.srt,
+  mymovie_de.srt e mymovie.srt.
 - Ogni cue del file sottotitoli viene trattato come frase/segmento.
   Se un cue contiene più frasi reali, senza timestamp più granulari non è
   possibile generare fotogrammi distinti per ogni frase reale.
@@ -83,6 +85,9 @@ SUBTITLE_EXTENSIONS = {
     ".vtt",
 }
 
+LOG_FORMAT = "%(asctime)s | %(levelname)s | %(filename)s:%(lineno)d | %(message)s"
+LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 
 @dataclass(frozen=True)
 class SubtitleCue:
@@ -96,6 +101,15 @@ class SubtitleCue:
 
 
 @dataclass(frozen=True)
+class SubtitleTrack:
+    """File sottotitoli associato a un video e alla sua lingua."""
+
+    path: Path
+    language_code: str
+    is_language_explicit: bool
+
+
+@dataclass(frozen=True)
 class VideoPipelineResult:
     """Risultato dell'elaborazione di un singolo video."""
 
@@ -104,6 +118,10 @@ class VideoPipelineResult:
     mp3_path: Path | None = None
     ogg_path: Path | None = None
     subtitles_path: Path | None = None
+    copied_subtitles_path: Path | None = None
+    subtitles_paths: list[Path] = field(default_factory=list)
+    copied_subtitles_paths: list[Path] = field(default_factory=list)
+    subtitle_languages: list[str] = field(default_factory=list)
     frame_paths: list[Path] = field(default_factory=list)
     phrase_paths: list[Path] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
@@ -122,20 +140,23 @@ class VideoPipelineOptions:
     auto_find_subtitles: bool = True
 
     write_mp3: bool = True
-    write_ogg: bool = True
+    write_ogg: bool = False
     write_frames: bool = True
     write_phrase_files: bool = True
+    copy_subtitles: bool = True
 
     per_video_subdir: bool = True
 
     audio_subdir: str = "audio"
     frames_subdir: str = "frames"
     phrases_subdir: str = "phrases"
+    subtitles_subdir: str = "subtitles"
     logs_subdir: str = "logs"
 
     mp3_quality: int = 2
     ogg_quality: int = 5
-    jpg_quality: int = 2
+    jpg_quality: int = 8
+    frame_max_width: int = 480
     phrase_encoding: str = "utf-8"
 
     frame_filename_prefix: str = "fotogr"
@@ -209,9 +230,9 @@ def parse_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
-        "--no-ogg",
+        "--write-ogg",
         action="store_true",
-        help="Non estrarre audio OGG Vorbis."
+        help="Estrarre anche audio OGG Vorbis. Default: disattivato."
     )
 
     parser.add_argument(
@@ -227,12 +248,25 @@ def parse_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--no-copy-subtitles",
+        action="store_true",
+        help="Non copiare i file sottotitoli trovati nella directory di output."
+    )
+
+    parser.add_argument(
+        "--frame-max-width",
+        type=int,
+        default=480,
+        help="Larghezza massima dei fotogrammi estratti. Default: 480."
+    )
+
+    parser.add_argument(
         "--jpg-quality",
         type=int,
-        default=2,
+        default=8,
         help=(
             "Qualità JPEG per ffmpeg -q:v. Valori più bassi indicano qualità maggiore. "
-            "Default: 2."
+            "Default: 8, per file più piccoli."
         )
     )
 
@@ -252,11 +286,13 @@ def build_options_from_args(args: argparse.Namespace) -> VideoPipelineOptions:
         overwrite=args.overwrite,
         auto_find_subtitles=not args.no_auto_find_subtitles,
         write_mp3=not args.no_mp3,
-        write_ogg=not args.no_ogg,
+        write_ogg=args.write_ogg,
         write_frames=not args.no_frames,
         write_phrase_files=not args.no_phrase_files,
+        copy_subtitles=not args.no_copy_subtitles,
         per_video_subdir=not args.no_per_video_subdir,
         jpg_quality=args.jpg_quality,
+        frame_max_width=args.frame_max_width,
     )
 
 
@@ -264,42 +300,48 @@ def ensure_logger(
     options: VideoPipelineOptions,
     logger: logging.Logger | None
 ) -> logging.Logger:
-    """Restituire un logger utilizzabile anche quando lo script è importato."""
+    """
+    Creare sempre un logger proprio dello step video.
 
-    if logger is not None:
-        return logger
+    Il log dello step video deve essere indipendente dal log del pipeline master.
+    Anche quando la funzione viene invocata dal master, il dettaglio operativo
+    viene scritto nel file di log della directory di output dello step.
 
-    logger = logging.getLogger("video_pipeline")
-    logger.setLevel(logging.DEBUG)
-    logger.handlers.clear()
-    logger.propagate = False
+    Il parametro logger resta nella firma per compatibilità, ma non viene usato
+    per scrivere il log dettagliato dello step.
+    """
+
+    step_logger = logging.getLogger("video_audio_subtitles_step")
+    step_logger.setLevel(logging.DEBUG)
+    step_logger.handlers.clear()
+    step_logger.propagate = False
 
     console_handler = logging.StreamHandler(sys.stderr)
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(
-        logging.Formatter("%(levelname)s: %(message)s")
+        logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT)
     )
-    logger.addHandler(console_handler)
+    step_logger.addHandler(console_handler)
 
-    if options.create_log_file:
-        log_dir = options.output_dir / options.logs_subdir
-        log_dir.mkdir(
-            parents=True,
-            exist_ok=True
-        )
-        file_handler = logging.FileHandler(
-            log_dir / "pipeline_video_audio_subtitles_extract.log",
-            encoding="utf-8"
-        )
-        file_handler.setLevel(logging.DEBUG)
-        file_handler.setFormatter(
-            logging.Formatter(
-                "%(asctime)s | %(levelname)s | %(message)s"
-            )
-        )
-        logger.addHandler(file_handler)
+    options.output_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
 
-    return logger
+    log_file = options.output_dir / "pipeline_video_audio_subtitles_extract.log"
+    file_handler = logging.FileHandler(
+        log_file,
+        encoding="utf-8"
+    )
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(
+        logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT)
+    )
+    step_logger.addHandler(file_handler)
+
+    step_logger.debug("Log indipendente dello step video: %s", log_file)
+
+    return step_logger
 
 
 def check_ffmpeg(logger: logging.Logger) -> None:
@@ -452,40 +494,133 @@ def extract_ogg(
     return ogg_path
 
 
-def find_subtitles_for_video(
+LANGUAGE_CODE_RE = re.compile(r"^[a-z]{2,3}(?:[-_][A-Za-z0-9]{2,8})?$")
+
+
+def infer_subtitle_language(
+    video_path: Path,
+    subtitle_path: Path
+) -> SubtitleTrack | None:
+    """
+    Riconoscere sottotitoli associati a un video.
+
+    Formati supportati:
+    - <video_stem>.<ext>
+    - <video_stem>_<language_code>.<ext>
+
+    Esempi:
+    - mymovie.srt      -> lingua non determinata: und
+    - mymovie_en.srt   -> en
+    - mymovie_ja.srt   -> ja
+    - mymovie_de.vtt   -> de
+    """
+
+    if subtitle_path.suffix.lower() not in SUBTITLE_EXTENSIONS:
+        return None
+
+    video_stem = video_path.stem
+    subtitle_stem = subtitle_path.stem
+
+    if subtitle_stem == video_stem:
+        return SubtitleTrack(
+            path=subtitle_path,
+            language_code="und",
+            is_language_explicit=False
+        )
+
+    prefix = f"{video_stem}_"
+
+    if subtitle_stem.startswith(prefix):
+        language_code = subtitle_stem[len(prefix):]
+        normalized = language_code.replace("_", "-")
+
+        if LANGUAGE_CODE_RE.match(normalized):
+            return SubtitleTrack(
+                path=subtitle_path,
+                language_code=normalized.lower(),
+                is_language_explicit=True
+            )
+
+    return None
+
+
+def find_subtitle_tracks_for_video(
     video_path: Path,
     options: VideoPipelineOptions
-) -> Path | None:
+) -> list[SubtitleTrack]:
+    """Trovare tutti i file sottotitoli associati al video."""
+
+    candidates: list[Path] = []
+
     if options.subtitles is not None:
         subtitles_path = options.subtitles
 
         if subtitles_path.is_file():
-            if subtitles_path.suffix.lower() not in SUBTITLE_EXTENSIONS:
+            track = infer_subtitle_language(
+                video_path=video_path,
+                subtitle_path=subtitles_path
+            )
+            if track is None:
                 raise RuntimeError(
-                    f"Formato sottotitoli non supportato: {subtitles_path}"
+                    f"Il file sottotitoli non corrisponde al video o ha formato non supportato: {subtitles_path}"
                 )
-            return subtitles_path
+            return [track]
 
         if subtitles_path.is_dir():
-            for ext in sorted(SUBTITLE_EXTENSIONS):
-                candidate = subtitles_path / f"{video_path.stem}{ext}"
-                if candidate.exists():
-                    return candidate
-            return None
+            candidates.extend(
+                path for path in subtitles_path.iterdir()
+                if path.is_file() and path.suffix.lower() in SUBTITLE_EXTENSIONS
+            )
+        else:
+            raise RuntimeError(
+                f"Percorso sottotitoli non trovato: {subtitles_path}"
+            )
 
-        raise RuntimeError(
-            f"Percorso sottotitoli non trovato: {subtitles_path}"
+    elif options.auto_find_subtitles:
+        candidates.extend(
+            path for path in video_path.parent.iterdir()
+            if path.is_file() and path.suffix.lower() in SUBTITLE_EXTENSIONS
+        )
+    else:
+        return []
+
+    tracks: list[SubtitleTrack] = []
+    seen: set[Path] = set()
+
+    for candidate in sorted(candidates):
+        track = infer_subtitle_language(
+            video_path=video_path,
+            subtitle_path=candidate
         )
 
-    if not options.auto_find_subtitles:
+        if track is None:
+            continue
+
+        resolved = track.path.resolve()
+        if resolved in seen:
+            continue
+
+        seen.add(resolved)
+        tracks.append(track)
+
+    return tracks
+
+
+def find_subtitles_for_video(
+    video_path: Path,
+    options: VideoPipelineOptions
+) -> Path | None:
+    """Compatibilità con versioni precedenti: restituisce il primo sottotitolo trovato."""
+
+    tracks = find_subtitle_tracks_for_video(
+        video_path=video_path,
+        options=options
+    )
+
+    if not tracks:
         return None
 
-    for ext in sorted(SUBTITLE_EXTENSIONS):
-        candidate = video_path.with_suffix(ext)
-        if candidate.exists():
-            return candidate
-
-    return None
+    return tracks[0].path
 
 
 def parse_timestamp_to_seconds(value: str) -> float:
@@ -658,7 +793,8 @@ def extract_frame(
     cue: SubtitleCue,
     frames_dir: Path,
     options: VideoPipelineOptions,
-    logger: logging.Logger
+    logger: logging.Logger,
+    language_code: str
 ) -> Path:
     frames_dir.mkdir(
         parents=True,
@@ -673,7 +809,8 @@ def extract_frame(
         )
     )
 
-    frame_path = frames_dir / f"{options.frame_filename_prefix}_{cue.start_label}_{words}.jpg"
+    safe_language_code = safe_ascii_filename_part(language_code)
+    frame_path = frames_dir / f"{video_path.stem}_{options.frame_filename_prefix}_{cue.start_label}_{safe_language_code}_{words}.jpg"
 
     logger.info("Estrazione fotogramma: %s", frame_path)
 
@@ -686,6 +823,8 @@ def extract_frame(
         str(video_path),
         "-frames:v",
         "1",
+        "-vf",
+        f"scale=w='min({options.frame_max_width},iw)':h=-2",
         "-q:v",
         str(options.jpg_quality),
         str(frame_path),
@@ -698,14 +837,18 @@ def write_phrase_file(
     cue: SubtitleCue,
     phrases_dir: Path,
     options: VideoPipelineOptions,
-    logger: logging.Logger
+    logger: logging.Logger,
+    video_stem: str,
+    language_code: str
 ) -> Path:
     phrases_dir.mkdir(
         parents=True,
         exist_ok=True
     )
 
-    phrase_path = phrases_dir / f"{options.phrase_filename_prefix}_{cue.start_label}.txt"
+    safe_video_stem = safe_ascii_filename_part(video_stem)
+    safe_language_code = safe_ascii_filename_part(language_code)
+    phrase_path = phrases_dir / f"{safe_video_stem}_{options.phrase_filename_prefix}_{cue.start_label}_{safe_language_code}.txt"
 
     if phrase_path.exists() and not options.overwrite:
         logger.info("File frase già esistente, salto: %s", phrase_path)
@@ -723,12 +866,16 @@ def write_phrase_file(
 
 def process_subtitles_for_video(
     video_path: Path,
-    subtitles_path: Path,
+    subtitle_track: SubtitleTrack,
     video_output_dir: Path,
     options: VideoPipelineOptions,
     logger: logging.Logger
 ) -> tuple[list[Path], list[Path], list[str]]:
+    subtitles_path = subtitle_track.path
+    language_code = subtitle_track.language_code
+
     logger.info("File sottotitoli: %s", subtitles_path)
+    logger.info("Lingua sottotitoli: %s", language_code)
 
     errors: list[str] = []
     frame_paths: list[Path] = []
@@ -753,7 +900,8 @@ def process_subtitles_for_video(
                         cue=cue,
                         frames_dir=frames_dir,
                         options=options,
-                        logger=logger
+                        logger=logger,
+                        language_code=language_code
                     )
                 )
             except Exception as exc:
@@ -768,7 +916,9 @@ def process_subtitles_for_video(
                         cue=cue,
                         phrases_dir=phrases_dir,
                         options=options,
-                        logger=logger
+                        logger=logger,
+                        video_stem=video_path.stem,
+                        language_code=language_code
                     )
                 )
             except Exception as exc:
@@ -777,6 +927,36 @@ def process_subtitles_for_video(
                 logger.error(message)
 
     return frame_paths, phrase_paths, errors
+
+
+def copy_subtitles_to_output(
+    subtitles_path: Path,
+    video_output_dir: Path,
+    options: VideoPipelineOptions,
+    logger: logging.Logger
+) -> Path:
+    """Copiare il file sottotitoli trovato nella directory di output del video."""
+
+    subtitles_dir = video_output_dir / options.subtitles_subdir
+    subtitles_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    destination = subtitles_dir / subtitles_path.name
+
+    if destination.exists() and not options.overwrite:
+        logger.info("Sottotitoli già copiati, salto: %s", destination)
+        return destination
+
+    shutil.copy2(
+        subtitles_path,
+        destination
+    )
+
+    logger.info("File sottotitoli copiato in output: %s", destination)
+
+    return destination
 
 
 def process_one_video(
@@ -797,6 +977,10 @@ def process_one_video(
     mp3_path: Path | None = None
     ogg_path: Path | None = None
     subtitles_path: Path | None = None
+    copied_subtitles_path: Path | None = None
+    subtitles_paths: list[Path] = []
+    copied_subtitles_paths: list[Path] = []
+    subtitle_languages: list[str] = []
     frame_paths: list[Path] = []
     phrase_paths: list[Path] = []
 
@@ -828,24 +1012,48 @@ def process_one_video(
             errors.append(message)
             logger.error(message)
 
-    if options.write_frames or options.write_phrase_files:
+    if options.write_frames or options.write_phrase_files or options.copy_subtitles:
         try:
-            subtitles_path = find_subtitles_for_video(
+            subtitle_tracks = find_subtitle_tracks_for_video(
                 video_path=video_path,
                 options=options
             )
 
-            if subtitles_path is None:
+            if not subtitle_tracks:
                 logger.info("Nessun file sottotitoli trovato per: %s", video_path)
             else:
-                frame_paths, phrase_paths, subtitle_errors = process_subtitles_for_video(
-                    video_path=video_path,
-                    subtitles_path=subtitles_path,
-                    video_output_dir=video_output_dir,
-                    options=options,
-                    logger=logger
-                )
-                errors.extend(subtitle_errors)
+                logger.info("File sottotitoli trovati per %s: %s", video_path.name, len(subtitle_tracks))
+
+                for subtitle_track in subtitle_tracks:
+                    subtitles_paths.append(subtitle_track.path)
+                    subtitle_languages.append(subtitle_track.language_code)
+
+                    if subtitles_path is None:
+                        subtitles_path = subtitle_track.path
+
+                    if options.copy_subtitles:
+                        copied = copy_subtitles_to_output(
+                            subtitles_path=subtitle_track.path,
+                            video_output_dir=video_output_dir,
+                            options=options,
+                            logger=logger
+                        )
+                        copied_subtitles_paths.append(copied)
+
+                        if copied_subtitles_path is None:
+                            copied_subtitles_path = copied
+
+                    if options.write_frames or options.write_phrase_files:
+                        lang_frame_paths, lang_phrase_paths, subtitle_errors = process_subtitles_for_video(
+                            video_path=video_path,
+                            subtitle_track=subtitle_track,
+                            video_output_dir=video_output_dir,
+                            options=options,
+                            logger=logger
+                        )
+                        frame_paths.extend(lang_frame_paths)
+                        phrase_paths.extend(lang_phrase_paths)
+                        errors.extend(subtitle_errors)
         except Exception as exc:
             message = f"Errore gestione sottotitoli: {exc}"
             errors.append(message)
@@ -857,6 +1065,10 @@ def process_one_video(
         mp3_path=mp3_path,
         ogg_path=ogg_path,
         subtitles_path=subtitles_path,
+        copied_subtitles_path=copied_subtitles_path,
+        subtitles_paths=subtitles_paths,
+        copied_subtitles_paths=copied_subtitles_paths,
+        subtitle_languages=subtitle_languages,
         frame_paths=frame_paths,
         phrase_paths=phrase_paths,
         errors=errors
@@ -872,9 +1084,10 @@ def process_video_audio_subtitles(
     overwrite: bool = False,
     auto_find_subtitles: bool = True,
     write_mp3: bool = True,
-    write_ogg: bool = True,
+    write_ogg: bool = False,
     write_frames: bool = True,
     write_phrase_files: bool = True,
+    copy_subtitles: bool = True,
     per_video_subdir: bool = True,
     audio_subdir: str = "audio",
     frames_subdir: str = "frames",
@@ -882,7 +1095,8 @@ def process_video_audio_subtitles(
     logs_subdir: str = "logs",
     mp3_quality: int = 2,
     ogg_quality: int = 5,
-    jpg_quality: int = 2,
+    jpg_quality: int = 8,
+    frame_max_width: int = 480,
     phrase_encoding: str = "utf-8",
     frame_filename_prefix: str = "fotogr",
     phrase_filename_prefix: str = "phrase",
@@ -907,7 +1121,7 @@ def process_video_audio_subtitles(
     subtitles:
         None, file sottotitoli o directory sottotitoli.
 
-    write_mp3, write_ogg, write_frames, write_phrase_files:
+    write_mp3, write_ogg, write_frames, write_phrase_files, copy_subtitles:
         Controllano singolarmente la produzione degli output.
 
     Restituisce
@@ -930,6 +1144,7 @@ def process_video_audio_subtitles(
         write_ogg=write_ogg,
         write_frames=write_frames,
         write_phrase_files=write_phrase_files,
+        copy_subtitles=copy_subtitles,
         per_video_subdir=per_video_subdir,
         audio_subdir=audio_subdir,
         frames_subdir=frames_subdir,
@@ -938,6 +1153,7 @@ def process_video_audio_subtitles(
         mp3_quality=mp3_quality,
         ogg_quality=ogg_quality,
         jpg_quality=jpg_quality,
+        frame_max_width=frame_max_width,
         phrase_encoding=phrase_encoding,
         frame_filename_prefix=frame_filename_prefix,
         phrase_filename_prefix=phrase_filename_prefix,
@@ -1009,8 +1225,10 @@ def main() -> int:
             write_ogg=options.write_ogg,
             write_frames=options.write_frames,
             write_phrase_files=options.write_phrase_files,
+            copy_subtitles=options.copy_subtitles,
             per_video_subdir=options.per_video_subdir,
             jpg_quality=options.jpg_quality,
+            frame_max_width=options.frame_max_width,
         )
 
         failures = sum(
