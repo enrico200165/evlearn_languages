@@ -21,6 +21,7 @@ hard-coded per le directory della pipeline.
 from __future__ import annotations
 
 import argparse
+import inspect
 import logging
 import sys
 import traceback
@@ -29,7 +30,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Callable
 
-from step_015_video import process_video_audio_subtitles
+from step_010_video import process_video_audio_subtitles
 from step_020_audio import transcribe_audio_to_subtitles
 
 
@@ -45,6 +46,9 @@ PIPE_DIR_VIDEO_OUT = "020_video_out"
 PIPE_DIR_VIDEO_AUDIO = f"{PIPE_DIR_VIDEO_OUT}/audio"
 
 PIPE_DIR_AUDIO_OUT = "030_audio_out"
+PIPE_AUDIO_INPUT_EXTENSIONS = (".mp3",)
+PIPE_DEFAULT_WRITE_VIDEO_MP3 = True
+PIPE_DEFAULT_WRITE_VIDEO_OGG = False
 
 
 # =============================================================================
@@ -56,6 +60,9 @@ STEP_ID_AUDIO = "020_audio"
 
 STEP_DESCRIPTION_VIDEO = "Estrazione audio, sottotitoli, fotogrammi e frasi da video."
 STEP_DESCRIPTION_AUDIO = "Generazione sottotitoli e piccoli audio frase da file audio."
+
+LOG_FORMAT = "%(asctime)s | %(levelname)s | %(filename)s:%(lineno)d | %(message)s"
+LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 @dataclass(frozen=True)
@@ -75,12 +82,13 @@ class PipelineConfig:
 
     audio_input_dir_name: str = PIPE_DIR_VIDEO_AUDIO
     audio_output_dir_name: str = PIPE_DIR_AUDIO_OUT
+    audio_input_extensions: tuple[str, ...] = PIPE_AUDIO_INPUT_EXTENSIONS
 
     recursive_video_search: bool = False
     auto_find_video_subtitles: bool = True
 
-    write_video_mp3: bool = True
-    write_video_ogg: bool = True
+    write_video_mp3: bool = PIPE_DEFAULT_WRITE_VIDEO_MP3
+    write_video_ogg: bool = PIPE_DEFAULT_WRITE_VIDEO_OGG
     write_video_frames: bool = True
     write_video_phrase_files: bool = True
     copy_video_subtitles: bool = True
@@ -199,6 +207,16 @@ def parse_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--audio-input-extension",
+        action="append",
+        default=list(PIPE_AUDIO_INPUT_EXTENSIONS),
+        help=(
+            "Estensione audio da elaborare nello step 020, per esempio .mp3. "
+            "Default: solo .mp3. Può essere specificata più volte."
+        )
+    )
+
+    parser.add_argument(
         "--recursive-video-search",
         action="store_true",
         help="Cercare video anche nelle sottodirectory dello step video. Default: disattivato."
@@ -217,9 +235,9 @@ def parse_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
-        "--no-video-ogg",
+        "--write-video-ogg",
         action="store_true",
-        help="Non estrarre audio OGG Vorbis nello step video."
+        help="Estrarre anche audio OGG Vorbis nello step video. Default: disattivato."
     )
 
     parser.add_argument(
@@ -328,10 +346,11 @@ def build_config(args: argparse.Namespace) -> PipelineConfig:
         video_output_dir_name=args.video_output_dir,
         audio_input_dir_name=args.audio_input_dir,
         audio_output_dir_name=args.audio_output_dir,
+        audio_input_extensions=tuple(args.audio_input_extension),
         recursive_video_search=args.recursive_video_search,
         auto_find_video_subtitles=not args.no_auto_find_video_subtitles,
         write_video_mp3=not args.no_video_mp3,
-        write_video_ogg=not args.no_video_ogg,
+        write_video_ogg=args.write_video_ogg,
         write_video_frames=not args.no_video_frames,
         write_video_phrase_files=not args.no_video_phrase_files,
         copy_video_subtitles=not args.no_copy_video_subtitles,
@@ -364,7 +383,7 @@ def create_master_logger(config: PipelineConfig) -> logging.Logger:
     console_handler = logging.StreamHandler(sys.stderr)
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(
-        logging.Formatter("%(levelname)s: %(message)s")
+        logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT)
     )
     logger.addHandler(console_handler)
 
@@ -374,9 +393,7 @@ def create_master_logger(config: PipelineConfig) -> logging.Logger:
     )
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(
-        logging.Formatter(
-            "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
-        )
+        logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT)
     )
     logger.addHandler(file_handler)
 
@@ -404,6 +421,52 @@ def create_empty_result(step_id: str) -> StepRunResult:
 def finalize_result(result: StepRunResult) -> StepRunResult:
     result.ended_at = datetime.now()
     return result
+
+
+def call_with_supported_kwargs(
+    func,
+    diagnostic_logger: logging.Logger,
+    **kwargs
+):
+    """
+    Chiamare una funzione di step passando solo i parametri supportati.
+
+    Serve a rendere il master più robusto quando uno step locale non è ancora
+    allineato all'ultima versione dell'interfaccia prevista dal master.
+    I parametri non supportati vengono ignorati e registrati nel log master.
+    """
+
+    signature = inspect.signature(func)
+    parameters = signature.parameters
+
+    accepts_var_kwargs = any(
+        parameter.kind == inspect.Parameter.VAR_KEYWORD
+        for parameter in parameters.values()
+    )
+
+    if accepts_var_kwargs:
+        return func(**kwargs)
+
+    supported_kwargs = {
+        key: value
+        for key, value in kwargs.items()
+        if key in parameters
+    }
+
+    skipped_kwargs = sorted(
+        key
+        for key in kwargs
+        if key not in parameters
+    )
+
+    if skipped_kwargs:
+        diagnostic_logger.warning(
+            "La funzione %s non supporta questi parametri, che vengono ignorati: %s",
+            getattr(func, "__name__", str(func)),
+            ", ".join(skipped_kwargs)
+        )
+
+    return func(**supported_kwargs)
 
 
 def run_015_video(config: PipelineConfig, logger: logging.Logger) -> StepRunResult:
@@ -485,7 +548,9 @@ def run_020_audio(config: PipelineConfig, logger: logging.Logger) -> StepRunResu
         return finalize_result(result)
 
     try:
-        audio_results = transcribe_audio_to_subtitles(
+        audio_results = call_with_supported_kwargs(
+            transcribe_audio_to_subtitles,
+            diagnostic_logger=logger,
             target=input_dir,
             output_dir=output_dir,
             language=config.audio_language,
@@ -495,6 +560,7 @@ def run_020_audio(config: PipelineConfig, logger: logging.Logger) -> StepRunResu
             recursive=True,
             overwrite=config.overwrite,
             per_audio_subdir=True,
+            audio_extensions=config.audio_input_extensions,
             write_srt=config.write_audio_srt,
             write_vtt=config.write_audio_vtt,
             write_txt=config.write_audio_txt,
@@ -503,6 +569,7 @@ def run_020_audio(config: PipelineConfig, logger: logging.Logger) -> StepRunResu
             phrase_audio_format=config.phrase_audio_format,
             phrase_audio_bitrate=config.phrase_audio_bitrate,
             phrase_audio_padding_ms=config.phrase_audio_padding_ms,
+            phrase_audio_fast_copy=True,
             logger=None,
         )
 
