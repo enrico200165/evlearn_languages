@@ -28,7 +28,7 @@ Funzione principale per script master
 Output controllabili singolarmente
 ----------------------------------
 - write_mp3: estrazione audio MP3.
-- write_ogg: estrazione audio OGG Vorbis.
+- write_ogg: estrazione audio OGG Vorbis, disattivata per default.
 - write_frames: estrazione fotogrammi da timestamp sottotitoli.
 - write_phrase_files: scrittura file testo per ogni frase/segmento.
 
@@ -85,6 +85,9 @@ SUBTITLE_EXTENSIONS = {
     ".vtt",
 }
 
+LOG_FORMAT = "%(asctime)s | %(levelname)s | %(filename)s:%(lineno)d | %(message)s"
+LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 
 @dataclass(frozen=True)
 class SubtitleCue:
@@ -137,7 +140,7 @@ class VideoPipelineOptions:
     auto_find_subtitles: bool = True
 
     write_mp3: bool = True
-    write_ogg: bool = True
+    write_ogg: bool = False
     write_frames: bool = True
     write_phrase_files: bool = True
     copy_subtitles: bool = True
@@ -227,9 +230,9 @@ def parse_args() -> argparse.Namespace:
     )
 
     parser.add_argument(
-        "--no-ogg",
+        "--write-ogg",
         action="store_true",
-        help="Non estrarre audio OGG Vorbis."
+        help="Estrarre anche audio OGG Vorbis. Default: disattivato."
     )
 
     parser.add_argument(
@@ -283,7 +286,7 @@ def build_options_from_args(args: argparse.Namespace) -> VideoPipelineOptions:
         overwrite=args.overwrite,
         auto_find_subtitles=not args.no_auto_find_subtitles,
         write_mp3=not args.no_mp3,
-        write_ogg=not args.no_ogg,
+        write_ogg=args.write_ogg,
         write_frames=not args.no_frames,
         write_phrase_files=not args.no_phrase_files,
         copy_subtitles=not args.no_copy_subtitles,
@@ -316,7 +319,7 @@ def ensure_logger(
     console_handler = logging.StreamHandler(sys.stderr)
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(
-        logging.Formatter("%(levelname)s: %(message)s")
+        logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT)
     )
     step_logger.addHandler(console_handler)
 
@@ -332,9 +335,7 @@ def ensure_logger(
     )
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(
-        logging.Formatter(
-            "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
-        )
+        logging.Formatter(LOG_FORMAT, datefmt=LOG_DATE_FORMAT)
     )
     step_logger.addHandler(file_handler)
 
@@ -792,7 +793,8 @@ def extract_frame(
     cue: SubtitleCue,
     frames_dir: Path,
     options: VideoPipelineOptions,
-    logger: logging.Logger
+    logger: logging.Logger,
+    language_code: str
 ) -> Path:
     frames_dir.mkdir(
         parents=True,
@@ -807,7 +809,8 @@ def extract_frame(
         )
     )
 
-    frame_path = frames_dir / f"{options.frame_filename_prefix}_{cue.start_label}_{words}.jpg"
+    safe_language_code = safe_ascii_filename_part(language_code)
+    frame_path = frames_dir / f"{video_path.stem}_{options.frame_filename_prefix}_{cue.start_label}_{safe_language_code}_{words}.jpg"
 
     logger.info("Estrazione fotogramma: %s", frame_path)
 
@@ -834,14 +837,18 @@ def write_phrase_file(
     cue: SubtitleCue,
     phrases_dir: Path,
     options: VideoPipelineOptions,
-    logger: logging.Logger
+    logger: logging.Logger,
+    video_stem: str,
+    language_code: str
 ) -> Path:
     phrases_dir.mkdir(
         parents=True,
         exist_ok=True
     )
 
-    phrase_path = phrases_dir / f"{options.phrase_filename_prefix}_{cue.start_label}.txt"
+    safe_video_stem = safe_ascii_filename_part(video_stem)
+    safe_language_code = safe_ascii_filename_part(language_code)
+    phrase_path = phrases_dir / f"{safe_video_stem}_{options.phrase_filename_prefix}_{cue.start_label}_{safe_language_code}.txt"
 
     if phrase_path.exists() and not options.overwrite:
         logger.info("File frase già esistente, salto: %s", phrase_path)
@@ -881,8 +888,8 @@ def process_subtitles_for_video(
 
     logger.info("Segmenti/frasi trovati nei sottotitoli: %s", len(cues))
 
-    frames_dir = video_output_dir / options.frames_subdir / language_code
-    phrases_dir = video_output_dir / options.phrases_subdir / language_code
+    frames_dir = video_output_dir / options.frames_subdir
+    phrases_dir = video_output_dir / options.phrases_subdir
 
     for cue in cues:
         if options.write_frames:
@@ -893,7 +900,8 @@ def process_subtitles_for_video(
                         cue=cue,
                         frames_dir=frames_dir,
                         options=options,
-                        logger=logger
+                        logger=logger,
+                        language_code=language_code
                     )
                 )
             except Exception as exc:
@@ -908,7 +916,9 @@ def process_subtitles_for_video(
                         cue=cue,
                         phrases_dir=phrases_dir,
                         options=options,
-                        logger=logger
+                        logger=logger,
+                        video_stem=video_path.stem,
+                        language_code=language_code
                     )
                 )
             except Exception as exc:
@@ -1074,7 +1084,7 @@ def process_video_audio_subtitles(
     overwrite: bool = False,
     auto_find_subtitles: bool = True,
     write_mp3: bool = True,
-    write_ogg: bool = True,
+    write_ogg: bool = False,
     write_frames: bool = True,
     write_phrase_files: bool = True,
     copy_subtitles: bool = True,

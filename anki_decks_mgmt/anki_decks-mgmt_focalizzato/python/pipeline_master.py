@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import inspect
 import logging
+import shutil
 import sys
 import traceback
 from dataclasses import dataclass, field
@@ -49,6 +50,7 @@ PIPE_DIR_AUDIO_OUT = "030_audio_out"
 PIPE_AUDIO_INPUT_EXTENSIONS = (".mp3",)
 PIPE_DEFAULT_WRITE_VIDEO_MP3 = True
 PIPE_DEFAULT_WRITE_VIDEO_OGG = False
+PIPE_SUBTITLE_EXTENSIONS = (".srt", ".vtt")
 
 
 # =============================================================================
@@ -469,6 +471,195 @@ def call_with_supported_kwargs(
     return func(**supported_kwargs)
 
 
+def discover_subtitle_files(root_dir: Path) -> list[Path]:
+    """Trovare file sottotitoli generati dentro una directory di output."""
+
+    if not root_dir.exists():
+        return []
+
+    return sorted(
+        path
+        for path in root_dir.rglob("*")
+        if path.is_file() and path.suffix.lower() in PIPE_SUBTITLE_EXTENSIONS
+    )
+
+
+def copy_generated_subtitles_to_video_output(
+    config: PipelineConfig,
+    logger: logging.Logger,
+    generated_subtitle_paths: list[Path]
+) -> list[Path]:
+    """
+    Copiare i sottotitoli generati nello stesso punto usato dai sottotitoli
+    già presenti accanto ai video: <video_output>/subtitles.
+    """
+
+    video_output_dir = config.path_in_base(config.video_output_dir_name)
+    destination_dir = video_output_dir / "subtitles"
+    destination_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    copied_paths: list[Path] = []
+
+    for source_path in generated_subtitle_paths:
+        destination_path = destination_dir / source_path.name
+
+        try:
+            if source_path.resolve() == destination_path.resolve():
+                copied_paths.append(destination_path)
+                continue
+
+            if destination_path.exists() and not config.overwrite:
+                logger.info(
+                    "Sottotitolo generato già presente, salto copia: %s",
+                    destination_path
+                )
+                copied_paths.append(destination_path)
+                continue
+
+            shutil.copy2(
+                source_path,
+                destination_path
+            )
+            logger.info(
+                "Sottotitolo generato copiato: %s -> %s",
+                source_path,
+                destination_path
+            )
+            copied_paths.append(destination_path)
+
+        except Exception as exc:
+            logger.error(
+                "Errore copia sottotitolo generato %s: %s",
+                source_path,
+                exc
+            )
+
+    return copied_paths
+
+
+def build_subtitle_selection_for_video_postprocess(
+    copied_subtitle_paths: list[Path]
+) -> list[Path]:
+    """
+    Se esistono file SRT generati, usare quelli per il post-processing video.
+    I VTT restano copiati in subtitles/, ma non vengono usati se esiste già
+    l'SRT equivalente, per evitare doppia produzione di frame e frasi.
+    """
+
+    srt_paths = [
+        path
+        for path in copied_subtitle_paths
+        if path.suffix.lower() == ".srt"
+    ]
+
+    if srt_paths:
+        return srt_paths
+
+    return copied_subtitle_paths
+
+
+def postprocess_video_outputs_from_generated_subtitles(
+    config: PipelineConfig,
+    logger: logging.Logger,
+    copied_subtitle_paths: list[Path]
+) -> list:
+    """
+    Rieseguire lo step video solo per frame e file frase dopo che i sottotitoli
+    sono stati generati dallo step audio.
+    """
+
+    selected_subtitles = build_subtitle_selection_for_video_postprocess(
+        copied_subtitle_paths
+    )
+
+    if not selected_subtitles:
+        logger.info(
+            "Nessun sottotitolo generato disponibile per post-processing video."
+        )
+        return []
+
+    video_input_dir = config.path_in_base(config.video_input_dir_name)
+    video_output_dir = config.path_in_base(config.video_output_dir_name)
+    subtitles_dir = video_output_dir / "subtitles"
+
+    logger.info(
+        "Post-processing video da sottotitoli generati: input=%s subtitles=%s output=%s",
+        video_input_dir,
+        subtitles_dir,
+        video_output_dir
+    )
+
+    return process_video_audio_subtitles(
+        target=video_input_dir,
+        output_dir=video_output_dir,
+        subtitles=subtitles_dir,
+        recursive=config.recursive_video_search,
+        overwrite=config.overwrite,
+        auto_find_subtitles=False,
+        write_mp3=False,
+        write_ogg=False,
+        write_frames=config.write_video_frames,
+        write_phrase_files=config.write_video_phrase_files,
+        copy_subtitles=False,
+        per_video_subdir=False,
+        logger=None,
+    )
+
+
+def copy_video_phrase_files_to_audio_output(
+    config: PipelineConfig,
+    logger: logging.Logger
+) -> list[Path]:
+    """
+    Copiare i file testo delle frasi anche sotto l'output audio, così nello
+    step 030 sono disponibili sottotitoli, audio frase e testo frase.
+    """
+
+    video_phrases_dir = config.path_in_base(config.video_output_dir_name) / "phrases"
+    audio_phrases_dir = config.path_in_base(config.audio_output_dir_name) / "phrases"
+
+    if not video_phrases_dir.exists():
+        logger.info(
+            "Directory frasi video non presente, nessuna copia verso output audio: %s",
+            video_phrases_dir
+        )
+        return []
+
+    audio_phrases_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    copied_paths: list[Path] = []
+
+    for source_path in sorted(video_phrases_dir.glob("*.txt")):
+        destination_path = audio_phrases_dir / source_path.name
+
+        if destination_path.exists() and not config.overwrite:
+            logger.info(
+                "File frase già presente in output audio, salto copia: %s",
+                destination_path
+            )
+            copied_paths.append(destination_path)
+            continue
+
+        shutil.copy2(
+            source_path,
+            destination_path
+        )
+        logger.info(
+            "File frase copiato in output audio: %s -> %s",
+            source_path,
+            destination_path
+        )
+        copied_paths.append(destination_path)
+
+    return copied_paths
+
+
 def run_015_video(config: PipelineConfig, logger: logging.Logger) -> StepRunResult:
     step_id = STEP_ID_VIDEO
     result = create_empty_result(step_id)
@@ -559,8 +750,9 @@ def run_020_audio(config: PipelineConfig, logger: logging.Logger) -> StepRunResu
             compute_type=config.audio_compute_type,
             recursive=True,
             overwrite=config.overwrite,
-            per_audio_subdir=True,
+            per_audio_subdir=False,
             audio_extensions=config.audio_input_extensions,
+            existing_subtitles_dir=config.path_in_base(config.video_output_dir_name) / "subtitles",
             write_srt=config.write_audio_srt,
             write_vtt=config.write_audio_vtt,
             write_txt=config.write_audio_txt,
@@ -574,11 +766,38 @@ def run_020_audio(config: PipelineConfig, logger: logging.Logger) -> StepRunResu
         )
 
         result.processed_items = len(audio_results)
+        generated_subtitles = discover_subtitle_files(output_dir)
+        copied_generated_subtitles = copy_generated_subtitles_to_video_output(
+            config=config,
+            logger=logger,
+            generated_subtitle_paths=generated_subtitles
+        )
+
+        video_postprocess_results = postprocess_video_outputs_from_generated_subtitles(
+            config=config,
+            logger=logger,
+            copied_subtitle_paths=copied_generated_subtitles
+        )
+
+        copied_phrase_text_files = copy_video_phrase_files_to_audio_output(
+            config=config,
+            logger=logger
+        )
+
         result.details = {
             "input_dir": str(input_dir),
             "output_dir": str(output_dir),
             "audio_files": [str(item.audio_path) for item in audio_results],
+            "generated_subtitles": [str(path) for path in generated_subtitles],
+            "copied_generated_subtitles": [str(path) for path in copied_generated_subtitles],
+            "video_postprocess_items": len(video_postprocess_results),
+            "copied_phrase_text_files": [str(path) for path in copied_phrase_text_files],
         }
+
+        for video_result in video_postprocess_results:
+            if getattr(video_result, "errors", None):
+                for error in video_result.errors:
+                    result.errors.append(f"{video_result.video_path}: {error}")
 
         for audio_result in audio_results:
             logger.info("Audio elaborato: %s", audio_result.audio_path)
