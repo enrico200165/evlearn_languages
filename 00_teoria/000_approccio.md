@@ -14,6 +14,40 @@ Questi obiettivi sono ridondanti e a complessità molto alta,  superiore anche a
 - gli steps vanno inquadrati in una pipeline il più generale possibile, 
 nella pipeline alcuni steps saranno opzionali, per alcuni steps saranno possibii elaborazioni alternative, l'importante è che ogni step abbia input ed output standard generali e flessibili. In alcuni casi sarà necessario più di un formato ma i formati dovranno sempre in numero minimo, ogni formato giustificato da logica di "business", non per semplificazione tecnica, formati utili a fini tecnici sono possibili ma solo all'interno di eventuali sottosteps, come formati intermedi non standard.
 
+## Obiettivi pragmatici  
+
+## Decks core N  
+Generare decks che contengono i vocaboli con frequenza m...n
+
+## decks da multimedia
+Dato un video, o una serie di video (magari appartenente a una serie), generare decks con i vocaboli di frequenza m..n non già presenti nei decks core (o in altri decks)
+
+
+
+
+## Obiettivi tecnici  
+
+### Estrazione di contenuti da multimedia
+
+Dato un video o un audio estrarre:
+- fotogrammi, in coincidenza di sottotitoli
+- sottotitoli se non presenti
+- testo di singole frasi in file, in coincidenza di sottotitoli
+- audio di singole frasi in file, in coincidenza di sottotitoli
+
+Indipendente dal resto
+
+### Database informazioni linguistiche (per linguaggio)
+#### obiettivo: 
+Evitare chiamate remote ed elaborazioni lente/costose non necessarie,  
+il sw cerca le info nel database e fa chiamate solo se le informazioni non sono presenti, con le informazioni popola il database
+
+contiene, per ogni tpo di entry (sostantivo, aggettivo, preposizione) le informazioni appropriate (flessione, coniugazioni, Etc.) in relazione 1:N
+
+#### input: 
+liste di parole, 
+
+
 
 ## Tipologie di deck da generare
 
