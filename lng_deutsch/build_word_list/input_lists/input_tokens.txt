@@ -1,0 +1,814 @@
+/#header/ format: de-study-words-v1
+/#header/ marker: /#info/
+/#header/ encoding: UTF-8
+/#header/ source_file: gohete_A1_SD1_Wortliste_02.pdf
+/#header/ source_title: Goethe-Zertifikat A1 Start Deutsch 1 Wortliste
+/#header/ extraction_note: one study item per line; optional metadata follows separator /#info/
+
+ab /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Ab morgen muss ich arbeiten.
+aber /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Ich bin oft im Büro, aber nur für wenige Stunden.
+abfahren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Wir fahren um zwölf Uhr ab.
+Abfahrt /#info/ article=die; entry=die Abfahrt; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Vor der Abfahrt rufe ich an.
+abgeben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Ich muss meine Schlüssel abgeben.
+abholen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Wann kann ich den Schrank bei dir abholen? | Wir müssen noch meinen Bruder abholen.
+Absender /#info/ article=der; entry=der Absender; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Da ist ein Brief für dich ohne Absender.
+Achtung /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Achtung! Das dürfen Sie nicht tun.
+Adresse /#info/ article=die; form_info=-en; entry=die Adresse,-en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Können Sie mir seine Adresse sagen?
+all- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Alles Gute! | Das ist alles.
+allein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Er kommt allein.
+also /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Also, es ist so: ... | Er hat Zeit, also muss er uns helfen.
+alt /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Wie alt sind Sie? | Sie sehen aber nicht so alt aus.
+Alter /#info/ article=das; entry=das Alter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Alter: 26 Jahre.
+an /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Fahren Sie an der nächsten Straße nach rechts. | Wir treffen uns am Bahnhof.
+anbieten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Was darf ich dir anbieten?
+Angebot /#info/ article=das; form_info=-e; entry=das Angebot, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Heute sind Sportschuhe im Angebot.
+ander- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=WiIlst du diese Jacke? | - Nein, ich möchte die andere.
+anfangen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Hier fängt die Bahnhofstraße an. | Der Unterricht fängt gleich an.
+Anfang /#info/ article=der; entry=der Anfang; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Sie wohnt am Anfang der Straße. | Wir machen Anfang Juli Urlaub.
+anklicken /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Da musst du dieses Wort anklicken.
+ankommen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Wann kommt dieser Zug in Hamburg an?
+Ankunft /#info/ article=die; entry=die Ankunft; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Auf diesem Plan steht nur die Ankunft(-szeit) der | Züge.
+ankreuzen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Auf dem Formular müssen Sie an mehreren Stellen | etwas ankreuzen.
+anmachen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Mach bitte das Licht an!
+anmelden /#info/ reflexive_marker=sich; entry=(sich) anmelden; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Wo kann ich mich anmelden?
+Anmeldung /#info/ article=die; entry=die Anmeldung; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Eine Anmeldung für diesen Kurs ist nicht mehr möglich.
+Anrede /#info/ article=die; entry=die Anrede; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Schreiben Sie auch eine Anrede und einen Gruß.
+anrufen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Kann man Sie anrufen? | Peter ruft kurz seine Freundin an.
+Anruf /#info/ article=der; form_info=-e; entry=der Anruf, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Sie bekommt viele Anrufe auf ihrem Handy.
+Anrufbeantworter /#info/ article=der; entry=der Anrufbeantworter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=Wir sind im Moment nicht da. Sprechen Sie bitte auf; joined_with=beantworter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=9; section=alphabetical_wordlist; examples=den Anrufbeantworter.
+Ansage /#info/ article=die; form_info=-n; entry=die Ansage, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Hören Sie die Ansagen.
+Anschluss /#info/ article=der; entry=der Anschluss; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=In Mannheim haben Sie Anschluss nach Saarbrücken. | Ist das die Anmeldung für einen Telefonanschluss?
+an sein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Heute Nacht war das Licht an.; page=23; examples=Das Licht ist noch an.
+antworten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Er antwortet nicht.
+Antwort /#info/ article=die; form_info=-en; entry=die Antwort, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Er gibt leider keine Antwort.
+Anzeige /#info/ article=die; form_info=-n; entry=die Anzeige, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Ich habe Ihre Anzeige in der Zeitung gelesen.
+anziehen /#info/ reflexive_marker=sich; entry=(sich) anziehen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Ich muss mich noch anziehen.
+Apartment /#info/ article=das; form_info=-s; entry=das Apartment, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Wir haben ein Apartment gemietet.
+Apfel /#info/ article=der; form_info=-Ä; entry=der Apfel, -Ä; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Ein Pfund Äpfel bitte.
+Appetit /#info/ article=der; entry=der Appetit; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Guten Appetit!
+arbeiten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Wo arbeiten Sie?
+Arbeit /#info/ article=die; form_info=-en; entry=die Arbeit, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Mein Bruder sucht Arbeit.
+arbeitslos /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Es gibt bei uns viele Leute, die schon lange arbeitslos | sind.
+Arbeitsplatz /#info/ article=der; form_info=-ä, e; entry=der Arbeitsplatz, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=An meinem Arbeitsplatz fehlt ein Drucker.
+Arm /#info/ article=der; form_info=-e; entry=der Arm, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Mein Arm tut weh.
+Arzt /#info/ article=der; form_info=-Ä, e; entry=der Arzt, -Ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Morgen habe ich einen Termin bei meiner Ärztin.
+auch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Ich bin auch Spanier.
+auf /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Die Kinder spielen auf der Straße. | Auf Wiedersehen.
+Aufgabe /#info/ article=die; form_info=-n; entry=die Aufgabe, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Das ist eine schwere Aufgabe.
+aufhören /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Der Kurs hört in einer Woche auf. | Hier hört die Bahnhofstraße auf.
+auf sein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Du brauchst den Schlüssel nicht. Die Wohnung ist auf.; page=23; examples=Das Fenster ist noch auf.
+aufstehen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Ich muss immer um vier Uhr aufstehen. | Soll ich aufstehen?
+Aufzug /#info/ article=der; form_info=-ü, e; entry=der Aufzug, -ü, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=In diesem Haus gibt es keinen Aufzug.
+Auge /#info/ article=das; form_info=-n; entry=das Auge, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Er hat blaue Augen.
+aus /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Er kommt aus Brasilien.
+Ausflug /#info/ article=der; entry=der Ausflug; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Morgen machen wir einen Ausflug nach Heidelberg.
+ausfüllen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Füllen Sie bitte dieses Formular aus.
+Ausgang /#info/ article=der; entry=der Ausgang; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Wo ist der Ausgang?
+Auskunft /#info/ article=die; form_info=-ü, e; entry=die Auskunft, -ü, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Können Sie mir eine Auskunft geben?
+Ausland /#info/ article=das; entry=das Ausland; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Fahren Sie ins Ausland?
+Ausländer /#info/ article=der; form_info=-; entry=der Ausländer, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=SInd Sie Ausländerin?
+ausländisch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Leider habe ich nur ausländisches Geld.
+ausmachen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Mach bitte das Licht aus!
+Aussage /#info/ article=die; form_info=-n; entry=die Aussage, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Ist die Aussage richtig oder falsch?
+aussehen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Das sieht schön aus.
+aus sein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Das Licht ist aus. | Die Schule ist aus.
+aussteigen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Wo muss ich aussteigen?
+Ausweis /#info/ article=der; entry=der Ausweis; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Hier ist mein Ausweis.
+ausziehen /#info/ reflexive_marker=sich; entry=(sich) ausziehen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Zieh die Schuhe aus, bitte!
+Auto /#info/ article=das; form_info=-s; entry=das Auto, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Er kommt mit dem Auto.
+Autobahn /#info/ article=die; form_info=-en; entry=die Autobahn, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Wo geht's hier bitte zur Autobahn?
+Automat /#info/ article=der; entry=der Automat; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Die Fahrkarten gibt es nur am Automaten.
+automatisch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=10; section=alphabetical_wordlist; examples=Du musst nichts machen. Das geht automatisch.
+Baby /#info/ article=das; form_info=-s; entry=das Baby, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Mein Kind ist noch ein Baby.
+Bäckerei /#info/ article=die; entry=die Bäckerei; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Ich geh mal schnell zur Bäckerei.
+Bad /#info/ article=das; entry=das Bad; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Wir haben kein großes Bad.
+baden /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Ich bade nicht so gern, ich dusche lieber.
+Bahn /#info/ article=die; entry=die Bahn; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Wir fahren lieber mit der Bahn. | Ich nehme die nächste Bahn.
+Bahnhof /#info/ article=der; entry=der Bahnhof; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Komme ich hier zum Bahnhof?
+Bahnsteig /#info/ article=der; entry=der Bahnsteig; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Auf welchem Bahnsteig fährt der Zug?
+bald /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Ich komme bald.
+Balkon /#info/ article=der; entry=der Balkon; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Die Wohnung hat auch einen kleinen Balkon.
+Banane /#info/ article=die; form_info=-n; entry=die Banane, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Drei Bananen, bitte!
+Bank /#info/ article=die; entry=die Bank; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Die Bank schließt schon um vier Uhr. | Er sitzt im Park auf einer Bank und liest.
+bar /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Muss ich bar zahlen oder geht's auch mit Karte?
+Bauch /#info/ article=der; entry=der Bauch; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Seit gestern tut mir der Bauch weh.
+Baum /#info/ article=der; form_info=-ä, e; entry=der Baum, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Vorsicht, fahr nicht an den Baum!
+Beamte /#info/ article=der; form_info=-n; entry=der Beamte, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Fragen Sie die Beamtin an Schalter acht!
+bedeuten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Was bedeutet das Wort?
+beginnen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Das Spiel beginnt um 15.30 Uhr.
+bei /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Offenbach liegt bei Frankfurt. | Ich wohne bei meinen Eltern.
+beide /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Beide Eltern arbeiten. | Wir kommen beide.
+Bein /#info/ article=das; form_info=-e; entry=das Bein, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Mein rechtes Bein tut weh.
+Beispiel /#info/ article=das; form_info=-e; entry=das Beispiel, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Kannst du mir ein Beispiel sagen?
+zum Beispiel /#info/ variants=z. B.; entry=zum Beispiel/z. B.; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Viele meiner Verwandten, z. B. meine beiden | Brüder, arbeiten auch hier.
+bekannt /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Picasso ist sehr bekannt. | der/die Bekannte, -n  Ein Bekannter von mir heißt Klaus.
+bekommen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Haben Sie meinen Brief bekommen? | Was bekommen Sie?
+benutzen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Die Aufzüge bitte nicht benutzen!
+Beruf /#info/ article=der; form_info=-e; entry=der Beruf, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Was sind Sie von Beruf? | Was ist Ihr Beruf?
+besetzt /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Die Nummer ist immer besetzt. | Der Platz ist besetzt.
+besichtigen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Ich möchte gern den Dom besichtigen.
+besser /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Es geht mir schon besser.
+best- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Am besten treffen wir uns morgen.
+bestellen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Wir möchten bestellen, bitte. | Dieses Buch haben wir nicht - sollen wir es für Sie
+besuchen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Darf ich dich besuchen?
+Bett /#info/ article=das; form_info=-en; entry=das Bett, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Wir brauchen noch ein Kinderbett.
+bezahlen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Wo muss ich bezahlen?
+Bier /#info/ article=das; entry=das Bier; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Noch ein Bier bitte.
+Bild /#info/ article=das; form_info=-er; entry=das Bild, -er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Hast du ein Bild von deinem Sohn?
+billig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=11; section=alphabetical_wordlist; examples=Die Jacke kostet nur 10 Euro! Die ist aber billig!
+Birne /#info/ article=die; form_info=-n; entry=die Birne, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Ein Kilo Birnen, bitte!
+bis /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Ich fahre nur bis Stuttgart. | Ich warte bis morgen.
+bisschen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Ich spreche Englisch, Französisch und ein bisschen | Deutsch.
+bitte /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Eine Tasse Kaffee, bitte! | Sprechen Sie bitte leise!
+Bitte /#info/ article=die; form_info=-n; entry=die Bitte, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Ich habe noch eine Bitte.
+bitten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Darf ich Sie um etwas bitten?
+bitter /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Der Kaffee schmeckt bitter.
+bleiben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Ich bleibe heute zu Hause. | Wir bleiben nur bis morgen.
+Bleistift /#info/ article=der; form_info=-e; entry=der Bleistift, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Hast du einen Bleistift?
+Blick /#info/ article=der; entry=der Blick; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Von diesem Hotel hat man einen guten Blick auf den | Rhein.
+Blume /#info/ article=die; form_info=-n; entry=die Blume, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Gefallen dir die Blumen?
+Bogen /#info/ article=der; entry=der Bogen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Schreiben Sie Ihre Lösungen bitte auf den Antwortbogen.
+böse /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Sie ist böse auf mich.
+brauchen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Brauchst du die Zeitung noch?
+breit /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Wie breit ist der Schrank?
+Brief /#info/ article=der; form_info=-e; entry=der Brief, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Haben Sie einen Brief für mich?
+Briefmarke /#info/ article=die; form_info=-n; entry=die Briefmarke, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Kaufst du bitte Briefmarken bei der Post.
+bringen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Bringen Sie mir bitte noch einen Kaffee! | Wir müssen ihn zum Arzt bringen.
+Brot /#info/ article=das; form_info=-e; entry=das Brot, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Haben Sie auch Weißbrot? | Nimm noch ein paar Brote für die Fahrt mit.
+Brötchen /#info/ article=das; form_info=-; entry=das Brötchen, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Möchtest du Brötchen zum Frühstück?
+Bruder /#info/ article=der; form_info=-ü; entry=der Bruder, -ü; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Sein Bruder arbeitet auch hier.
+Buch /#info/ article=das; form_info=-ü, er; entry=das Buch, -ü, er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Gute Bücher sind oft sehr teuer. | In diesem Wörterbuch finden Sie mehr als 20.000 Wörter.
+Buchstabe /#info/ article=der; form_info=-n; entry=der Buchstabe, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Diesen Buchstaben gibt es in meiner Sprache nicht.
+buchstabieren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Bitte buchstabieren Sie Ihren Namen.
+Bus /#info/ article=der; form_info=-se; entry=der Bus, -se; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Wann kommt der nächste Bus?
+Butter /#info/ article=die; entry=die Butter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Für mich bitte ein Brötchen mit Butter und Käse.
+Café /#info/ article=das; form_info=-s; entry=das Café, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Sollen wir uns im Café treffen?
+CD /#info/ article=die; form_info=-s; entry=die CD, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Bring bitte deine Lieblings-CD mit.
+Chef /#info/ article=der; entry=der Chef; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Wir haben eine neue Chefin.
+circa /#info/ variants=ca.; entry=circa/ca.; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Von Mainz nach Frankfurt sind es circa fünfzig | Kilometer.
+Computer /#info/ article=der; form_info=-; entry=der Computer, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Wann bekommst du deinen neuen Computer?
+da /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Da hinten ist er ja. | Wir sprechen gerade über Paul. Da kommt er ja gerade.
+Dame /#info/ article=die; form_info=-n; entry=die Dame, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist
+Damen /#info/ note=an der Toilette; entry=Damen (an der Toilette); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=12; section=alphabetical_wordlist; examples=Sehr geehrte Damen und Herren!
+daneben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Du kennst doch die Post. Daneben ist die Bank.
+danken /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich danke Ihnen für die Einladung.
+Dank /#info/ article=der; entry=der Dank; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Vielen Dank! | Herzlichen Dank!
+danke /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Soll ich Ihnen helfen? - Nein, danke!
+dann /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich muss noch schnell zur Post, dann komme ich.
+Datum /#info/ article=das; entry=das Datum; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Bitte schreiben Sie noch das Datum auf das Formular.
+dauern /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Wie lange dauert der Film?
+dein- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ist das dein Auto? | Ist das deins?
+denn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich kann nicht kommen, denn ich bin krank.
+der /#info/ form_info=die, das; entry=der, die, das; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich nehme das da. | Hier ist der Brief, den du suchst.
+dich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Die Blumen sind für dich.
+dies- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich nehme lieber diesen Kuchen.
+dir /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Gefallen dir die Blumen?
+Disco /#info/ article=die; entry=die Disco; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Heute abend gehen wir in die Disco tanzen.
+Doktor /#info/ article=der; entry=der Doktor; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Meine Tochter ist krank. Wir gehen zum Doktor.
+Doppelzimmer /#info/ article=das; entry=das Doppelzimmer; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Wollen Sie ein Doppelzimmer oder ein Einzelzimmer?
+Dorf /#info/ article=das; form_info=-ö, er; entry=das Dorf, -ö, er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Meine Familie lebt in einem Dorf.
+dort /#info/ form_info=-her, -hin; entry=dort, -her, -hin; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Deine Tasche kannst du dorthin stellen. | Dort ist unser Haus.
+draußen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Wollen wir draußen sitzen?
+drucken /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Bitte drucke das Formular für mich.
+Drucker /#info/ article=der; form_info=-; entry=der Drucker, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Mein Drucker ist kaputt.
+drücken /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Drück hier, dann geht der Computer an.
+durch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Am besten gehen Sie durch die Breite Straße.
+Durchsage /#info/ article=die; form_info=-n; entry=die Durchsage, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich habe die Durchsage nicht verstanden.
+dürfen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Sie dürfen hier nicht rauchen. | Darf ich Sie zu einem Kaffee einladen?
+Durst /#info/ article=der; entry=der Durst; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Hast du etwas zu trinken? Ich habe großen Durst.
+duschen /#info/ reflexive_marker=sich; entry=(sich) duschen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich bade nicht so gern, ich dusche lieber.
+Dusche /#info/ article=die; entry=die Dusche; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Unsere Wohnung hat nur eine Dusche.
+Ecke /#info/ article=die; form_info=-n; entry=die Ecke, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=An der nächsten Ecke links.
+Ehefrau /#info/ article=die; form_info=-en/; entry=die Ehefrau, -en/; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist
+Ehemann /#info/ article=der; form_info=-ä, er; entry=der Ehemann, ä, er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Das ist mein (Ehe-) Mann/meine (Ehe-) Frau.
+Ei /#info/ article=das; form_info=-er; entry=das Ei, -er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Möchtest du ein Ei zum Frühstück?
+eilig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Hast du es eilig?
+ein- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich nehme ein Bier. Willst du auch eins? | Ist hier einer, der das kann?
+einfach /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Die Prüfung ist ganz einfach. | Hin und zurück? - Nein, bitte nur einfach.
+Eingang /#info/ article=der; entry=der Eingang; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Der Eingang ist um die Ecke.
+einkaufen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Ich muss noch für morgen einkaufen.
+einladen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Darf ich Sie zu einem Kaffee einladen?
+Einladung /#info/ article=die; entry=die Einladung; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=13; section=alphabetical_wordlist; examples=Danke für die Einladung!
+einmal /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Diese Prüfung mache ich nicht noch einmal.
+einsteigen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Schnell, steig ein, der Zug fährt gleich.
+Eintritt /#info/ article=der; entry=der Eintritt; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Der Preis für den Eintritt ist 5 Euro.
+Einzelzimmer /#info/ article=das; entry=das Einzelzimmer; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Haben Sie noch ein Einzelzimmer?
+Eltern /#info/ article=die; note=pl.; entry=die Eltern (pl.); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Meine Eltern leben in Spanien.
+E-Mail /#info/ article=die; form_info=-s; entry=die E-Mail, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Ich habe Ihre E-Mail nicht bekommen.
+Empfänger /#info/ article=der; form_info=-; entry=der Empfänger, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Auf dem Brief steht dein Name, also bist du der | Empfänger.
+empfehlen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Welchen Wein können Sie mir empfehlen?
+enden /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Die Straße endet hier.
+Ende /#info/ article=das; entry=das Ende; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Sie wohnt am Ende der Straße. | Er bekommt sein Geld am Ende des Monats.
+entschuldigen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Entschuldigen Sie bitte!
+Entschuldigung /#info/ article=die; entry=die Entschuldigung; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Entschuldigung! - Bitte.
+er /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Er heißt Ali.
+Ergebnis /#info/ article=das; form_info=-se; entry=das Ergebnis, -se; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Das Ergebnis des Tests bekommen Sie in zwei Wochen.
+erklären /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Kannst du mir das erklären?
+erlauben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Rauchen ist hier nicht erlaubt.
+Erwachsene /#info/ article=der; form_info=-n; entry=der Erwachsene, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Dieser Film ist nur für Erwachsene.
+erzählen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Wir müssen euch etwas erzählen!
+es /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Es regnet.
+essen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Was gibt es zu essen?
+Essen /#info/ article=das; entry=das Essen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Das Essen ist heute sehr gut.
+euer /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Euer Kurs beginnt heute.
+fahren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Ich fahre mit dem Auto zur Arbeit.
+Fahrer /#info/ article=der; entry=der Fahrer; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Bitte nicht mit dem Fahrer sprechen!
+Fahrkarte /#info/ article=die; form_info=-n; entry=die Fahrkarte, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Hast du schon eine Fahrkarte?
+Fahrrad /#info/ article=das; form_info=-ä, er; entry=das Fahrrad, -ä, er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Fährst du mit dem Fahrrad oder mit dem Auto?
+falsch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Das ist falsch.
+Familie /#info/ article=die; form_info=-n; entry=die Familie, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Meine Familie lebt in Spanien.
+Familienname /#info/ article=der; entry=der Familienname; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Meine Familiennamen sind García González.
+Familienstand /#info/ article=der; entry=der Familienstand; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Bei "Familienstand" musst du "ledig" ankreuzen.
+Farbe /#info/ article=die; form_info=-n; entry=die Farbe, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Die Farbe gefällt mir gut.
+Fax /#info/ article=das; form_info=-e; entry=das Fax, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Schicken Sie uns einfach ein Fax!
+Feier- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist
+Feierabend /#info/ form_info=Feiertag; entry=Feierabend, Feiertag; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Am Montag ist Feiertag.
+feiern /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Wir feiern heute meinen Geburtstag.
+fehlen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Herr Müller ist nicht da, er fehlt schon seit drei Tagen. | Was fehlt Ihnen?
+Fehler /#info/ article=der; form_info=-; entry=der Fehler, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Diesen Fehler mache ich immer.
+fernsehen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Wollen wir heute Abend mal fernsehen?
+fertig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Bist du fertig? | Ist mein Auto schon fertig?
+Feuer /#info/ article=das; entry=das Feuer; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Haben Sie Feuer?
+Fieber /#info/ article=das; entry=das Fieber; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Mein Mann hat noch immer Fieber.
+Film /#info/ article=der; form_info=-e; entry=der Film, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Ich möchte gern diesen Film sehen.
+finden /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Wir müssen den Schlüssel finden.
+Firma /#info/ article=die; entry=die Firma; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Er arbeitet jetzt bei einer anderen Firma.
+Fisch /#info/ article=der; form_info=-e; entry=der Fisch, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=14; section=alphabetical_wordlist; examples=Ich esse gern Fisch. Fleisch mag ich nicht.
+Flasche /#info/ article=die; form_info=-n; entry=die Flasche, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Eine Flasche Bier, bitte.
+Fleisch /#info/ article=das; entry=das Fleisch; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Fleisch mag ich nicht.
+fliegen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Ich fliege nicht gern. Deshalb fahre ich mit dem Zug.
+abfliegen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Wann fliegst du ab?
+Abflug /#info/ article=der; entry=der Abflug; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Der Abflug ist um 11.20 Uhr.
+Flughafen /#info/ article=der; entry=der Flughafen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Kannst du mich zum Flughafen bringen?
+Flugzeug /#info/ article=das; entry=das Flugzeug; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Das Flugzeug aus Berlin kommt heute später an.
+Formular /#info/ article=das; form_info=-e; entry=das Formular, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Sie müssen dieses Formular ausfüllen.
+Foto /#info/ article=das; form_info=-s; entry=das Foto, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Darf ich ein Foto machen?
+fragen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Er möchte Sie etwas fragen. Wann kommen Sie?
+Frage /#info/ article=die; form_info=-n; entry=die Frage, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Ich habe eine Frage.
+Frau /#info/ article=die; form_info=-en; entry=die Frau, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Das ist Frau Becker. | Guten Tag, Frau Schmitt!
+frei /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Ist der Platz noch frei?
+Freizeit /#info/ article=die; entry=die Freizeit; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=In meiner Freizeit spiele ich oft Fußball.
+fremd /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Das weiß ich nicht; ich bin fremd hier.
+freuen /#info/ reflexive_marker=sich; entry=(sich) freuen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Ich freue mich auf den Urlaub.
+Freund /#info/ article=der; form_info=-e; entry=der Freund, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Das ist ein Freund von mir. | Das ist meine Freundin.
+früher /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Früher waren wir oft zusammen im Kino.
+frühstücken /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Am Sonntag frühstücke ich gern im Bett.
+Frühstück /#info/ article=das; entry=das Frühstück; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Möchtest du ein Ei zum Frühstück?
+Führung /#info/ article=die; entry=die Führung; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Die Führung durch das Haus beginnt in 3 Minuten.
+für /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Das ist für Sie. | Das ist der Schlüssel für die Haustür.
+Fuß /#info/ article=der; form_info=-ü, e; entry=der Fuß, -ü, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Der linke Fuß tut mir weh.
+Fußball /#info/ article=der; entry=der Fußball; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Spielt ihr gerne Fußball?
+Garten /#info/ article=der; entry=der Garten; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Wir haben leider keinen Garten.
+Gast /#info/ article=der; form_info=-ä, e; entry=der Gast, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Am Wochenende haben wir mehrere Gäste.
+geben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Kannst du mir bitte deinen Kugelschreiber geben? | Es gibt keine Karten mehr.
+geboren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Ich bin in Zagreb geboren.
+Geburtsjahr /#info/ article=das; entry=das Geburtsjahr; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Das Geburtsjahr Ihres Sohnes, bitte?
+Geburtsort /#info/ article=der; entry=der Geburtsort; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Bitte schreiben Sie Ihren Geburtsort auf das Formular.
+Geburtstag /#info/ article=der; entry=der Geburtstag; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Herzlichen Glückwunsch zum Geburtstag!
+gefallen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Das gefällt mir.
+gegen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Fahr nicht gegen den Baum! | Ich bin gegen diese Lösung.
+gehen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Ich weiß nicht, wie das geht. | Wie geht's?
+gehören /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Wem gehört das?
+Geld /#info/ article=das; entry=das Geld; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Hast du noch Geld?
+Gemüse /#info/ article=das; entry=das Gemüse; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=15; section=alphabetical_wordlist; examples=Gemüse brauchen wir auch noch.
+Gepäck /#info/ article=das; entry=das Gepäck; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Wollen Sie Ihr Gepäck mitnehmen?
+gerade /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Da kommt er ja gerade.
+geradeaus /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Gehen Sie immer geradeaus!
+gern /#info/ note=e; entry=gern(e); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Ich gehe gerne einkaufen.
+Geschäft /#info/ article=das; form_info=-e; entry=das Geschäft, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Die Geschäfte schließen um 18.30 Uhr.
+Geschenk /#info/ article=das; form_info=-e; entry=das Geschenk, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Danke für das schöne Geschenk.
+Geschwister /#info/ article=die; note=pl.; entry=die Geschwister (pl.); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Ich habe leider keine Geschwister.
+Gespräch /#info/ article=das; form_info=-e; entry=das Gespräch, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Das Gespräch mit Frau Kunz ist um 14 Uhr.
+gestern /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Gestern war ich krank.
+gestorben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Meine Frau ist gestern gestorben.
+Getränk /#info/ article=das; form_info=-e; entry=das Getränk, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Mein Lieblingsgetränk ist Tomatensaft.
+Gewicht /#info/ article=das; entry=das Gewicht; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Bei "Gewicht" schreibst du: 62 Kilo.
+gewinnen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Wer gewinnt das Spiel?
+Glas /#info/ article=das; form_info=-ä, er; entry=das Glas, -ä, er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Bitte noch ein Glas Wein! | Wir brauchen noch drei Gläser.
+glauben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Sie können mir glauben, es ist so. | Ich glaube, er kommt gleich.
+gleich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Das ist mir gleich. | Das ist der gleiche Preis.
+Gleis /#info/ article=das; form_info=-e; entry=das Gleis, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Der ICE nach Berlin hält heute an Gleis 12.
+Glück /#info/ article=das; entry=das Glück; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Viel Glück!
+glücklich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Meine Kinder sind glücklich verheiratet.
+Glückwunsch /#info/ article=der; entry=der Glückwunsch; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Herzlichen Glückwunsch zum Geburtstag.
+Grad /#info/ note=Celsius; entry=Grad (Celsius); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Heute haben wir dreißig Grad.
+gratulieren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Ich gratuliere dir!
+grillen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Heute grillen wir im Garten.
+groß /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Mein Bruder und ich sind gleich groß. | Frankfurt ist eine große Stadt.
+Größe /#info/ article=die; entry=die Größe; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Haben Sie das auch in Größe 40?
+Großeltern /#info/ article=die; note=pl.; entry=die Großeltern (pl.); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Meine Großeltern leben in Japan.
+Großmutter /#info/ article=die; entry=die Großmutter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Meine Großmutter heißt Eva.
+Großvater /#info/ article=der; entry=der Großvater; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Mein Großvater ist schon 80.
+Gruppe /#info/ article=die; form_info=-n; entry=die Gruppe, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Die erste Gruppe beginnt um 16 Uhr.
+Gruß /#info/ article=der; form_info=-ü, e; entry=der Gruß, -ü, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Viele Grüße an Ihre Frau. | Mit freundlichen Grüßen
+gültig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Der Pass ist nicht mehr gültig.
+günstig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Dort gibt es günstige Angebote.
+gut /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Das finde ich gut. | Ich komme um 13 Uhr. - Gut!
+Haar /#info/ article=das; form_info=-e; entry=das Haar, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Sie hat lange Haare.
+haben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Ich habe ein neues Auto.
+Hähnchen /#info/ article=das; form_info=-; entry=das Hähnchen, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Ein Hähnchen mit Pommes bitte!
+Halbpension /#info/ article=die; entry=die Halbpension; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Möchten Sie Vollpension oder Halbpension?
+Halle /#info/ article=die; entry=die Halle; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Wir treffen uns in Halle B
+hallo /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=16; section=alphabetical_wordlist; examples=Hallo Inge! Wie geht's?
+halten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Dieser Zug hält nicht in Rüdesheim.
+Haltestelle /#info/ article=die; entry=die Haltestelle; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=An der nächsten Haltestelle müssen Sie aussteigen.
+Hand /#info/ article=die; form_info=-ä, e; entry=die Hand, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Er gibt mir die Hand.
+Handy /#info/ article=das; form_info=-s; entry=das Handy, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=In der Schule bitte die Handys ausmachen!
+Haus /#info/ article=das; form_info=-ä, er; entry=das Haus, -ä, er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=In welchem Haus wohnst du? | Ich gehe jetzt nach Hause.
+Hausaufgabe /#info/ article=die; form_info=-n; entry=die Hausaufgabe,-n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Kannst du mir bei den Hausaufgaben helfen?
+Hausfrau /#info/ article=die; form_info=-en/; entry=die Hausfrau, -en/; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist
+Hausmann /#info/ article=der; entry=der Hausmann; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Die Hausfrau/der Hausmann wäscht, kocht und kauft | ein.
+Heimat /#info/ article=die; entry=die Heimat; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Ich komme aus der Schweiz. Das ist meine Heimat.
+heiraten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Meine Schwester heiratet einen Japaner.
+heißen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Ich heiße Charlotte Meier. | Wie heißt das auf Deutsch?
+helfen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Können Sie mir helfen, bitte?
+hell /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Im Sommer ist es bis 21 Uhr hell.
+Herd /#info/ article=der; entry=der Herd; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=In der neuen Küche fehlt noch der Herd.
+Herr /#info/ article=der; form_info=-en; entry=der Herr, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Guten Tag, Herr Sommer!
+herzlich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Herzlichen Glückwunsch!
+heute /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Heute ist ein schöner Tag.
+hier /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Hier ist 06131-553221, Pamela Linke. | Hier wohne ich.
+Hilfe /#info/ article=die; entry=die Hilfe; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Hilfe! Bitte helfen Sie mir! | Brauchen Sie meine Hilfe?
+hinten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Die Tür zum Aussteigen ist hinten.
+Hobby /#info/ article=das; form_info=-s; entry=das Hobby, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Meine Hobbys sind Wandern und Schwimmen.
+hoch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Der Mount Everest ist 8.880 Meter hoch.
+Hochzeit /#info/ article=die; entry=die Hochzeit; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Zur dieser Hochzeit kommen mehr als fünfzig Gäste.
+holen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Ich hole zwei Flaschen Wasser aus der Küche.
+hören /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Hör mal! Was ist das? | Ich habe das Lied schon mal gehört.
+Hotel /#info/ article=das; form_info=-s; entry=das Hotel, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Im Urlaub sind wir in einem Hotel am Meer.
+Hund /#info/ article=der; form_info=-e; entry=der Hund, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Der Hund ist noch jung.
+Hunger /#info/ article=der; entry=der Hunger; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Ich habe Hunger! Wann ist das Essen fertig?
+ich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Ich heiße Veronika.
+ihr /#info/ variants=ihm, ihn; entry=ihr/ihm/ihn; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Gib ihr/ihm bitte das Buch. | Ruf ihn bitte an.
+immer /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Frau Bast kommt immer zu spät.
+in /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Ich wohne in Wiesbaden. | Der Zug kommt in fünf Minuten.
+Information /#info/ article=die; form_info=-en; entry=die Information, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Wenn Sie Fragen haben, gehen Sie zur Information. | Wir haben hier wichtige Informationen für Sie.
+international /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Unser Deutschkurs ist international: Silvana kommt | aus Italien, Conchi aus Spanien, Yin aus China ...
+Internet /#info/ article=das; entry=das Internet; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=17; section=alphabetical_wordlist; examples=Das findest du im Internet.
+ja /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Sind Sie Herr Watanabe? - Ja.
+Jacke /#info/ article=die; form_info=-n; entry=die Jacke, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Zieh dir eine Jacke an. Es ist kalt.
+jed- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Blumen kannst du in jedem Bahnhof kaufen.
+jetzt /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Jetzt machen wir eine Pause.
+Job /#info/ article=der; form_info=-s; entry=der Job, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Jenny hat einen neuen Job bei der Post.
+Jugendliche /#info/ article=der; form_info=-n; entry=der Jugendliche, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Viele Jugendliche kaufen gern ein.
+jung /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Claudia ist 21. - Was? Noch so jung?
+Junge /#info/ article=der; form_info=-n; entry=der Junge, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Ich habe zwei Kinder. Einen Jungen und ein Mädchen.
+Kaffee /#info/ article=der; entry=der Kaffee; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Zum Frühstück trinke ich immer Kaffee.
+kaputt /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Das Glas war teuer. Es geht sehr leicht kaputt.
+Karte /#info/ article=die; form_info=-n; entry=die Karte, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Ich schreibe meinen Bekannten eine Karte aus dem | Urlaub.; note=Kredit; entry=(Kredit)-Karte, -n; examples=Kann ich auch mit Karte (be-) zahlen?
+Kartoffel /#info/ article=die; form_info=-n; entry=die Kartoffel, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Für Pommes frites braucht man Kartoffeln.
+Kasse /#info/ article=die; entry=die Kasse; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Zahlen Sie bitte an der Kasse.
+kaufen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Tim kauft sich ein neues Auto.
+kein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Es gibt keine Eintrittskarten mehr.
+kennen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Kennen Sie diese Frau? - Nein, leider nicht.
+kennenlernen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Wir sind neu hier. Wir möchten Sie kennenlernen.
+Kind /#info/ article=das; form_info=-er; entry=das Kind, -er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Wie viele Kinder haben Sie?
+Kindergarten /#info/ article=der; entry=der Kindergarten; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Die kleine Laura geht schon in den Kindergarten.
+Kino /#info/ article=das; form_info=-s; entry=das Kino, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Wir sehen heute Abend im Kino einen schönen Film.
+Kiosk /#info/ article=der; entry=der Kiosk; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Am Kiosk bekommen Sie Getränke, Zigaretten und | Zeitungen.
+klar /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Kommst du mit? - Klar!
+Klasse /#info/ article=die; entry=die Klasse; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=In unserer Klasse sind fünfundzwanzig Schüler. | Im Zug fahre ich immer 2. Klasse.
+Kleidung /#info/ article=die; entry=die Kleidung; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Wo finde ich Kleidung? - Jacken im ersten, Jeans im | zweiten Stock.
+klein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Eltville ist eine kleine Stadt am Rhein.
+kochen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Herr Georgi kann gut kochen.
+Koffer /#info/ article=der; form_info=-; entry=der Koffer, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Ist das Ihr Koffer?
+Kollege /#info/ article=der; form_info=-n; entry=der Kollege, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Wie heißt die neue Kollegin?
+kommen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Woher kommen Sie? - Aus Frankreich. | Kommst du mit ins Schwimmbad?
+können /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Ich kann Deutsch und Russisch. | Können Sie mir helfen?
+Konto /#info/ article=das; entry=das Konto; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Das Geld überweisen wir am ersten März auf Ihr Konto.
+Kopf /#info/ article=der; entry=der Kopf; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Mein Kopf tut weh!
+kosten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Wie viel kostet das? - 10 Euro.
+krank /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Ich kann heute nicht zur Arbeit kommen, ich bin krank | und liege im Bett.
+kriegen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Ich kriege 15 Euro in der Stunde für meine Arbeit.
+Küche /#info/ article=die; entry=die Küche; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Der neue Herd kommt in die Küche.
+Kuchen /#info/ article=der; entry=der Kuchen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=18; section=alphabetical_wordlist; examples=Ich nehme ein Stück Kuchen.
+Kugelschreiber /#info/ article=der; entry=der Kugelschreiber; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Hast du einen Kugelschreiber für mich?
+Kühlschrank /#info/ article=der; entry=der Kühlschrank; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Haben wir noch Milch? - Ja, im Kühlschrank.
+kulturell /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Ich bin kulturell interessiert. Ich gehe oft ins Museum.
+kümmern /#info/ reflexive_marker=sich; entry=sich kümmern; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Jede Mutter kümmert sich um ihre kleinen Kinder.
+Kunde /#info/ article=der; form_info=-n; entry=der Kunde, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Einen Moment, bitte. Ich habe eine Kundin.
+Kurs /#info/ article=der; form_info=-e; entry=der Kurs, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Der Deutschkurs geht bis zum Sommer.
+kurz /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Ricardo hat kurzes Haar.
+lachen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Die Kinder lachen viel.
+Laden /#info/ article=der; form_info=-ä; entry=der Laden, -ä; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Im Buchladen können Sie Bücher kaufen.
+Land /#info/ article=das; form_info=-ä, er; entry=das Land, -ä, er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Italien ist ein schönes Land.
+lang /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Die Jeans ist zu lang.
+lange /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Wie lange fährt der Zug von Hamburg nach Berlin?
+langsam /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Könnten Sie bitte etwas langsamer sprechen?
+laufen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Ich möchte nicht Auto fahren, ich möchte laufen.
+laut /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Nicht so laut! Das Baby schläft.
+leben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Sie lebt bei ihrer Schwester. | Ihre Eltern leben nicht mehr.
+Leben /#info/ article=das; entry=das Leben; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Das Leben in diesem Land ist teuer.
+Lebensmittel /#info/ article=die; note=pl.; entry=die Lebensmittel (pl.); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Lebensmittel bekommen Sie im Supermarkt.
+ledig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Sind Sie verheiratet? - Nein. Ledig.
+legen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Legen Sie das Buch auf den Tisch.
+Lehrer /#info/ article=der; form_info=-; entry=der Lehrer, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Unsere Deutschlehrerin heißt Frau Müller.
+leicht /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Der Koffer ist leicht. | Deutsch ist nicht leicht.
+leider /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Leider kann ich nicht kommen. Ich muss zum Arzt.
+leise /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Seid leise. Die anderen schlafen schon.
+lernen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Wie lange lernen Sie schon Deutsch?
+lesen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Ich lese ein Buch von García Márquez.
+letzt- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Morgen ist der letzte Kurstag.
+Leute /#info/ article=die; note=pl.; entry=die Leute (pl.); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=In der Disko sind viele Leute.
+Licht /#info/ article=das; entry=das Licht; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Wo macht man hier das Licht an?
+lieb- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist
+Liebe Susanne /#info/ form_info=lieber Hans,; entry=Liebe Susanne, lieber Hans,; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist
+lieben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Ich liebe dich!
+lieber /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Sie fährt lieber mit der Bahn.
+Lieblings- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Mein Lieblingsfilm ist "Schwarze Augen".
+Lied /#info/ article=das; form_info=-er; entry=das Lied, -er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Welches ist dein Lieblingslied?
+liegen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Um neun Uhr liegt Judith noch im Bett. | Frankfurt liegt am Main.
+links /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Gehen Sie die nächste Straße links.
+Lkw /#info/ article=der; form_info=-s; entry=der Lkw, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Dieser Lastkraftwagen ist sehr groß.
+Lokal /#info/ article=das; entry=das Lokal; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=In unserer Straße gibt es ein neues Lokal.
+Lösung /#info/ article=die; form_info=-en; entry=die Lösung, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Die Lösung ist ganz einfach.
+lustig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Frau Mertens ist lustig. Sie lacht immer.
+machen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=19; section=alphabetical_wordlist; examples=Was machst du heute Abend? | Ich muss jetzt das Essen machen.
+Mädchen /#info/ article=das; form_info=-; entry=das Mädchen, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Familie Kurz bekommt ein Baby. - Junge oder Mädchen?
+man /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Hier darf man nicht rauchen.
+Mann /#info/ article=der; form_info=-ä, er; entry=der Mann, -ä, er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Mein Mann arbeitet bei der Polizei.
+männlich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Kreuzen Sie bitte an: "weiblich" oder "männlich".
+Maschine /#info/ article=die; form_info=-n; entry=die Maschine, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Die Waschmaschine ist günstig.
+Meer /#info/ article=das; entry=das Meer; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Wir machen Urlaub am Meer.
+mehr /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Dieses Auto kostet 1.000 Euro mehr als das andere.
+mein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Mein Vater ist Arzt.
+meist- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Die meisten Norddeutschen sind sehr groß.
+Mensch /#info/ article=der; form_info=-en; entry=der Mensch, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Die Menschen sind hier anders als bei uns.
+mieten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Ich möchte ein Auto mieten.
+Miete /#info/ article=die; entry=die Miete; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Die Miete für diese Wohnung ist 600 Euro.
+Milch /#info/ article=die; entry=die Milch; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Die Milch steht im Kühlschrank.
+mit /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Trinken Sie den Kaffee mit Milch?
+mitbringen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Ich gehe einkaufen. Soll ich dir was mitbringen?
+mitkommen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Ich gehe ins Kino. Kommst du mit?
+mitmachen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Warum macht ihr nicht mit?
+mitnehmen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Nehmen wir meine Schwester ins Kino mit?
+Mitte /#info/ article=die; entry=die Mitte; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Der Lehrer steht in der Mitte des Klassenzimmers.
+Möbel /#info/ article=die; note=pl.; entry=die Möbel (pl.); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Sind die Möbel neu?
+möchten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Was möchten Sie trinken?
+mögen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Magst du Kaffee oder Tee?
+möglich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Mit dieser Fahrkarte ist die Fahrt ab 9 Uhr möglich.
+Moment /#info/ article=der; entry=der Moment; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Moment mal bitte! | Einen Moment bitte.
+morgen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Morgen beginnt die Schule um 10 Uhr.
+müde /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Ich bin müde. Ich gehe schlafen.
+Mund /#info/ article=der; entry=der Mund; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Öffnen Sie den Mund.
+müssen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Ich muss jeden Tag von 8 Uhr bis 18 Uhr arbeiten.
+Mutter /#info/ article=die; form_info=-ü; entry=die Mutter, -ü; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Frau Berghäuser ist die Mutter von Michaela.
+nach /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Ich gehe jetzt nach Hause. | Ich fliege nach München.
+nächst- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Sehen wir uns nächste Woche?
+Name /#info/ article=der; form_info=-n; entry=der Name, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Mein Name ist Thomas Schmidt. | Mein Vorname ist Thomas; Schmidt ist der Familienname.
+nehmen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Heute gibt es Hähnchen. Das nehme ich. | Ich nehme den Bus.
+nein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Fährst du auch nach München? - Nein, ich habe keine | Zeit.
+neu /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Ich bin der neue Kollege. | Wir haben eine neue Wohnung.
+nicht /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Das stimmt nicht. | Das ist doch schön, nicht?
+nichts /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Das macht nichts. | Hier kaufe ich nichts. Der Laden gefällt mir nicht.
+nie /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=20; section=alphabetical_wordlist; examples=Er kommt nie pünktlich.
+noch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Vielleicht kommt er noch. | Wir warten noch fünf Minuten.
+normal /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=75 kg. Sein Gewicht ist normal.
+Nummer /#info/ article=die; form_info=-n; entry=die Nummer, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Sie haben Zimmer Nummer zwölf. | Welche Hausnummer haben Sie?
+nur /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Ich möchte nur ein Glas Wasser.
+oben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Ich wohne oben.
+Obst /#info/ article=das; entry=das Obst; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Im Sommer ist das Obst billig.
+oder /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Wann können Sie kommen - heute oder morgen?
+öffnen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Ich öffne die Tür.
+geöffnet /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Der Laden ist samstags bis 16.00 Uhr geöffnet.
+oft /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Petra treffe ich oft.
+ohne /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Ohne Geld kann er nichts kaufen.
+Öl /#info/ article=das; entry=das Öl; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Den Salat machen wir ohne Öl.
+Oma /#info/ article=die; form_info=-s; entry=die Oma, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Meine Oma ist schon tot.
+Opa /#info/ article=der; form_info=-s; entry=der Opa, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Mein Opa heißt Hans.
+Ordnung /#info/ article=die; entry=die Ordnung; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Das ist in Ordnung.
+Ort /#info/ article=der; form_info=-e; entry=der Ort, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Der Ort liegt am Meer.
+Papier /#info/ article=das; entry=das Papier; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Hier sind Papier und Bleistift.
+Papiere /#info/ article=die; note=pl.; entry=die Papiere (pl.); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Haben Sie Ihre Papiere dabei?
+Partner /#info/ article=der; form_info=-/; entry=der Partner, -/; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist
+Partnerin /#info/ article=die; form_info=-nen; entry=die Partnerin, -nen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Sie ist meine Partnerin.
+Party /#info/ article=die; entry=die Party; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Heute Abend machen wir eine Party.
+Pass /#info/ article=der; form_info=-ä, e; entry=der Pass, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Im Hotel brauchst du deinen Pass.
+Pause /#info/ article=die; form_info=-n; entry=die Pause, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Von 12.00 bis 12.30 Uhr haben wir Mittagspause.
+Plan /#info/ article=der; form_info=-ä, e; entry=der Plan, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Ich kaufe mir einen Stadtplan.
+Platz /#info/ article=der; form_info=-ä, e; entry=der Platz, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Tut mir leid, der Platz ist besetzt. | Bitte nehmen Sie Platz!
+Polizei /#info/ article=die; entry=die Polizei; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Holen Sie die Polizei! | die Pommes frites (pl.)  Die Kinder essen Hähnchen mit Pommes frites.
+Post /#info/ article=die; entry=die Post; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Wo ist die Post, bitte? | Ist Post da?
+Postleitzahl /#info/ article=die; entry=die Postleitzahl; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Wie ist Ihre Postleitzahl?
+Praktikum /#info/ article=das; entry=das Praktikum; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Ich mache ein Praktikum bei Siemens.
+Praxis /#info/ article=die; entry=die Praxis; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Die Praxis ist ab acht Uhr geöffnet.
+Preis /#info/ article=der; form_info=-e; entry=der Preis, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Die Preise sind hoch.
+Problem /#info/ article=das; form_info=-e; entry=das Problem, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Mein Problem ist die Sprache.
+Prospekt /#info/ article=der; form_info=-e; entry=der Prospekt, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Bitte schicken Sie mir einen Prospekt von Ihrem Hotel.
+Prüfung /#info/ article=die; entry=die Prüfung; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Die Prüfung ist am Montag um 8.00 Uhr.
+pünktlich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=21; section=alphabetical_wordlist; examples=Der Bus fährt pünktlich um acht Uhr. | Herr Müller ist immer pünktlich.
+Rad fahren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Das Kind kann schon Rad fahren.
+rauchen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich rauche nicht.
+Raum /#info/ article=der; form_info=-ä, e; entry=der Raum, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Der Unterricht ist in Raum 332.
+Rechnung /#info/ article=die; form_info=-en; entry=die Rechnung, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Die Rechnung, bitte.
+rechts /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Die Schillerstraße ist hier rechts.
+regnen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Heute regnet es.
+Regen /#info/ article=der; entry=der Regen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Bei diesem Regen gehe ich nicht raus.
+Reis /#info/ article=der; entry=der Reis; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich esse gern Reis.
+reisen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich reise gern.
+Reise /#info/ article=die; entry=die Reise; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Wir machen eine Reise nach Österreich.
+Reisebüro /#info/ article=das; form_info=-s; entry=das Reisebüro, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Mein Mann arbeitet im Reisebüro.
+Reiseführer /#info/ article=der; entry=der Reiseführer; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich kaufe mir einen Reiseführer von Berlin. | Unser Reiseführer heißt Peter.
+reparieren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Er hat das Fahrrad repariert.
+Reparatur /#info/ article=die; entry=die Reparatur; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Die Reparatur ist sehr teuer.
+Restaurant /#info/ article=das; form_info=-s; entry=das Restaurant, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Wir essen heute in einem Restaurant.
+Rezeption /#info/ article=die; entry=die Rezeption; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Fragen Sie bitte im Hotel an der Rezeption.
+richtig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Habe ich das richtig verstanden? | Das ist richtig.
+riechen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Dieser Wein riecht gut.
+ruhig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich möchte ein ruhiges Zimmer.
+Saft /#info/ article=der; entry=der Saft; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Möchtest du einen Apfelsaft?
+sagen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Sag mal, wie geht es dir denn?
+Salat /#info/ article=der; entry=der Salat; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Wie schmeckt dir der Salat?
+Salz /#info/ article=das; entry=das Salz; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Herr Ober, kann ich bitte Salz haben?
+Satz /#info/ form_info=-ä, e; entry=Satz, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Dieser Satz ist sehr einfach.
+S-Bahn /#info/ article=die; entry=die S-Bahn; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich nehme lieber die S-Bahn.
+Schalter /#info/ article=der; entry=der Schalter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Gehen Sie bitte zum Schalter drei!
+scheinen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Die Sonne scheint.
+schicken /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Bitte schicken Sie mir eine E-Mail.
+Schild /#info/ article=das; form_info=-er; entry=das Schild, -er; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Haben Sie nicht das Schild gesehen?
+Schinken /#info/ article=der; form_info=-; entry=der Schinken, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich möchte gern ein Schinkenbrot.
+schlafen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich schlafe meistens acht Stunden.
+schlecht /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Mir ist schlecht! | Sie sehen schlecht aus.
+schließen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Bitte, schließen Sie die Tür.
+geschlossen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Die Bank hat am Samstag geschlossen.
+Schluss /#info/ article=der; entry=der Schluss; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich muss jetzt Schluss machen. | Zum Schluss gibt er uns allen die Hand.
+Schlüssel /#info/ article=der; form_info=-; entry=der Schlüssel, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ich gebe Ihnen noch den Zimmerschlüssel.
+schmecken /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Schmeckt das gut?
+schnell /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Er fährt schnell.
+schon /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Ist das Essen schon fertig?
+schön /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Schönen Urlaub! | Das ist sehr schön.
+Schrank /#info/ article=der; form_info=-ä, e; entry=der Schrank, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Die Gläser stehen im Schrank.
+schreiben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=22; section=alphabetical_wordlist; examples=Er schreibt jeden Tag fünfzig E-Mails.
+Schuh /#info/ article=der; form_info=-e; entry=der Schuh, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Zieh die Schuhe aus!
+Schule /#info/ article=die; entry=die Schule; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Meine Tochter geht schon in die Schule. | Die Schule ist gleich hier um die Ecke.
+Schüler /#info/ article=der; form_info=-; entry=der Schüler, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=In meinem Kurs sind acht Schülerinnen und fünf | Schüler.
+schwer /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Ist Ihr Gepäck sehr schwer? | Das ist eine schwere Arbeit.
+Schwester /#info/ article=die; form_info=-n; entry=die Schwester, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Meine Schwester kommt am Dienstag.
+schwimmen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Ich schwimme jeden Tag einen Kilometer.
+Schwimmbad /#info/ article=das; entry=das Schwimmbad; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Kommst du mit ins Schwimmbad?
+See /#info/ article=der; entry=der See; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Komm, wir fahren zum Starnberger See.
+sehen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Ich kann dich nicht sehen. | Ich habe diesen Jungen schon einmal gesehen.
+Sehenswürdigkeit /#info/ article=die; form_info=-en; entry=die Sehenswürdigkeit, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Welche Sehenswürdigkeiten gibt es in Frankfurt?
+sehr /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Danke sehr! | Das ist sehr schwer.
+sein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Herr Müller ist in seinem Zimmer. | Mir ist kalt.
+weg sein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Herr Meier ist schon weg.
+zu sein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Die Tür ist zu.
+seit /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Ich wohne seit drei Jahren in Köln.
+selbstständig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Er ist selbstständig.
+sich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Sie müssen sich erst anmelden.
+sie /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Wie heißt sie?
+Sie /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Wie heißen Sie, bitte?
+sitzen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Wo sitzen Sie?
+so /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Sie müssen das so machen! | Fahren Sie bitte nicht so schnell!
+Sofa /#info/ article=das; entry=das Sofa; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Das Sofa ist neu.
+sofort /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Bitte antworten Sie sofort.
+Sohn /#info/ article=der; form_info=-ö, e; entry=der Sohn, -ö, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Das ist Hans, mein Sohn.
+sollen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Soll ich kommen? | Was soll ich mitbringen?
+Sonne /#info/ article=die; entry=die Sonne; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Die Sonne scheint.
+spät /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Es ist schon spät, ich muss gehen.
+später /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Das können wir später machen.
+Speisekarte /#info/ article=die; entry=die Speisekarte; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Bringen Sie mir die Speisekarte, bitte.
+spielen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Die Kinder spielen draußen. | Spielen Sie Karten?
+Sport /#info/ article=der; entry=der Sport; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Ich mache viel Sport.
+Sprache /#info/ article=die; form_info=-n; entry=die Sprache, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Welche Sprachen sprichst du?
+sprechen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Kann ich (mit) Herrn Klein sprechen?
+Stadt /#info/ article=die; form_info=-ä, e; entry=die Stadt, -ä, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Heidelberg ist eine alte Stadt.
+stehen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Ich glaube es nicht, aber es steht in der Zeitung. | Der Bus steht schon an der Haltestelle.
+Stelle /#info/ article=die; form_info=-n; entry=die Stelle, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=23; section=alphabetical_wordlist; examples=Ich habe eine neue Stelle.
+stellen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Stell die Tasche rechts in die Ecke!
+Stock /#info/ article=der; entry=der Stock; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Unsere Wohnung liegt im ersten Stock.
+Straße /#info/ article=die; form_info=-n; entry=die Straße, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=In welcher Straße wohnen Sie?
+Straßenbahn /#info/ article=die; entry=die Straßenbahn; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Wo fährt die Straßenbahn ab?
+studieren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Ich studiere in Mainz.
+Studium /#info/ article=das; entry=das Studium; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Das Studium beginnt im Oktober.
+Student /#info/ article=der; form_info=-en; entry=der Student, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Ich bin Studentin.
+Stunde /#info/ article=die; form_info=-n; entry=die Stunde, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Ich bin in einer Stunde zurück.; page=7; section=wordgroups
+suchen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Suchst du etwas?
+tanzen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Tanzen Sie gern?
+Tasche /#info/ article=die; form_info=-n; entry=die Tasche, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Ich habe die Schlüssel in der Tasche.
+Taxi /#info/ article=das; form_info=-s; entry=das Taxi, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Es gibt heute keinen Bus mehr. Er fährt mit dem Taxi.
+Tee /#info/ article=der; entry=der Tee; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Ich trinke morgens immer Tee.
+Teil /#info/ article=der; form_info=-e; entry=der Teil, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Lies bitte auch den zweiten Teil.
+telefonieren /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Darf ich mal telefonieren?
+Telefon /#info/ article=das; entry=das Telefon; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Haben Sie Telefon?
+Termin /#info/ article=der; form_info=-e; entry=der Termin, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Am besten machen wir sofort einen Termin.
+Test /#info/ article=der; entry=der Test; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Der Test war einfach.
+teuer /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Das ist mir zu teuer.
+Text /#info/ article=der; form_info=-e; entry=der Text, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Lesen Sie bitte diesen Text.
+Thema /#info/ article=das; entry=das Thema; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Wir sprechen heute über das Thema "Essen und | Trinken".
+Ticket /#info/ article=das; form_info=-s; entry=das Ticket, -s; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Wie viel kostet das Ticket?
+Tisch /#info/ article=der; form_info=-e; entry=der Tisch, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Die Fotos liegen auf dem Tisch.
+Tochter /#info/ article=die; form_info=-ö; entry=die Tochter, -ö; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Das ist meine Tochter Katharina.
+Toilette /#info/ article=die; form_info=-en; entry=die Toilette, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Wo ist die Toilette, bitte?
+Tomate /#info/ article=die; form_info=-n; entry=die Tomate, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Die Tomate ist noch grün.
+tot /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Sein Vater ist schon lange tot.
+treffen /#info/ reflexive_marker=sich; entry=(sich) treffen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Ich treffe in der Stadt einen Kollegen. | Wir treffen uns immer freitags.
+Treppe /#info/ article=die; form_info=-n; entry=die Treppe, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Die Toilette? Die Treppe hoch und dann links.
+trinken /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Möchtest du etwas trinken?
+tschüss /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Junge Leute sagen meistens "tschüss!" und nicht | "auf Wiedersehen".
+tun /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Ich habe noch etwas zu tun. | Was tut Ihr Mann?
+über /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Gehen Sie hier über die Straße. | Er wohnt im zweiten Stock über Familie Meier.
+übernachten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Du kannst bei mir übernachten.
+überweisen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Sie können das Geld auch überweisen.
+Uhr /#info/ article=die; entry=die Uhr; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Es ist vier Uhr.
+um /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Er kommt um sieben Uhr. | Da kommt er gerade um die Ecke.
+umziehen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Nächsten Monat ziehen wir um.
+und /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=24; section=alphabetical_wordlist; examples=Peter und Helmut sind meine Söhne.
+unser- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Das ist unsere Lehrerin.
+unten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Er wohnt ganz unten im Haus.
+unter /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Unter uns wohnt eine Familie mit drei Kindern.
+Unterricht /#info/ article=der; entry=der Unterricht; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Wir haben Unterricht von 8.00 bis 12.00 Uhr.
+unterschreiben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Wo muss ich unterschreiben?
+Unterschrift /#info/ article=die; entry=die Unterschrift; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Hier fehlt noch Ihre Unterschrift.
+Urlaub /#info/ article=der; entry=der Urlaub; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Ich nehme im September Urlaub.
+Vater /#info/ article=der; form_info=-ä; entry=der Vater, -ä; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Mein Vater ist Arbeiter.
+verboten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Hier ist Rauchen verboten.
+verdienen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Ich verdiene 1.500 Euro im Monat.
+Verein /#info/ article=der; entry=der Verein; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Es gibt einen neuen Sportverein in der Stadt.
+verheiratet /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Ich bin verheiratet und habe drei Kinder.
+verkaufen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Er verkauft sein altes Auto.
+Verkäufer /#info/ article=der; form_info=-; entry=der Verkäufer, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Meine Mutter ist Verkäuferin im Kaufhaus.
+vermieten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Die Wohnung ist schon vermietet.
+Vermieter /#info/ article=der; entry=der Vermieter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Unser Vermieter heißt Huber. Er wohnt auch hier.
+verstehen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Können Sie mich verstehen?
+Verwandte /#info/ article=der; form_info=-n; entry=der Verwandte, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Peter besucht seine Verwandten in Polen.
+viel /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Hier regnet es viel.
+vielleicht /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Ich komme vielleicht mit dem Bus.
+von /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Das Auto von Felix ist kaputt. | Er kommt gerade von Köln/von zu Hause.
+vor /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Der Termin war vor einer Stunde. | Das Auto steht vor der Tür.
+Vorname /#info/ article=der; form_info=-n; entry=der Vorname, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Ich heiße Müller, mein Vorname ist Eva.
+Vorsicht /#info/ article=die; entry=die Vorsicht; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Vorsicht! Da kommt ein Auto.
+vorstellen /#info/ reflexive_marker=sich; entry=(sich) vorstellen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Wir wollen uns kennenlernen. Können Sie sich bitte | vorstellen?
+Vorwahl /#info/ article=die; entry=die Vorwahl; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Wie ist die Vorwahl von München?
+wandern /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Wir wandern um den Chiemsee.
+wann /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Wann bist du fertig? | Wann kann ich Sie anrufen?
+warten /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Können Sie ein paar Minuten warten? | Auf wen warten Sie?
+warum /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Warum kommt er nicht?
+was /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Was ist das? | Was möchten Sie?
+was für ein /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Was für eine Farbe möchten Sie?
+waschen /#info/ reflexive_marker=sich; entry=(sich) waschen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Wo kann ich mir die Hände waschen? | Ich muss morgen waschen.
+Wasser /#info/ article=das; entry=das Wasser; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Ein Glas Wasser, bitte.
+weh tun /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Ich muss zum Arzt. Mein Bein tut weh.
+weiblich /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Kreuzen Sie bitte an: "weiblich" oder "männlich".
+Wein /#info/ article=der; entry=der Wein; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Nein danke, ich möchte keinen Wein.
+weit /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=25; section=alphabetical_wordlist; examples=Zum Bahnhof ist es nicht weit.
+weiter /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Der Bus fährt nicht weiter.
+welch- /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Welches Buch möchtest du?
+Welt /#info/ article=die; entry=die Welt; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Es gibt viele Probleme auf der Welt.
+wenig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Ich habe leider nur wenig verstanden. | Er verdient wenig.
+wer /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wer ist das?
+werden /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Mein Sohn will Arzt werden.
+Wetter /#info/ article=das; entry=das Wetter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wir hatten schlechtes Wetter.
+wichtig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Dieses Formular ist sehr wichtig.
+wie /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wie heißt du? | Er schreibt wie ein Kind.
+wiederholen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Können Sie das bitte wiederholen?
+Wiederhören /#info/ article=das; entry=das Wiederhören; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wir müssen jetzt Schluss machen. | Also auf Wiederhören!
+Wiedersehen /#info/ article=das; entry=das Wiedersehen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Auf Wiedersehen!
+wie viel /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wie viel Milch nehmen Sie?
+willkommen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Herzlich willkommen!
+Wind /#info/ article=der; entry=der Wind; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Der Wind kommt aus Osten.
+wir /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wir lernen Deutsch.
+wissen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Weißt du, wie er heißt?
+wo /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wo waren Sie im Urlaub? | Wo ist die Post?
+woher /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Woher kommen Sie?
+wohin /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wohin fährt dieser Bus? | Wohin wollen Sie am Wochenende?
+wohnen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Ich wohne in München.
+Wohnung /#info/ article=die; form_info=-en; entry=die Wohnung, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Seit wann haben Sie diese Wohnung?
+wollen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wollen Sie einen Kaffee trinken?
+Wort /#info/ variants=-e; article=das; form_info=-ö, er; entry=das Wort, -ö, er/-e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Ich kenne das Wort nicht.
+wunderbar /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Das Essen schmeckt wunderbar.
+zahlen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Zahlen, bitte!
+Zeit /#info/ article=die; entry=die Zeit; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Ich habe heute keine Zeit.
+zurzeit /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Zurzeit habe ich sehr viel zu tun.
+Zeitung /#info/ article=die; form_info=-en; entry=die Zeitung, -en; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Ich lese gern Zeitung.
+Zigarette /#info/ article=die; form_info=-n; entry=die Zigarette, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wie teuer sind die Zigaretten?
+Zimmer /#info/ article=das; form_info=-; entry=das Zimmer, -; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Das Zimmer ist groß. | Öffne im Schlafzimmer das Fenster, bitte!
+Zoll /#info/ article=der; entry=der Zoll; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Wir müssen noch durch den Zoll.
+zu /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=26; section=alphabetical_wordlist; examples=Der Bus fährt zum Bahnhof. | Ich gehe zu Fuß.
+zufrieden /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=27; section=alphabetical_wordlist; examples=Ich bin mit der Wohnung zufrieden.
+Zug /#info/ article=der; form_info=-ü, e; entry=der Zug, -ü, e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=27; section=alphabetical_wordlist; examples=Ich fahre gern mit dem Zug.
+zurück /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=27; section=alphabetical_wordlist; examples=Einmal Frankfurt und zurück. | Wann kommst du zurück?
+zusammen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=27; section=alphabetical_wordlist; examples=Sollen wir zusammen essen gehen? | Das macht zusammen 2 Euro 80.
+zwischen /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=27; section=alphabetical_wordlist; examples=Heidelberg liegt zwischen Frankfurt und Stuttgart. | Zwischen 8 und 10 Uhr bin ich zu Hause.
+eins /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+zwei /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+drei /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+vier /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+fünf /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+sechs /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+sieben /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+acht /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+neun /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+zehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+elf /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+zwölf /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+dreizehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+vierzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+fünfzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+sechzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+siebzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+achtzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+neunzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+zwanzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+einundzwanzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+dreißig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+vierzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+fünfzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+sechzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+siebzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+achtzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+neunzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+hundert /#info/ note=ein; entry=(ein)hundert; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+hunderteins /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+zweihundert /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+tausend /#info/ note=ein; entry=(ein)tausend; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+en /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+das /#info/ variants=der, die erste; entry=das/der/die erste; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+zweite /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+dritte /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+vierte /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+ein halb /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+ein Viertel /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+Viertel /#info/ note=siehe Seite 79/Uhrzeit b; entry=Viertel ... (siehe Seite 79/Uhrzeit b); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+neunzehnhundertneunundneunzig /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+zweitausendvierzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+Berlin /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+zwölfter Vierter zweitausendzwei /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=6; section=wordgroups
+null Uhr drei /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+sieben Uhr fünfzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+dreizehn Uhr siebzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+vierundzwanzig Uhr /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+ein Uhr /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+fünf Minuten vor /#info/ variants=nach eins (ein Uhr); entry=fünf Minuten vor/nach eins (ein Uhr); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Viertel vor /#info/ variants=nach zwei (zwei Uhr); entry=Viertel vor/nach zwei (zwei Uhr); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+halb drei /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Sekunde /#info/ article=die; form_info=-n; entry=die Sekunde, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Minute /#info/ article=die; form_info=-n; entry=die Minute, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Tag /#info/ article=der; form_info=-e; entry=der Tag, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups; entry=der Tag
+Woche /#info/ article=die; form_info=-e; entry=die Woche, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Jahr /#info/ article=das; form_info=-e; entry=das Jahr, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Wochentag /#info/ article=der; form_info=-e; entry=der Wochentag, -e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Sonntag /#info/ article=der; entry=der Sonntag; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Montag /#info/ article=der; entry=der Montag; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Dienstag /#info/ article=der; entry=der Dienstag; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Mittwoch /#info/ article=der; entry=der Mittwoch; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Donnerstag /#info/ article=der; entry=der Donnerstag; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Freitag /#info/ article=der; entry=der Freitag; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Samstag /#info/ variants=Sonnabend; article=der; entry=der Samstag/Sonnabend; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Wochenende /#info/ article=das; entry=das Wochenende; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+am Wochenende /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Morgen /#info/ article=der; entry=der Morgen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Vormittag /#info/ article=der; form_info=-e; entry=der Vormittag,-e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Mittag /#info/ article=der; entry=der Mittag; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Nachmittag /#info/ article=der; form_info=-e; entry=der Nachmittag,-e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Abend /#info/ article=der; form_info=-e; entry=der Abend,-e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Nacht /#info/ article=die; form_info=¨-e; entry=die Nacht,¨-e; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Januar /#info/ article=der; entry=der Januar; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Februar /#info/ article=der; entry=der Februar; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+März /#info/ article=der; entry=der März; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+April /#info/ article=der; entry=der April; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Mai /#info/ article=der; entry=der Mai; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Juni /#info/ article=der; entry=der Juni; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Juli /#info/ article=der; entry=der Juli; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+August /#info/ article=der; entry=der August; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+September /#info/ article=der; entry=der September; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Oktober /#info/ article=der; entry=der Oktober; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+November /#info/ article=der; entry=der November; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Dezember /#info/ article=der; entry=der Dezember; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=7; section=wordgroups
+Frühling /#info/ variants=das Frühjahr; article=der; entry=der Frühling/das Frühjahr; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Sommer /#info/ article=der; entry=der Sommer; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Herbst /#info/ article=der; entry=der Herbst; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Winter /#info/ article=der; entry=der Winter; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Meter /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Zentimeter /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Meter fünfzehn /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+zweihundert Kilometer /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Quadratmeter /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Grad unter Null /#info/ variants=minus ein Grad; entry=ein Grad unter Null/minus ein Grad; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+vier Grad über Null /#info/ variants=plus vier Grad; entry=vier Grad über Null/plus vier Grad; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Prozent /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Liter /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Gramm /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Pfund /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Kilo /#info/ note=gramm; entry=ein Kilo(gramm); source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Deutschland /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Deutsche /#info/ article=der/die; form_info=-n; entry=der/die Deutsche, -n; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+ein Deutscher /#info/ form_info=eine Deutsche, Deutsche,; entry=ein Deutscher, eine Deutsche, Deutsche,; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+deutsch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Europa /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Europäer /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+europäisch /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Türkei /#info/ variants=Türkin, -nen, türkisch; form_info=Türke; entry=Türkei, Türke/Türkin, -nen, türkisch; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Finnland /#info/ variants=Finnin, -nen, finnisch; form_info=Finne; entry=Finnland, Finne/Finnin, -nen, finnisch; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+schwarz /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+grau /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+blau /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+grün /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+weiß /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+rot /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+gelb /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+braun /#info/ source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Norden /#info/ article=der; entry=der Norden; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Süden /#info/ article=der; entry=der Süden; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Westen /#info/ article=der; entry=der Westen; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
+Osten /#info/ article=der; entry=der Osten; source=Goethe-Zertifikat A1 Start Deutsch 1 Wortliste; page=8; section=wordgroups
