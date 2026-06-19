@@ -11,42 +11,59 @@ Alcuni esempi di obiettivi sono
 
 Questi obiettivi sono ridondanti e a complessità molto alta,  superiore anche a quella stimata da informatici senior senza competenze elaborazione di testo e linguaggi, quindi:
 - vanno scomposti in sottobiettivi focalizzati, cioè steps di elaborazione modulari e riusabili, con input e output generali e standard, definiti con estrema cura
-- gli steps vanno inquadrati in una pipeline il più generale possibile, 
-nella pipeline alcuni steps saranno opzionali, per alcuni steps saranno possibii elaborazioni alternative, l'importante è che ogni step abbia input ed output standard generali e flessibili. In alcuni casi sarà necessario più di un formato ma i formati dovranno sempre in numero minimo, ogni formato giustificato da logica di "business", non per semplificazione tecnica, formati utili a fini tecnici sono possibili ma solo all'interno di eventuali sottosteps, come formati intermedi non standard.
+- gli steps vanno inquadrati in una pipeline il più generale possibile,  
+  - nella pipeline alcuni steps saranno opzionali, per alcuni steps saranno possibii elaborazioni alternative, l'importante è che **ogni step abbia input ed output standard** generali e flessibili. 
+  - In alcuni casi sarà necessario più di un formato ma i formati dovranno sempre in numero minimo, ogni formato giustificato da logica di "business", non per semplificazione tecnica, 
+  - formati utili a fini tecnici sono ammessi solo all'interno di eventuali sottosteps, come formati intermedi non standard.
+
+
+## Principi generali  
+
+In tutte le generazione di decks dovrebbe essere possibile scegliere se avere
+- vocali non già presenti nei decks core (o tutti i vocaboli)
+- vocali con frequenze fra m+1 e n con riferimento a un file di frequenze dato in input (in input per generalità)
+    - necessità di definire un formato standard per le frequenze
+
 
 ## Obiettivi pragmatici  
 
-## Decks core N  
+
+- Decks core N  
 Generare decks che contengono i vocaboli con frequenza m...n
 
-## decks da multimedia
+- decks da testi (tutti i files di testo in una directory)
+
+- decks da multimedia
 Dato un video, o una serie di video (magari appartenente a una serie), generare decks con i vocaboli di frequenza m..n non già presenti nei decks core (o in altri decks)
-
-
 
 
 ## Obiettivi tecnici  
 
 ### Estrazione di contenuti da multimedia
 
-Dato un video o un audio estrarre:
-- fotogrammi, in coincidenza di sottotitoli
-- sottotitoli se non presenti
-- testo di singole frasi in file, in coincidenza di sottotitoli
-- audio di singole frasi in file, in coincidenza di sottotitoli
-
 Indipendente dal resto
 
+- da video estrarre audio
+- da audio generare sottotitoli se non già presenti
+- da video estrarre fotogrammi, in coincidenza di sottotitoli
+
+da audio, se disponibili sottotitoli estrarre:
+  - testo di singole frasi in file, in coincidenza di sottotitoli
+  - audio di singole frasi in file, in coincidenza di sottotitoli
+
+
 ### Database informazioni linguistiche (per linguaggio)
-#### obiettivo: 
+
+#### obiettivo:  
 Evitare chiamate remote ed elaborazioni lente/costose non necessarie,  
 il sw cerca le info nel database e fa chiamate solo se le informazioni non sono presenti, con le informazioni popola il database
 
 contiene, per ogni tpo di entry (sostantivo, aggettivo, preposizione) le informazioni appropriate (flessione, coniugazioni, Etc.) in relazione 1:N
 
+Lo script che lo genera deve loggare, almeno su files, quali informazioni prende da quale sorgente
+
 #### input: 
 liste di parole, 
-
 
 
 ## Tipologie di deck da generare
@@ -66,15 +83,17 @@ Servono a mostrare le parole nel loro contesto reale d’uso e permettono di all
 **deck orientati alle strutture grammaticali o ai pattern**. 
 non sono centrati su una singola parola né su una frase generica, ma su una costruzione linguistica ricorrente. Possono riguardare, per esempio, una reggenza verbale, l’uso di una particella, la posizione del verbo, una forma verbale, una costruzione con ausiliare o un pattern sintattico.
 
-La distinzione tra lemmi, frasi e strutture è utile perché separa tre obiettivi didattici diversi: - acquisire vocabolario, 
+La distinzione tra lemmi, frasi e strutture è utile perché separa tre obiettivi didattici diversi:  
+- acquisire vocabolario,  
 - osservare l’uso in contesto,  
 - comprendere i meccanismi grammaticali.  
 
 Senza questa distinzione, si rischierebbe di inserire troppa grammatica nei deck lessicali o di usare i deck di frasi per scopi troppo diversi tra loro.
 
 Per lingue come il tedesco e il giapponese questa separazione è particolarmente importante.  
-Nel tedesco occorre gestire genere, plurale, casi, reggenze, preposizioni e posizione del verbo.  Nel giapponese occorre invece prestare attenzione a particelle, forme verbali, livelli di cortesia, kanji, kana e segmentazione delle frasi.  
-n
+Nel tedesco occorre gestire genere, plurale, casi, reggenze, preposizioni e posizione del verbo.  
+Nel giapponese occorre invece prestare attenzione a particelle, forme verbali, livelli di cortesia, kanji, kana e segmentazione delle frasi.  
+
 
 ## Pipeline 
 
@@ -116,9 +135,13 @@ Estrarre testo leggibile dai diversi formati supportati: sottotitoli, DOCX, Mark
 ##### Output:  
 file plain text in UTF-8. 
 UTF-8 è adatto per rappresentare testi in lingue diverse, compresi tedesco e giapponese.  
-È però opportuno prevedere alcune regole tecniche: usare UTF-8 senza BOM, normalizzare Unicode quando necessario, conservare correttamente gli a-capo e gestire in modo esplicito eventuali caratteri di controllo, spazi anomali o simboli non testuali.  
+È però opportuno prevedere alcune regole tecniche:  
+- usare UTF-8 senza BOM, 
+- normalizzare Unicode quando necessario,  
+- conservare correttamente gli a-capo e gestire in modo esplicito eventuali caratteri di controllo, spazi anomali o simboli non testuali.  
 
 Questo primo testo estratto non dovrebbe ancora essere considerato materiale didattico pronto.  
+
 È semplicemente il contenuto testuale ottenuto dalla fonte.
 
 #### 4. Normalizzazione del testo
@@ -148,14 +171,17 @@ occorre preservare correttamente maiuscole, umlaut, ß, segni di punteggiatura e
 
 Il testo normalizzato deve poi essere segmentato in unità linguistiche adatte alle diverse tipologie di deck.
 
-###### deck di frasi  
-l’unità principale sarà la frase o un segmento testuale equivalente. Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti. L’obiettivo è produrre unità abbastanza complete da avere senso come esempi didattici.
 
 ###### deck di lemmi  
 l’unità principale sarà invece il token o il lemma.  
 Il testo dovrà quindi essere tokenizzato e, quando possibile, lemmatizzato. 
 In questa fase non è opportuno rimuovere automaticamente le stopword, perché parole funzionali come articoli, pronomi, preposizioni, particelle, ausiliari e connettivi sono importanti nelle liste lessicali di base. 
 La rimozione o il filtraggio delle stopword potrà essere eventualmente previsto come opzione successiva, non come comportamento predefinito.
+
+###### deck di frasi  
+l’unità principale sarà la frase o un segmento testuale equivalente.  
+Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti.  
+L’obiettivo è produrre unità abbastanza complete da avere senso come esempi didattici.
 
 #### 6. Estrazione dei target per tipologia di deck
 
@@ -169,7 +195,8 @@ A questo punto la pipeline dovrà produrre file di target separati per ciascuna 
 
 
 Per i deck di lemmi, il formato iniziale può essere un file UTF-8 con un elemento per riga.  
-Ogni riga rappresenta un token, una parola o un lemma candidato. In questa fase il file contiene solo i target lessicali, non ancora informazioni arricchite. Per esempio, non contiene ancora traduzioni, frequenze, esempi, coniugazioni o spiegazioni grammaticali.
+Ogni riga rappresenta un token, una parola o un lemma candidato. 
+In questa fase il file contiene solo i target lessicali, non ancora informazioni arricchite. Per esempio, non contiene ancora traduzioni, frequenze, esempi, coniugazioni o spiegazioni grammaticali.
 
 
 Per i deck di frasi, il formato iniziale può essere un file UTF-8 con una frase o un segmento per riga. 
