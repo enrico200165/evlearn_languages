@@ -1,6 +1,6 @@
 # Prospettiva e Obiettivi
 
-Alcuni esempi di obiettivi sono
+Alcuni esempi informali di obiettivi sono
 - generare un deck con i N vocaboli più frequenti in assoluto (cioè secondo una fonte che non ci interessa dato che le frequenze non saranno mai veramente assolute)  
 - dato un testo generare un deck con i vocaboli che in esso hanno frequenza fra M+1 e N, entrambe inclusive
 - dato un video/film/audio generare un deck con i vocaboli che in esso hanno frequenza fra M+1 e N, entrambe inclusive
@@ -10,30 +10,37 @@ Alcuni esempi di obiettivi sono
 
 
 Questi obiettivi sono ridondanti e a complessità molto alta,  superiore anche a quella stimata da informatici senior senza competenze elaborazione di testo e linguaggi, quindi:
-- vanno scomposti in sottobiettivi focalizzati, cioè steps di elaborazione modulari e riusabili, con input e output generali e standard, definiti con estrema cura
-- gli steps vanno inquadrati in una pipeline il più generale possibile,  
+- vanno scomposti in sottobiettivi focalizzati, cioè steps di elaborazione 
+  - modulari e riusabili, 
+  - con input e output generali e standard, definiti con cura (si implementa dopo analisi)
+- gli steps vanno inquadrati in una pipeline il più generale possibile (senza esagerare e fallire costruendo qualcosa di molto molto generale e quindi molto molto complesso)  
   - nella pipeline alcuni steps saranno opzionali, per alcuni steps saranno possibii elaborazioni alternative, l'importante è che **ogni step abbia input ed output standard** generali e flessibili. 
   - In alcuni casi sarà necessario più di un formato ma i formati dovranno sempre in numero minimo, ogni formato giustificato da logica di "business", non per semplificazione tecnica, 
   - formati utili a fini tecnici sono ammessi solo all'interno di eventuali sottosteps, come formati intermedi non standard.
 
 
-## Principi generali  
+## Parametrizzazzioni generali  
 
 In tutte le generazione di decks dovrebbe essere possibile scegliere se avere
-- vocali non già presenti nei decks core (o tutti i vocaboli)
-- vocali con frequenze fra m+1 e n con riferimento a un file di frequenze dato in input (in input per generalità)
-    - necessità di definire un formato standard per le frequenze
+- vocali non già presenti in altri decks (in particolare in eventuali decks "core").  
+Ciò richiede una registrazione centralizzata, indipendente dal singolo deck, della presenza di una data entry nei decks.
+    - probabilmente si implementerà come relazione 1:N "è presente" fra entry e deck, relazione con un attributo di descrizione opaco
+- vocali con frequenze fra m+1 e n con riferimento a informazioni di frequenze. Ciò richiede
+  - necessità di definire un formato standard per le frequenze 
+  - passare le informazioni di frequenza come input alla generazione del deck  
+  - per il momento ipotizzo un file di testo letto direttamente in RAM (in una hash table) dato che le entries non saranno più di qualche migliaio
 
 
-## Obiettivi pragmatici  
+## Obiettivi: fonti contenuti  
 
+- decks da testi
+  -  data una directory che contiene files di testo generare decks che contengono i vocaboli includi in tali testi (non già presenti in altri decks, presenza gestita tramite un referenze DB )
 
-- Decks core N  
-Generare decks che contengono i vocaboli con frequenza m...n
+- decks da files di sottotitoli
 
-- decks da testi (tutti i files di testo in una directory)
+- decks da audio
 
-- decks da multimedia
+- decks video
 Dato un video, o una serie di video (magari appartenente a una serie), generare decks con i vocaboli di frequenza m..n non già presenti nei decks core (o in altri decks)
 
 
@@ -41,30 +48,46 @@ Dato un video, o una serie di video (magari appartenente a una serie), generare 
 
 ### Estrazione di contenuti da multimedia
 
-Indipendente dal resto
+Se si considera tutto ciò che si può avere disponibile o non disponibile, ciò che si può produrre, ci si trova in una sorprendente numerosità di opzioni, che forse (probabilmente ma non sicuramente) può essere forzata in una pipeline con passi sequenziali controllati da "if then else" se e solo se si fa un'analisi molto accurata.
 
-- da video estrarre audio
-- da audio generare sottotitoli se non già presenti
-- da video estrarre fotogrammi, in coincidenza di sottotitoli
 
-da audio, se disponibili sottotitoli estrarre:
-  - testo di singole frasi in file, in coincidenza di sottotitoli
-  - audio di singole frasi in file, in coincidenza di sottotitoli
+Si può avere a disposizione:
+- video con sottotitoli
+- video senza sottotitoli
+- sottotitoli
+- un gruppo di files di testo
+- Etc. Etc. Ect.
+
+Analisi in sezione dedicata,** non qui!**  
 
 
 ### Database informazioni linguistiche (per linguaggio)
 
+Contiene, per ogni tipo di entry (sostantivo, aggettivo, preposizione) 
+- informazioni linguistiche indipendenti dalla tecnologia 
+- informazioni tecniche utili alla produzione di decks (entry già presente in altri decks, frequenza entry in un determinato contesto Etc.)
+
 #### obiettivo:  
-Evitare chiamate remote ed elaborazioni lente/costose non necessarie,  
+Fungere da reference linguistica e operativa
+Evitare chiamate remote ed elaborazioni lente/costose non necessarie.  
+
+
+Tipologie informazioni identificate finora (esempi, analisi precisa in sezione dedicata al DB):  
+- informazioni relative all'entry  
+  - tipologia sostantivo, verbo ...
+    - informazioni relative alla tipologia ...
+- presenza entry in decks (come rel. 1:N fra entry e deck, con attributo testo opaco)
+- frequenza entry in un determinato contesto (relazione 1:n fra entry e contesto, con attributo testo opaco)
+- ...  
+
 il sw cerca le info nel database e fa chiamate solo se le informazioni non sono presenti, con le informazioni popola il database
 
-contiene, per ogni tpo di entry (sostantivo, aggettivo, preposizione) le informazioni appropriate (flessione, coniugazioni, Etc.) in relazione 1:N
+#### Requisiti tecnici HL (da migrare in sezione dedicata quando sarà sviluppata)
 
 Lo script che lo genera deve loggare, almeno su files, quali informazioni prende da quale sorgente
 
 #### input: 
 liste di parole, 
-
 
 ## Tipologie di deck da generare
 
@@ -77,7 +100,7 @@ hanno come unità principale la parola o il lemma.
 Servono a costruire progressivamente il vocabolario di base e possono contenere informazioni come significato, categoria grammaticale, frequenza, pronuncia, forme principali, traduzione, esempi brevi e note grammaticali essenziali. Questa tipologia è particolarmente utile per organizzare il lessico secondo criteri di frequenza, livello, lingua, argomento o difficoltà.
 
 **deck orientati alle frasi**   
-hanno invece come unità principale una frase completa. 
+Hanno invece come unità principale una frase completa, ho gruppi di poche frasi tipicament usate assieme come singola interazione comunicativa.
 Servono a mostrare le parole nel loro contesto reale d’uso e permettono di allenare comprensione, sintassi, collocazioni, reggenze, ordine delle parole, particelle, preposizioni e costruzioni idiomatiche. Le frasi consentono di evitare che il lessico venga appreso in modo troppo astratto o isolato.
 
 **deck orientati alle strutture grammaticali o ai pattern**. 
@@ -97,117 +120,19 @@ Nel giapponese occorre invece prestare attenzione a particelle, forme verbali, l
 
 ## Pipeline 
 
-### Macrofase 1: estrazione raw-input + metadati
+Si tenterà di applicare, ad alto livello una sequenza concettuale standard. 
+A livello tecnico tale sequenza potrebbe rilevarsi non la migliore.
 
-#### Obiettivo:  
-estrarre il testo da fonti eterogenee, come audio, video, sottotitoli, documenti e file testuali, 
-scriverlo in formati standard, relativamente semplici. generali e flessibili, autodescrittivi e riutilizzabili.
+Al momento è la seguente: 
 
-#### Precisazioni
+- 10 identificazione delle fonti e loro 
+- 20 import fonti
+- 30 estrazione dati e metadati  
+- 40 normalizzazione dati
+- 50 arricchimento
+- 60 generazione
 
-L’obiettivo della mnon è ancora generare direttamente le carte Anki complete. 
-L’obiettivo è preparare input puliti, coerenti e separati per le diverse tipologie di deck.
-
-La generazione delle carte, con aggiunta di informazioni come traduzioni, spiegazioni, esempi, pronuncia, categoria grammaticale, frequenza, note d’uso o audio, dovrà appartenere a una fase successiva della pipeline.
-
-Questa separazione consente di mantenere il sistema più controllabile: prima si estraggono e normalizzano i target, poi si arricchiscono, poi si generano le carte.
-
-
-La fase può essere andrà organizzata in una sequenza di passi.
-
-#### 1. Step: Identificazione della fonte
-
-La fonte iniziale potrà essere costituita da file audio, video, file di sottotitoli, documenti strutturati, pagine HTML, file Markdown, file DOCX oppure normali file di testo. 
-In questa fase il sistema dovrà solo identificare il tipo di input e prepararlo per il passo successivo.
-
-#### 2. Step: Speech-to-text (opzionale)
-
-Se l’input è un file audio o video, il primo passo sarà il riconoscimento automatico del parlato.  L’output preferibile di questo passaggio non dovrebbe essere un semplice file di testo, ma un file di sottotitoli, perché i sottotitoli permettono di conservare anche la segmentazione temporale del parlato.
-
-L’output consigliato di questo passo è quindi un file di sottotitoli, per esempio in formato SRT o VTT. In seguito sarà possibile estrarre il testo, ma mantenere inizialmente le informazioni temporali è utile per eventuali controlli, revisioni, allineamenti audio-testo o generazione di esempi collegati al punto esatto del video o dell’audio.
-
-**Al momento si sceglie SRT per semplicità.**
-
-#### 3. Step: Estrazione testo (opzioni alternative) 
-
-Estrarre testo leggibile dai diversi formati supportati: sottotitoli, DOCX, Markdown, HTML, TXT e altri formati testuali o documentali.
-
-##### Output:  
-file plain text in UTF-8. 
-UTF-8 è adatto per rappresentare testi in lingue diverse, compresi tedesco e giapponese.  
-È però opportuno prevedere alcune regole tecniche:  
-- usare UTF-8 senza BOM, 
-- normalizzare Unicode quando necessario,  
-- conservare correttamente gli a-capo e gestire in modo esplicito eventuali caratteri di controllo, spazi anomali o simboli non testuali.  
-
-Questo primo testo estratto non dovrebbe ancora essere considerato materiale didattico pronto.  
-
-È semplicemente il contenuto testuale ottenuto dalla fonte.
-
-#### 4. Normalizzazione del testo
-
-Serve a rendere il testo più stabile e più adatto alle elaborazioni successive.
-
-La normalizzazione può includere: 
-- la conversione coerente degli spazi, 
-- la rimozione di elementi tecnici non linguistici, 
-- la gestione degli a-capo, 
-- la normalizzazione Unicode, 
-- l’eliminazione di markup residuo e 
-- la correzione di artefatti tipici dei sottotitoli o dell’OCR, se presenti.
-
-Per il giapponese: 
-occorre particolare attenzione alla normalizzazione Unicode, alla punteggiatura, agli spazi eventualmente introdotti artificialmente e alla successiva segmentazione in token.  
-
-Per il tedesco: 
-occorre preservare correttamente maiuscole, umlaut, ß, segni di punteggiatura e apostrofi significativi.
-
-
-#### 5. Segmentazione in unità linguistiche
-
-##### input:
-
-##### output:
-
-Il testo normalizzato deve poi essere segmentato in unità linguistiche adatte alle diverse tipologie di deck.
-
-
-###### deck di lemmi  
-l’unità principale sarà invece il token o il lemma.  
-Il testo dovrà quindi essere tokenizzato e, quando possibile, lemmatizzato. 
-In questa fase non è opportuno rimuovere automaticamente le stopword, perché parole funzionali come articoli, pronomi, preposizioni, particelle, ausiliari e connettivi sono importanti nelle liste lessicali di base. 
-La rimozione o il filtraggio delle stopword potrà essere eventualmente previsto come opzione successiva, non come comportamento predefinito.
-
-###### deck di frasi  
-l’unità principale sarà la frase o un segmento testuale equivalente.  
-Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti.  
-L’obiettivo è produrre unità abbastanza complete da avere senso come esempi didattici.
-
-#### 6. Estrazione dei target per tipologia di deck
-
-##### descrizione:  
-A questo punto la pipeline dovrà produrre file di target separati per ciascuna tipologia di deck.
-
-##### input:
-
-
-##### output:
-
-
-Per i deck di lemmi, il formato iniziale può essere un file UTF-8 con un elemento per riga.  
-Ogni riga rappresenta un token, una parola o un lemma candidato. 
-In questa fase il file contiene solo i target lessicali, non ancora informazioni arricchite. Per esempio, non contiene ancora traduzioni, frequenze, esempi, coniugazioni o spiegazioni grammaticali.
-
-
-Per i deck di frasi, il formato iniziale può essere un file UTF-8 con una frase o un segmento per riga. 
-Ogni riga rappresenta una frase candidata per la generazione di carte. Anche in questo caso la frase non contiene ancora necessariamente informazioni arricchite, come traduzione, analisi grammaticale, parole chiave o note didattiche.
-Va tenuta presente la possibilità di generare piccoli files audio corrispondenti a ogni frase di testo, il nome file potrebbe essere uno dei metadati che seguono il marker.
-
-
-Per i futuri deck grammaticali o strutturali, il sistema dovrà prevedere la possibilità di estrarre pattern o costruzioni ricorrenti. In questa fase non è necessario implementare completamente tale funzione, ma l’architettura non deve impedirla. Per questo motivo è importante conservare, quando possibile, il legame tra frase, fonte, posizione nel testo ed eventuali metadati.
-
-
-#### 7. Conservazione dei metadati
+### Conservazione dei metadati
 
 Anche se l’output principale dei primi passi può essere un file plain text UTF-8, è utile prevedere la conservazione dei metadati, perché questi dati permettono controlli, debug, revisione manuale, tracciabilità e generazione futura di carte più ricche.
 
@@ -296,7 +221,7 @@ Questa struttura consente di mantenere i file semplici, leggibili e modificabili
 
 Il vantaggio principale è che il formato non dipende da un marker globale fisso. Ogni file può dichiarare il proprio marker, riducendo il rischio di conflitti con il contenuto. Inoltre, lo stesso schema può essere usato per file di lemmi, frasi e, in futuro, strutture grammaticali.
 
-#### 8. Formati intermedi consigliati
+#### Formati intermedi consigliati
 
 Per la massima semplicità, i file di target potranno essere normali file di testo UTF-8.
 
@@ -333,4 +258,129 @@ In sintesi, il sistema dovrà supportare due livelli:
 - formato auto-descrittivo, con header opzionale, marker configurabile e metadati in-line.
 
 Questa scelta permette di mantenere semplice l’uso iniziale, ma lascia spazio a informazioni più ricche quando saranno necessarie.
+
+
+#### Fase 10: Identificazione delle fonti
+
+Ridondante con lista sintetica ma ben strutt
+
+La fonte iniziale potrà essere costituita da 
+- file audio, 
+- file video, 
+- dati testuali:
+  - files di sottotitoli, 
+  - documenti strutturati, 
+  - pagine HTML, 
+  - file Markdown, 
+  - file DOCX 
+  - normali file di testo. 
+ 
+In questa fase il sistema dovrà solo identificare il tipo di input e prepararlo per il passo successivo.
+
+
+### Fase 20: import fonti
+Al momento manuale, non ulteriormente sviluppata.
+
+### Fase 30: estrazione dati e metadati
+
+#### Obiettivo:  
+estrarre il testo da fonti eterogenee, come audio, video, sottotitoli, documenti e file testuali, 
+scriverlo in formati standard, relativamente semplici. generali e flessibili, autodescrittivi e riutilizzabili.
+
+L’obiettivo della non è ancora generare direttamente contenuti didattici per l'utente finale. 
+L’obiettivo è preparare dati di input di buona qualità, niente di più. 
+
+#### Indentificazione Primitive
+
+Tentativo di identificare primitive riusabili
+
+- da video estrarre audio
+- se sottotitoli originali non utili o disponibili: 
+  - da audio generare sottotitoli
+- se necessario tradurre sottotitoli in una data lingua
+- se richiesto e disponibili sottotitoli:
+  - da video estrarre fotogrammi, in coincidenza di uno specifico file di sottotitoli
+
+def. dialogo atomico:
+- singola frase oppure 
+- più frasi che hanno senso didattico studiato assieme, come singolo "scambio" di comunicazione
+In pratica si tratterò di files di sottotitoli dove più fasi sono aggregate quando ha senso
+- Va analizzato quale formato di sottotitoli si presta meglio a questo, utile un formato che consenta commenti 
+
+produzione dialoghi atomici
+  - da uno o più files, anche in lungue parallete estrazione di dialoghi atomici
+    - viene prodotto un nuovo file di sottotitoli
+    - per produrre dialoghi atomici per il momento verranno usati solo files di sottotitoli, non normali files di testo
+
+Nomi file per brani testuali:  
+    probabilmente **&lt;nome file audio&gt;_&lt;timestamp&gt;_&lt;primi 20 caratteri testo&gt;**
+
+- se richiesto e disponibili file di sottotitoli/dialoghi atomici:
+  - da file di sottotitoli/scambi-a estrarre testo entry in un file dedicato
+  - da file audio estrarre testo entry in un file dedicato
+
+
+##### Annotazioni operative da organizzare  
+
+###### Formato sottotitoli primario: 
+VTT
+
+###### Formato files .txt
+UTF-8 senza BOM, 
+- normalizzare Unicode quando necessario,  
+- conservare correttamente gli a-capo e gestire in modo esplicito eventuali caratteri di controllo, spazi anomali o simboli non testuali.  
+
+
+### Fase 40: Normalizzazione dati 
+
+Bisogna distinguere fra parole singole e frasi
+
+Serve a rendere il testo più stabile e più adatto alle elaborazioni successive.
+
+La normalizzazione può includere: 
+- la conversione coerente degli spazi, 
+- la rimozione di elementi tecnici non linguistici, 
+- la gestione degli a-capo, 
+- la normalizzazione Unicode, 
+- l’eliminazione di markup residuo e 
+- la correzione di artefatti tipici dei sottotitoli o dell’OCR, se presenti.
+
+Per il giapponese: 
+occorre particolare attenzione alla normalizzazione Unicode, alla punteggiatura, agli spazi eventualmente introdotti artificialmente e alla successiva segmentazione in token.  
+
+Per il tedesco: 
+occorre preservare correttamente maiuscole, umlaut, ß, segni di punteggiatura e apostrofi significativi.
+
+
+##### Normalizzazione per deck di lemmi  
+
+Il testo dovrà  essere tokenizzato e, quando possibile, lemmatizzato. 
+
+In questa fase non è opportuno rimuovere automaticamente le stopword, perché parole funzionali come articoli, pronomi, preposizioni, particelle, ausiliari e connettivi sono importanti nelle liste lessicali di base. 
+
+La rimozione o il filtraggio delle stopword potrà essere eventualmente previsto come opzione successiva, non come comportamento predefinito.
+
+##### Normalizzazione per deck di frasi  
+l’unità principale sarà la frase o un segmento testuale equivalente.  
+Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti.  
+L’obiettivo è produrre unità abbastanza complete da avere senso come esempi didattici.
+
+
+### Fase 50:Arricchimento
+
+#### Fase 50: arricchimento lemmi  
+Per i deck di lemmi, il formato iniziale può essere un file UTF-8 con un elemento per riga.  
+Ogni riga rappresenta un token, una parola o un lemma candidato. 
+In questa fase il file contiene solo i target lessicali, non ancora informazioni arricchite. Per esempio, non contiene ancora traduzioni, frequenze, esempi, coniugazioni o spiegazioni grammaticali.
+
+
+#### Fase 50: arricchimento frasi  
+Per i deck di frasi, il formato iniziale può essere un file UTF-8 con una frase o un segmento per riga. 
+Ogni riga rappresenta una frase candidata per la generazione di carte. Anche in questo caso la frase non contiene ancora necessariamente informazioni arricchite, come traduzione, analisi grammaticale, parole chiave o note didattiche.
+Va tenuta presente la possibilità di generare piccoli files audio corrispondenti a ogni frase di testo, il nome file potrebbe essere uno dei metadati che seguono il marker.
+
+
+Per i futuri deck grammaticali o strutturali, il sistema dovrà prevedere la possibilità di estrarre pattern o costruzioni ricorrenti. In questa fase non è necessario implementare completamente tale funzione, ma l’architettura non deve impedirla. Per questo motivo è importante conservare, quando possibile, il legame tra frase, fonte, posizione nel testo ed eventuali metadati.
+
+
 
