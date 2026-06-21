@@ -1,16 +1,10 @@
 # Lezione 0 - Progettazione del Lessico Core
 
-## Parte 1 - Cosa significa "N parole"  
+## Parte 1 - Conteggio parole  
 
 ## Obiettivo della lezione
 
-Spesso si parla di:
-
-```
-1000 parole core
-2000 parole
-3000 parole
-```
+Spesso si parla di: 1000 parole core, 2000 parole, 3000 parole.  
 
 Se non si definisce con precisione cosa significa "parola", diventa impossibile contare le parole e:
 
@@ -37,15 +31,7 @@ Questa domanda è alla base della moderna linguistica applicata e della progetta
 
 In generale esiste una forte correlazione tra:
 
-```
-frequenza d'uso
-```
-
-e
-
-```
-utilità pratica
-```
+frequenza d'uso e utilità pratica
 
 Le parole che compaiono più spesso:
 
@@ -62,7 +48,7 @@ Questo principio è sorprendentemente stabile tra lingue molto diverse.
 
 Esistono diversi modi di contare il vocabolario.
 
-## Primo livello: token
+## Token
 
 Il concetto più semplice è il token.
 
