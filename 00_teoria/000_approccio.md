@@ -10,52 +10,60 @@ Alcuni esempi informali di obiettivi sono
 
 
 Questi obiettivi sono ridondanti e a complessità molto alta,  superiore anche a quella stimata da informatici senior senza competenze elaborazione di testo e linguaggi, quindi:
-- vanno scomposti in sottobiettivi focalizzati, cioè steps di elaborazione 
+- vanno scomposti in sottobiettivi focalizzati, cioè steps di elaborazione che siano:   
   - modulari e riusabili, 
   - con input e output generali e standard, definiti con cura (si implementa dopo analisi)
-- gli steps vanno inquadrati in una pipeline il più generale possibile (senza esagerare e fallire costruendo qualcosa di molto molto generale e quindi molto molto complesso)  
+- gli steps vanno inquadrati in una pipeline il più generale possibile (senza esagerare e fallire costruendo qualcosa di troppo generale e quindi con complessità non gestibile)  
   - nella pipeline alcuni steps saranno opzionali, per alcuni steps saranno possibii elaborazioni alternative, l'importante è che **ogni step abbia input ed output standard** generali e flessibili. 
   - In alcuni casi sarà necessario più di un formato ma i formati dovranno sempre in numero minimo, ogni formato giustificato da logica di "business", non per semplificazione tecnica, 
   - formati utili a fini tecnici sono ammessi solo all'interno di eventuali sottosteps, come formati intermedi non standard.
 
 
-## Parametrizzazzioni generali  
+## Comportamenti e Parametrizzazzioni generali  
 
+Tutto ciò che segue deve essere applicato in modo ortogonale.
+
+#### Presenza in altri decks
 In tutte le generazione di decks dovrebbe essere possibile scegliere se avere
-- vocali non già presenti in altri decks (in particolare in eventuali decks "core").  
-Ciò richiede una registrazione centralizzata, indipendente dal singolo deck, della presenza di una data entry nei decks.
-    - probabilmente si implementerà come relazione 1:N "è presente" fra entry e deck, relazione con un attributo di descrizione opaco
-- vocali con frequenze fra m+1 e n con riferimento a informazioni di frequenze. Ciò richiede
+- vocali non già presenti in una lista di altri decks. 
+  - La lista deve essere individuabile tramite un'espressione regolare sul nome o includere tutti i decks.  
+Ciò richiede una registrazione centralizzata, indipendente dal singolo deck, della presenza di una data entry nei vari decks.
+    - probabilmente si implementerà come relazione 1:N "è presente" fra entry e deck, relazione con un attributo: una stringa di descrizione opaca  
+
+#### Range di frequenze
+- entries con frequenze fra m+1 e n con riferimento a informazioni di frequenze. Ciò richiede
   - necessità di definire un formato standard per le frequenze 
   - passare le informazioni di frequenza come input alla generazione del deck  
-  - per il momento ipotizzo un file di testo letto direttamente in RAM (in una hash table) dato che le entries non saranno più di qualche migliaio
+    - per il momento per le informazioni sulla frequenza si ipotizza un file di testo letto direttamente in RAM (in una hash table) dato che le entries non saranno più di qualche migliaio
 
+#### Molteplici input 
+Quando in una directory si trova più di un file di input dello stesso tipo si genererà un deck top level con un sottodeck per ogni file. 
+Solo i sotto-deck conterranno entries, quelle del file a cui sono relative
 
 ## Obiettivi: fonti contenuti  
 
-- decks da testi
-  -  data una directory che contiene files di testo generare decks che contengono i vocaboli includi in tali testi (non già presenti in altri decks, presenza gestita tramite un referenze DB )
 
-- decks da files di sottotitoli
+- decks **da documenti di testo**  
 
-- decks da audio
+- decks da files di **sottotitoli**
 
-- decks video
-Dato un video, o una serie di video (magari appartenente a una serie), generare decks con i vocaboli di frequenza m..n non già presenti nei decks core (o in altri decks)
+- decks da **audio**
+
+- decks **video**
 
 
 ## Obiettivi tecnici  
 
 ### Estrazione di contenuti da multimedia
 
-Se si considera tutto ciò che si può avere disponibile o non disponibile, ciò che si può produrre, ci si trova in una sorprendente numerosità di opzioni, che forse (probabilmente ma non sicuramente) può essere forzata in una pipeline con passi sequenziali controllati da "if then else" se e solo se si fa un'analisi molto accurata.
+Se si considera tutto ciò che si può avere disponibile o non disponibile, ciò che si può produrre, ci si trova in una molteplicità di situazioni, che probabilmente ma non sicuramente può essere forzata in una pipeline con passi sequenziali controllati da "if then else", Un'analisi molto accurata è necessaria per evitare di sprecare lavoro.
 
 
+##### Esempi di situazioni
 Si può avere a disposizione:
-- video con sottotitoli
-- video senza sottotitoli
-- sottotitoli
-- un gruppo di files di testo
+- video con sottotitoli o senza sottotitoli
+- audio con sottotitoli o senza sottotitoli
+- documenti di testo
 - Etc. Etc. Ect.
 
 Analisi in sezione dedicata,** non qui!**  
@@ -69,10 +77,15 @@ Contiene, per ogni tipo di entry (sostantivo, aggettivo, preposizione)
 
 #### obiettivo:  
 Fungere da reference linguistica e operativa
-Evitare chiamate remote ed elaborazioni lente/costose non necessarie.  
+- linguistica  
+Conterra le informazioni relative ad un lemma (flessione sostantivi tedeschi, coniugazione verbi, frasi di esempio)
+- operativa  
+  - sapere in quali decks è eventualmente presente un'entry
+  - Evitare ripetizioni chiamate remote o elaborazioni lente/costose per procurarsi informazioni linguistiche (prima si consulta il DB, se non ha già le informazioni queste vengono ottenute e memorizzate nel DB)
 
 
-Tipologie informazioni identificate finora (esempi, analisi precisa in sezione dedicata al DB):  
+Tipologie informazioni identificate finora 
+(esempi, analisi precisa in sezione dedicata al DB):  
 - informazioni relative all'entry  
   - tipologia sostantivo, verbo ...
     - informazioni relative alla tipologia ...
@@ -80,14 +93,29 @@ Tipologie informazioni identificate finora (esempi, analisi precisa in sezione d
 - frequenza entry in un determinato contesto (relazione 1:n fra entry e contesto, con attributo testo opaco)
 - ...  
 
-il sw cerca le info nel database e fa chiamate solo se le informazioni non sono presenti, con le informazioni popola il database
+Il sw cerca le info nel database e fa chiamate solo se le informazioni non sono presenti, con le informazioni popola il database
+
+#### Flag completezza entry
+
+Si ipotizza popolamento incrementale,  può essere utile sapere se un'entry è completa, potrebbe essere quindi utile un flag di completezza per evitare un'analisi di completezza.
+Dato che il concetto di completezza può variare nel tempo si ipotizza di utilizzare un campo timestamp contenente il timestamp dell'ultimo completamento
+
 
 #### Requisiti tecnici HL (da migrare in sezione dedicata quando sarà sviluppata)
 
-Lo script che lo genera deve loggare, almeno su files, quali informazioni prende da quale sorgente
+Il codice che procura informazioni linguistiche deve loggare, almeno su files, 
+- quali informazioni prende (ex. flessione sostantivo Artz)
+- quale sorgente (ex. chatGPT, PONS Online Dictionary API)
 
-#### input: 
-liste di parole, 
+#### Popolamento reference DB, requisiti funzionali HL 
+liste di tokens, in generale raw input
+
+il programma di popolamento 
+- normalizza l'input
+- controlla se l'entry normalizzata è già presente
+  - se non è presente inserisce l'entry normalizzata
+- controlla se l'entry è completa
+
 
 ## Tipologie di deck da generare
 
@@ -95,15 +123,15 @@ Sono utili più tipologie di deck, perché l’apprendimento linguistico non rig
 
 Una prima distinzione fondamentale è tra deck orientati ai lemmi e deck orientati alle frasi.
 
-**deck orientati ai lemmi**  
+### **deck orientati ai lemmi**  
 hanno come unità principale la parola o il lemma. 
 Servono a costruire progressivamente il vocabolario di base e possono contenere informazioni come significato, categoria grammaticale, frequenza, pronuncia, forme principali, traduzione, esempi brevi e note grammaticali essenziali. Questa tipologia è particolarmente utile per organizzare il lessico secondo criteri di frequenza, livello, lingua, argomento o difficoltà.
 
-**deck orientati alle frasi**   
+### **deck orientati alle frasi**   
 Hanno invece come unità principale una frase completa, ho gruppi di poche frasi tipicament usate assieme come singola interazione comunicativa.
 Servono a mostrare le parole nel loro contesto reale d’uso e permettono di allenare comprensione, sintassi, collocazioni, reggenze, ordine delle parole, particelle, preposizioni e costruzioni idiomatiche. Le frasi consentono di evitare che il lessico venga appreso in modo troppo astratto o isolato.
 
-**deck orientati alle strutture grammaticali o ai pattern**. 
+### **deck orientati alle strutture grammaticali o ai pattern**. 
 non sono centrati su una singola parola né su una frase generica, ma su una costruzione linguistica ricorrente. Possono riguardare, per esempio, una reggenza verbale, l’uso di una particella, la posizione del verbo, una forma verbale, una costruzione con ausiliare o un pattern sintattico.
 
 La distinzione tra lemmi, frasi e strutture è utile perché separa tre obiettivi didattici diversi:  
@@ -120,43 +148,55 @@ Nel giapponese occorre invece prestare attenzione a particelle, forme verbali, l
 
 ## Pipeline 
 
-Si tenterà di applicare, ad alto livello una sequenza concettuale standard. 
+Si tenterà di applicare, ad alto livello una sequenza **concettuale** standard.   
 A livello tecnico tale sequenza potrebbe rilevarsi non la migliore.
 
 Al momento è la seguente: 
 
-- 10 identificazione delle fonti e loro 
+- 10 identificazione delle fonti 
 - 20 import fonti
 - 30 estrazione dati e metadati  
 - 40 normalizzazione dati
-- 50 arricchimento
+- 50 arricchimento e popolamento DB
 - 60 generazione
 
 ### Conservazione dei metadati
 
 Anche se l’output principale dei primi passi può essere un file plain text UTF-8, è utile prevedere la conservazione dei metadati, perché questi dati permettono controlli, debug, revisione manuale, tracciabilità e generazione futura di carte più ricche.
 
-Per esempio, una frase estratta da un sottotitolo può avere informazioni come file sorgente, numero del sottotitolo, tempo iniziale, tempo finale, lingua, eventuale file audio collegato e qualità stimata della trascrizione. Una frase estratta da un documento può avere informazioni come nome file, titolo, sezione o posizione approssimativa. Questi dati non sono sempre necessari per generare il deck, ma possono diventare importanti nelle fasi successive di arricchimento e revisione.
+Per esempio,  
+una frase estratta da un sottotitolo può avere informazioni come file sorgente, numero del sottotitolo, tempo iniziale, tempo finale, lingua, eventuale file audio collegato e qualità stimata della trascrizione.   
+Una frase estratta da un documento può avere informazioni come nome file, titolo, sezione o posizione approssimativa. Questi dati non sono sempre necessari per generare il deck, ma possono diventare importanti nelle fasi successive di arricchimento e revisione.  
 
-##### Ipotesi: header e metadati in-line
 
-Si ipotizza di usare file testuali UTF-8 auto-descrittivi.
+##### Ipotesi: header e metadati
 
-Le righe di header saranno opzionali e saranno identificate dal prefisso:
+Si ipotizza di usare file testuali UTF-8 auto-descrittivi in cui 
+- Può essere presente un header opzionle per metadati relativo all'intero file. 
+- ogni riga può includere metadati ad essa relativi 
 
+Per l'header si potrà invece valutare in futuro una struttura simile al frontmatter **se e solo se consente i principi dichiarati in questo documento**
+
+
+
+
+L'header è opzionale. I file dovranno essere elaborabili anche senza header.
+L'header non deve forzare una struttura globale ma essere composto di singole linee, opzionali, utilizzabili autonomamente.
+
+Le righe di header saranno opzionali e saranno identificate dal prefisso:  
     /#/
 
-I file dovranno comunque essere elaborabili anche senza header.
 
-Una riga di header potrà dichiarare il marker usato nel file per separare il contenuto principale dai metadati della riga. Per esempio:
-
+Una riga di header potrà dichiarare il marker usato nel file per separare il contenuto principale dai metadati della riga. 
+Il marker sarà quindi configurabile file per file. Dovrà essere una breve sequenza di caratteri ASCII base, scelta in modo da avere probabilità molto bassa di comparire nel testo naturale.
+Si ipotizza:
     /#/ marker: #1#
 
-In questo esempio il marker `#1#` specifica che, in quel file, tutto ciò che precede `#1#` è il contenuto principale, mentre tutto ciò che segue `#1#` contiene dati o metadati relativi alla riga.
+*In questo esempio il marker `#1#` specifica che, in quel file, tutto ciò che precede `#1#` è il contenuto principale, mentre tutto ciò che segue `#1#` contiene dati o metadati relativi alla riga.
+*
 
-Il marker sarà quindi configurabile file per file. Dovrà essere una breve sequenza di caratteri ASCII base, scelta in modo da avere probabilità molto bassa di comparire nel testo naturale.
-
-I file dovranno essere elaborabili anche senza marker. In questo caso ogni riga dati sarà interpretata come contenuto puro, senza metadati di riga.
+I file dovranno essere elaborabili anche senza marker di riga.  
+In questo caso ogni riga dati sarà interpretata come contenuto puro, senza metadati di riga.
 
 Esempio di file di frasi:
 
@@ -180,7 +220,8 @@ Esempio di file di lemmi:
     食べる #1# source=lesson01.txt; count=8; pos=VERB
     学校 #1# source=lesson01.txt; count=5; pos=NOUN
 
-Il formato dei metadati non viene fissato in questa fase. Potrà essere definito successivamente. Le alternative principali sono:
+Il formato dei metadati non viene fissato in questa fase. 
+Potrà essere definito successivamente. Le alternative principali sono:
 
 - coppie `key=value` separate da punto e virgola;
 - JSON compatto;
@@ -192,16 +233,8 @@ Per i metadati di riga, la soluzione tecnicamente più robusta sembra JSON compa
 
 Esempio con JSON compatto:
 
-    Ich gehe morgen zur Schule. #1# {"source":"film1.srt","start":"00:01:12.500","end":"00:01:15.200","audio":"sent_0001.mp3","lang":"de"}
+    Ich gehe morgen zur Schule. #1# {"source":"film1.srt","start":"00:01:12.500", "end":"00:01:15.200","audio":"sent_0001.mp3","lang":"de"}
 
-Per i metadati globali del file si potrà invece valutare in futuro una struttura simile al frontmatter. Il frontmatter è adatto a descrivere l’intero file, ma non è la scelta più naturale per descrivere i metadati di ogni singola riga.
-
-Una possibile evoluzione del formato potrà quindi prevedere:
-
-- header iniziale per i metadati globali del file;
-- marker dichiarato nell’header;
-- righe dati con contenuto principale e metadati di riga;
-- metadati di riga preferibilmente in JSON compatto.
 
 ##### Regole minime di parsing
 
@@ -275,22 +308,38 @@ La fonte iniziale potrà essere costituita da
   - file DOCX 
   - normali file di testo. 
  
-In questa fase il sistema dovrà solo identificare il tipo di input e prepararlo per il passo successivo.
+In questa fase il sistema dovrà solo 
+- eventualmente cercare input, eventualmente supportato dalll'AI
+- identificare il tipo di input   
+- quando possibile validarne la correttezza (non corrotto) prima dell'import (raramente possibile?)
+
 
 
 ### Fase 20: import fonti
-Al momento manuale, non ulteriormente sviluppata.
+- importare la fonte
+- validala (contiene contenuti attesi, non è corrotta)
+- eventualmente popolare una struttura dati interna di situazione iniziale per consentire la scelta dei passi di elaborazione da effettuare
+
 
 ### Fase 30: estrazione dati e metadati
 
 #### Obiettivo:  
-estrarre il testo da fonti eterogenee, come audio, video, sottotitoli, documenti e file testuali, 
-scriverlo in formati standard, relativamente semplici. generali e flessibili, autodescrittivi e riutilizzabili.
-
 L’obiettivo della non è ancora generare direttamente contenuti didattici per l'utente finale. 
 L’obiettivo è preparare dati di input di buona qualità, niente di più. 
 
+#### Azioni  
+
+- estrazione  
+Esempi: 
+estrarre il testo da fonti eterogenee, come audio, video, sottotitoli, documenti e file testuali, 
+scriverlo in formati standard, relativamente semplici. generali e flessibili, autodescrittivi e riutilizzabili.
+
+- aggiornamento situazione globale  
+
+
 #### Indentificazione Primitive
+
+//ev:finoqui
 
 Tentativo di identificare primitive riusabili
 
