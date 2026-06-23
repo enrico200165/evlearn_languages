@@ -148,8 +148,23 @@ Nel giapponese occorre invece prestare attenzione a particelle, forme verbali, l
 
 ## Pipeline 
 
+### Formati
+
+I formati dei dati utilizzati nella pipeline devono essere standardizzati, si ipotizza quanto segue:
+
+##### Formato files .txt
+UTF-8 senza BOM, 
+- normalizzare Unicode quando necessario,  
+- conservare correttamente gli a-capo e gestire in modo esplicito eventuali caratteri di controllo, spazi anomali o simboli non testuali.  
+
+##### Formato sottotitoli primario: 
+VTT
+
+
+### Pipeline - Overview sequenza steps
+
 Si tenterà di applicare, ad alto livello una sequenza **concettuale** standard.   
-A livello tecnico tale sequenza potrebbe rilevarsi non la migliore.
+A livello tecnico tale sequenza potrebbe rilevarsi non la migliore e non si esclude di implementare una pipeline leggermente diversa.
 
 Al momento è la seguente: 
 
@@ -160,28 +175,31 @@ Al momento è la seguente:
 - 50 arricchimento e popolamento DB
 - 60 generazione
 
-### Conservazione dei metadati
+### Conservazione dei metadati negli I/O della pipeline
 
 Anche se l’output principale dei primi passi può essere un file plain text UTF-8, è utile prevedere la conservazione dei metadati, perché questi dati permettono controlli, debug, revisione manuale, tracciabilità e generazione futura di carte più ricche.
 
 Per esempio,  
-una frase estratta da un sottotitolo può avere informazioni come file sorgente, numero del sottotitolo, tempo iniziale, tempo finale, lingua, eventuale file audio collegato e qualità stimata della trascrizione.   
-Una frase estratta da un documento può avere informazioni come nome file, titolo, sezione o posizione approssimativa. Questi dati non sono sempre necessari per generare il deck, ma possono diventare importanti nelle fasi successive di arricchimento e revisione.  
+- una frase estratta da un sottotitolo può avere informazioni come file sorgente, numero del sottotitolo, tempo iniziale, tempo finale, lingua, eventuale file audio collegato e qualità stimata della trascrizione.   
+- Una frase estratta da un documento può avere informazioni come nome file, titolo, sezione o posizione approssimativa.  
+Questi dati non sono sempre necessari per generare il deck, ma possono diventare importanti nelle fasi successive di arricchimento e revisione.  
 
 
 ##### Ipotesi: header e metadati
 
-Si ipotizza di usare file testuali UTF-8 auto-descrittivi in cui 
-- Può essere presente un header opzionle per metadati relativo all'intero file. 
-- ogni riga può includere metadati ad essa relativi 
+Per i dati in formato testo si ipotizza che
+- può essere presente un header opzionale per metadati relativo all'intero file. 
+- ogni riga può includere metadati relativi unicamente allìentry in essa contenuta  
 
 Per l'header si potrà invece valutare in futuro una struttura simile al frontmatter **se e solo se consente i principi dichiarati in questo documento**
 
 
 
+I file dovranno essere elaborabili anche senza headerper sviluppare passi di pipeline in grado di prendere in input anche files non prodotti dalla pipeline, quindi l'header è:  
+- opzionale per files esterni ma 
+- obbligatorio per i file prodotti dalla pipelien. 
 
-L'header è opzionale. I file dovranno essere elaborabili anche senza header.
-L'header non deve forzare una struttura globale ma essere composto di singole linee, opzionali, utilizzabili autonomamente.
+L'header non deve forzare una struttura globale ma essere composto di singole linee, opzionali, utilizzabili autonomamente.  
 
 Le righe di header saranno opzionali e saranno identificate dal prefisso:  
     /#/
@@ -292,10 +310,10 @@ In sintesi, il sistema dovrà supportare due livelli:
 
 Questa scelta permette di mantenere semplice l’uso iniziale, ma lascia spazio a informazioni più ricche quando saranno necessarie.
 
+### Passi della pipeline  
+#### Fase 10: Identificazione di fonti e input  
 
-#### Fase 10: Identificazione delle fonti
-
-Ridondante con lista sintetica ma ben strutt
+Ricerca di siti e input (video, corpus, files di testo Etc. )
 
 La fonte iniziale potrà essere costituita da 
 - file audio, 
@@ -309,35 +327,35 @@ La fonte iniziale potrà essere costituita da
   - normali file di testo. 
  
 In questa fase il sistema dovrà solo 
-- eventualmente cercare input, eventualmente supportato dalll'AI
+- eventualmente cercare fonti, eventualmente supportato dall'AI
 - identificare il tipo di input   
-- quando possibile validarne la correttezza (non corrotto) prima dell'import (raramente possibile?)
+- quando possibile validare la correttezza (non corrotto) prima dell'import (raramente possibile?)
 
 
-
-### Fase 20: import fonti
-- importare la fonte
-- validala (contiene contenuti attesi, non è corrotta)
+#### Fase 20: import input  
+- importare
+- validare (contiene contenuti attesi, non è corrotta)
 - eventualmente popolare una struttura dati interna di situazione iniziale per consentire la scelta dei passi di elaborazione da effettuare
 
 
-### Fase 30: estrazione dati e metadati
+#### Fase 30: estrazione dati e metadati
 
-#### Obiettivo:  
-L’obiettivo della non è ancora generare direttamente contenuti didattici per l'utente finale. 
-L’obiettivo è preparare dati di input di buona qualità, niente di più. 
+##### Obiettivo:  
+L’obiettivo 
+- non è ancora generare direttamente contenuti didattici per l'utente finale. 
+- è preparare dati di input di buona qualità, niente di più. 
 
-#### Azioni  
+##### Azioni  
 
-- estrazione  
 Esempi: 
-estrarre il testo da fonti eterogenee, come audio, video, sottotitoli, documenti e file testuali, 
-scriverlo in formati standard, relativamente semplici. generali e flessibili, autodescrittivi e riutilizzabili.
+estrarre audio da video, generare sottotitoli da audio o video etc. 
 
-- aggiornamento situazione globale  
+I dati estratti verranno scritti in formati standard (per la pipeline), relativamente semplici, generali e flessibili, autodescrittivi e riutilizzabili.
+
+Nel software che elabora la pipeline eventuale aggiornamento di struttura du memoria relativa alla situazione globale degli input disponibili  
 
 
-#### Indentificazione Primitive
+##### Indentificazione Primitive
 
 //ev:finoqui
 
@@ -369,18 +387,10 @@ Nomi file per brani testuali:
   - da file audio estrarre testo entry in un file dedicato
 
 
-##### Annotazioni operative da organizzare  
+#### Fase 40: Normalizzazione dati 
 
-###### Formato sottotitoli primario: 
-VTT
-
-###### Formato files .txt
-UTF-8 senza BOM, 
-- normalizzare Unicode quando necessario,  
-- conservare correttamente gli a-capo e gestire in modo esplicito eventuali caratteri di controllo, spazi anomali o simboli non testuali.  
-
-
-### Fase 40: Normalizzazione dati 
+##### Applicabilità:
+Testi prodotti dalla pipeline
 
 Bisogna distinguere fra parole singole e frasi
 
@@ -410,20 +420,24 @@ In questa fase non è opportuno rimuovere automaticamente le stopword, perché p
 La rimozione o il filtraggio delle stopword potrà essere eventualmente previsto come opzione successiva, non come comportamento predefinito.
 
 ##### Normalizzazione per deck di frasi  
-l’unità principale sarà la frase o un segmento testuale equivalente.  
+
+L’unità principale sarà la frase o un segmento testuale equivalente.  
+
 Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti.  
+Questa elaborazione peerò potrebbe essere parte della costruzione delle interazioni linguistiche nel passo di arricchimento.
+
 L’obiettivo è produrre unità abbastanza complete da avere senso come esempi didattici.
 
 
-### Fase 50:Arricchimento
+#### Fase 50:Arricchimento
 
-#### Fase 50: arricchimento lemmi  
+##### Fase 50: arricchimento lemmi  
 Per i deck di lemmi, il formato iniziale può essere un file UTF-8 con un elemento per riga.  
 Ogni riga rappresenta un token, una parola o un lemma candidato. 
 In questa fase il file contiene solo i target lessicali, non ancora informazioni arricchite. Per esempio, non contiene ancora traduzioni, frequenze, esempi, coniugazioni o spiegazioni grammaticali.
 
 
-#### Fase 50: arricchimento frasi  
+##### Fase 50: arricchimento frasi  
 Per i deck di frasi, il formato iniziale può essere un file UTF-8 con una frase o un segmento per riga. 
 Ogni riga rappresenta una frase candidata per la generazione di carte. Anche in questo caso la frase non contiene ancora necessariamente informazioni arricchite, come traduzione, analisi grammaticale, parole chiave o note didattiche.
 Va tenuta presente la possibilità di generare piccoli files audio corrispondenti a ogni frase di testo, il nome file potrebbe essere uno dei metadati che seguono il marker.
@@ -432,4 +446,4 @@ Va tenuta presente la possibilità di generare piccoli files audio corrispondent
 Per i futuri deck grammaticali o strutturali, il sistema dovrà prevedere la possibilità di estrarre pattern o costruzioni ricorrenti. In questa fase non è necessario implementare completamente tale funzione, ma l’architettura non deve impedirla. Per questo motivo è importante conservare, quando possibile, il legame tra frase, fonte, posizione nel testo ed eventuali metadati.
 
 
-
+letto: 3

@@ -1,8 +1,6 @@
 # Lezione 0 - Progettazione del Lessico Core
 
-## Parte 1 - Cosa significa "N parole"  
-
-## Obiettivo della lezione
+## Conteggio parole 
 
 Spesso si parla di:
 
@@ -24,7 +22,7 @@ Se non si definisce con precisione cosa significa "parola", diventa impossibile 
 
 ---
 
-# Ritorno sull'investimento (ROI)
+## Selezione parole e Ritorno sull'investimento (ROI)
 
 ```
 Quali parole producono il maggior beneficio?
@@ -33,19 +31,10 @@ Quali parole producono il maggior beneficio?
 Questa domanda è alla base della moderna linguistica applicata e della progettazione di sistemi di apprendimento.
 
 
-## Frequenza e utilità
+### Frequenza e utilità
 
-In generale esiste una forte correlazione tra:
+In generale esiste una forte correlazione tra: frequenza d'uso e utilità pratica
 
-```
-frequenza d'uso
-```
-
-e
-
-```
-utilità pratica
-```
 
 Le parole che compaiono più spesso:
 
@@ -58,13 +47,11 @@ Questo principio è sorprendentemente stabile tra lingue molto diverse.
 
 ---
 
-# Cosa significa realmente "parola"
+## Cosa significa realmente "parola"
 
 Esistono diversi modi di contare il vocabolario.
 
-## Primo livello: token
-
-Il concetto più semplice è il token.
+### Primo livello: token
 
 Un token è una singola occorrenza di una parola in un testo.
 
@@ -81,9 +68,7 @@ Ogni occorrenza di nach e Hause è conteggiata
 Ci sono 12 token
 
 
-## A cosa servono i token
-
-I token sono molto utili per:
+I token sono utili per:
 
 * statistica linguistica;
 * analisi dei corpora;
@@ -95,57 +80,20 @@ Non sono però la misura normalmente utilizzata quando si parla del vocabolario 
 
 ---
 
-# Secondo livello: forma lessicale
+### Secondo livello: forma lessicale
 
-Consideriamo il verbo tedesco:
+Consideriamo il verbo tedesco: `gehen`. 
+Forme possibili: `gehen gehe gehst geht ging gegangen gehend`  
 
-```
-gehen
-```
-
-Forme possibili:
-
-```
-gehen
-gehe
-gehst
-geht
-ging
-gegangen
-gehend
-```
 7 forme lessicali
 
 In questo approccio ogni forma viene contata separatamente.
 
 
----
-
-## Esempio giapponese
-
-Verbo:
-
-```
-食べる
-```
-
-Forme:
-
-```
-食べる
-食べます
-食べた
-食べない
-食べて
-食べよう
-食べられる
-```
+Consideriamo il verbo Giappinese: `食べる`.  
+Forme: `食べる 食べます 食べた 食べない 食べて 食べよう 食べられる`  
 
 Anche qui ogni forma viene contata come elemento distinto.
-
----
-
-## Problema delle forme
 
 Se si usa questo criterio, il numero di "parole" esplode rapidamente.
 
@@ -158,138 +106,58 @@ Questo rende difficile confrontare lingue diverse.
 
 ---
 
-# Terzo livello: lemma
+### Terzo livello: lemma
 
 Il lemma è la forma di dizionario.
 
 Tutte le forme grammaticali vengono ricondotte a una singola voce.
 
----
 
-## Esempio tedesco
-
-Le forme:
-
-```
-gehen
-gehe
-gehst
-geht
-ging
-gegangen
-```
-
-vengono ricondotte a:
-
-```
-gehen
-```
-
+Esempi: 
+Tedesco: le forme: `gehen gehe gehst geht ging gegangen` vengono ricondotte a: `gehen` 
 Conteggio: 1 lemma  
 
----
-
-## Esempio giapponese
-
-Le forme:
-
-```
-食べる
-食べます
-食べた
-食べない
-食べて
-食べよう
-食べられる
-```
-
-diventano:
-
-```
-食べる
-```
-
+Giapponese: le forme: `食べる 食べます 食べた 食べない 食べて 食べよう 食べられる` diventano: `食べる`  
 Conteggio: 1 lemma
-
----
-
-# Perché il lemma è importante
 
 Quando la ricerca scientifica afferma:
 *conoscere N parole* quasi sempre si riferisce a *N lemmi*
 
 ---
 
-# Quarto livello: famiglia lessicale
-
-Esiste un livello ancora più aggregato.
+### Quarto livello: famiglia lessicale
 
 Si raggruppano parole che condividono una stessa radice.
 
----
+Esempio:  
+inglese `teach teacher teaching taught` possono essere considerate parte della stessa famiglia.
+tedesco `lernen Lerner Lernende Lernprozess` possono essere considerate una famiglia lessicale.
 
-## Esempio inglese
-
-```
-teach
-teacher
-teaching
-taught
-```
-
-possono essere considerate parte della stessa famiglia.
+La famiglia lessicale è utilizzata soprattutto negli studi sulla `copertura lessicale` ovvero sulla percentuale di testo **comprensibile** da un lettore.
 
 ---
 
-## Esempio tedesco
+### Cosa significa conoscere una parola
 
-```
-lernen
-Lerner
-Lernende
-Lernprozess
-```
+Questa espressione è più complessa di quanto sembri.
 
-possono essere considerate una famiglia lessicale.
-
----
-
-## Quando viene usata
-
-La famiglia lessicale è utilizzata soprattutto negli studi sulla:
-
-```
-copertura lessicale
-```
-
-ovvero sulla percentuale di testo **comprensibile** da un lettore.
-
----
-
-# Cosa significa conoscere una parola
-
-Anche questa espressione è più complessa di quanto sembri.
-
----
-
-### Livello 1 - Riconoscimento  
+#### Livello 1 - Riconoscimento  
 
 Sapere che: gehen significa andare  
 
 
-### Livello 2 - Riconoscimento delle forme  
+#### Livello 2 - Riconoscimento delle forme  
 
 Capire automaticamente: ging gegangen senza dover consultare un dizionario.
 
----
 
-### Livello 3 - Produzione
+#### Livello 3 - Produzione
 
 Saper utilizzare la parola correttamente in una frase.
 
 Esempio: Ich gehe nach Hause.
 
-### Livello 4 - Padronanza
+#### Livello 4 - Padronanza
 
 Saper usare correttamente:
 
@@ -301,9 +169,9 @@ Saper usare correttamente:
 
 ---
 
-# Tutti i tipi di parole vengono contati?
+# Tipi di parole vengono contati?
 
-Sì. Quando si parla di: 2000 lemmi si intendono normalmente tutte le categorie grammaticali.
+Tutti. Quando si parla di: 2000 lemmi si intendono normalmente tutte le categorie grammaticali.
 Sostantivi, Verbi, Aggettivi, Avverbi, Pronomi, Preposizioni, Congiunzioni
 
 le parole più frequenti di una lingua sono spesso:
@@ -362,3 +230,5 @@ e per la maggior parte delle lingue supportate dal sistema.
 
 ---
 
+
+read: 3
