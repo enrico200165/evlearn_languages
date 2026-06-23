@@ -361,28 +361,34 @@ Nel software che elabora la pipeline eventuale aggiornamento di struttura du mem
 
 Tentativo di identificare primitive riusabili
 
-- da video estrarre audio
-- se sottotitoli originali non utili o disponibili: 
-  - da audio generare sottotitoli
-- se necessario tradurre sottotitoli in una data lingua
-- se richiesto e disponibili sottotitoli:
-  - da video estrarre fotogrammi, in coincidenza di uno specifico file di sottotitoli
+- se presente video 
+  - se non presente audio 
+    - estrarre audio da video
+
+- se presente audio o video
+  - se non presenti sottotitoli l2 
+    - da audio generare sottotitoli l2
+  - produrre sottotitoli l1 relativi a dialoghi atomici
+  - se non presenti sottotitoli l1
+    - da sottotitoli l1 generare sottotitoli l2
 
 def. dialogo atomico:
 - singola frase oppure 
 - più frasi che hanno senso didattico studiato assieme, come singolo "scambio" di comunicazione
 In pratica si tratterò di files di sottotitoli dove più fasi sono aggregate quando ha senso
 - Va analizzato quale formato di sottotitoli si presta meglio a questo, utile un formato che consenta commenti 
-
 produzione dialoghi atomici
   - da uno o più files, anche in lungue parallete estrazione di dialoghi atomici
     - viene prodotto un nuovo file di sottotitoli
     - per produrre dialoghi atomici per il momento verranno usati solo files di sottotitoli, non normali files di testo
-
 Nomi file per brani testuali:  
     probabilmente **&lt;nome file audio&gt;_&lt;timestamp&gt;_&lt;primi 20 caratteri testo&gt;**
 
-- se richiesto e disponibili file di sottotitoli/dialoghi atomici:
+
+- se richiesti fotogrammi AND presenti video AND presenti sottotitoli l2:
+  - da video estrarre fotogrammi, in coincidenza di uno specifico file di sottotitoli, default l2
+
+- se richiesti brani atomici in file e disponibili file di sottotitoli/dialoghi atomici:
   - da file di sottotitoli/scambi-a estrarre testo entry in un file dedicato
   - da file audio estrarre testo entry in un file dedicato
 

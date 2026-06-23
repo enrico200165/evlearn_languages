@@ -2,13 +2,7 @@
 
 ## Conteggio parole 
 
-Spesso si parla di:
-
-```
-1000 parole core
-2000 parole
-3000 parole
-```
+Spesso si parla di: 1000 parole core, 2000 parole, 3000 parole.  
 
 Se non si definisce con precisione cosa significa "parola", diventa impossibile contare le parole e:
 
