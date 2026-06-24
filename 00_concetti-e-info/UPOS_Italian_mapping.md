@@ -3,174 +3,149 @@ La mappatura non è perfettamente 1:1, perché la grammatica italiana classifica
 
 ## Mapping operativo grammatica italiana → UPOS
 
-Nome comune
-→ NOUN
+Nome comune → NOUN  
 Esempi: casa, libro, lavoro, problema, decisione.
 
-Nome proprio
-→ PROPN
+Nome proprio → PROPN  
 Esempi: Marco, Roma, Italia, Google.
 Nella grammatica scolastica italiana il nome proprio è un sottotipo del nome; in UPOS ha un tag autonomo.
 
-Articolo
-→ DET
+Articolo  → DET  
 Esempi: il, lo, la, i, gli, le, un, uno, una.
 In UPOS l’articolo non ha un tag autonomo: rientra nei determinanti. La documentazione UD per l’italiano include infatti articoli definiti e indefiniti tra i DET. ([Dipendenze Universali][2])
 
-Articolo partitivo
-→ di norma DET, oppure ADP + DET se analizzato come forma articolata/scomposta
+Articolo partitivo → di norma DET, oppure ADP + DET se analizzato come forma articolata/scomposta  
 Esempi: dei libri, delle persone.
 Operativamente, in un sistema NLP conviene controllare come il tokenizer/treebank rappresenta forme come del, dello, della, dei, degli, delle. In molti schemi UD le preposizioni articolate possono essere trattate come combinazioni di preposizione + articolo.
 
-Aggettivo qualificativo
-→ ADJ
+Aggettivo qualificativo → ADJ  
 Esempi: bello, grande, difficile, interessante, rosso.
 UD italiano definisce ADJ come categoria delle parole che modificano nomi e ne specificano proprietà o attributi. ([Dipendenze Universali][3])
 
-Aggettivo participiale
-→ ADJ se ha funzione aggettivale
+Aggettivo participiale 
+* → ADJ se ha funzione aggettivale  
 Esempi: porta chiusa, lavoro completato, persona interessata.
-→ VERB se conserva funzione verbale.
+* → VERB se conserva funzione verbale.
 UD segnala esplicitamente che i participi possono essere classificati come VERB o ADJ a seconda della lingua e del contesto. ([Dipendenze Universali][4])
 
-Aggettivo possessivo
-→ DET quando determina un nome
+Aggettivo possessivo → DET quando determina un nome  
 Esempi: mio padre, la mia macchina.
 UD italiano indica esplicitamente che gli aggettivi possessivi sono trattati come DET. ([Dipendenze Universali][2])
 
-Aggettivo dimostrativo
-→ DET quando determina un nome
-Esempi: questo libro, quella casa.
-→ PRON quando sostituisce un nome
+Aggettivo dimostrativo 
+* → DET quando determina un nome  
+Esempi: questo libro, quella casa.  
+* → PRON quando sostituisce un nome  
 Esempio: questo è interessante.
 
-Aggettivo indefinito
-→ DET quando determina un nome
+Aggettivo indefinito  
+* → DET quando determina un nome
 Esempi: alcuni studenti, ogni giorno, nessuna risposta.
-→ PRON quando sostituisce un nome
+* → PRON quando sostituisce un nome  
 Esempi: alcuni sono arrivati, nessuno risponde.
 
-Aggettivo interrogativo o esclamativo
-→ DET quando determina un nome
+Aggettivo interrogativo o esclamativo  
+* → DET quando determina un nome  
 Esempi: quale libro?, che problema!, quanta gente!
-→ PRON quando sostituisce un nome
+* → PRON quando sostituisce un nome  
 Esempi: quale preferire?, chi è arrivato?
 
-Aggettivo numerale cardinale
-→ NUM
+Aggettivo numerale cardinale → NUM  
 Esempi: uno, due, tre, cento, mille.
 
-Aggettivo numerale ordinale
-→ ADJ in UD italiano
+Aggettivo numerale ordinale → ADJ in UD italiano  
 Esempi: primo, secondo, terzo, ultimo.
 UD italiano include gli ordinali nella classe ADJ. ([Dipendenze Universali][3])
 
-Pronome personale
-→ PRON
+Pronome personale → PRON  
 Esempi: io, tu, lui, lei, noi, voi, loro.
 
-Pronome clitico
-→ PRON
+Pronome clitico → PRON  
 Esempi: mi, ti, lo, la, gli, le, ci, vi, si, ne.
 Questi elementi nella grammatica italiana sono spesso chiamati particelle pronominali, ma in UD vanno normalmente trattati come pronomi, non come PART.
 
-Pronome possessivo
-→ PRON quando sostituisce un nome
-Esempio: questo è il mio.
-→ DET quando accompagna un nome
+Pronome possessivo  
+* → PRON quando sostituisce un nome  
+Esempio: questo è il mio. 
+* → DET quando accompagna un nome  
 Esempio: il mio libro.
 
-Pronome dimostrativo
-→ PRON quando sostituisce un nome
+Pronome dimostrativo  
+* → PRON quando sostituisce un nome  
 Esempi: questo, quello, ciò.
-→ DET quando accompagna un nome
+* → DET quando accompagna un nome  
 Esempio: questo libro.
 
-Pronome relativo
-→ PRON
+Pronome relativo → PRON
 Esempi: che, cui, il quale, la quale, i quali.
 Attenzione: che può anche essere SCONJ quando introduce una subordinata completiva.
 
-Pronome indefinito
-→ PRON quando sostituisce un nome
+Pronome indefinito  
+* → PRON quando sostituisce un nome  
 Esempi: qualcuno, qualcosa, nessuno, molti.
-→ DET quando determina un nome
+* → DET quando determina un nome  
 Esempi: molti studenti, nessuna risposta.
 
-Pronome interrogativo
-→ PRON
+Pronome interrogativo  
+* → PRON
 Esempi: chi?, che cosa?, quale?
-→ DET se determina un nome
+* → DET se determina un nome  
 Esempio: quale libro?
 
-Verbo lessicale
-→ VERB
+Verbo lessicale → VERB  
 Esempi: andare, fare, studiare, lavorare, decidere.
 UD distingue VERB dai verbi ausiliari; VERB copre i verbi principali, non gli ausiliari. ([Dipendenze Universali][4])
 
-Verbo ausiliare
-→ AUX
+Verbo ausiliare → AUX  
 Esempi: essere e avere nei tempi composti; essere nella passiva; eventuali modali secondo le convenzioni specifiche della lingua/treebank.
 
-Verbo copulativo
-→ AUX o VERB, secondo le linee guida della lingua e il contesto
+Verbo copulativo → AUX o VERB, secondo le linee guida della lingua e il contesto
 Esempio: essere in la casa è grande.
 In UD, la copula in senso stretto è normalmente separata dal verbo lessicale; per un progetto software conviene verificare le linee guida specifiche del treebank italiano usato.
 
-Verbo modale o servile
-→ AUX o VERB, secondo le convenzioni del treebank
+Verbo modale o servile → AUX o VERB, secondo le convenzioni del treebank  
 Esempi: potere, dovere, volere.
 UD specifica che i modali possono essere VERB oppure AUX a seconda della lingua e del comportamento grammaticale. ([Dipendenze Universali][4])
 
-Avverbio
-→ ADV
+Avverbio → ADV  
 Esempi: bene, male, rapidamente, ieri, qui, sempre, forse, molto.
 
-Preposizione semplice
-→ ADP
+Preposizione semplice → ADP  
 Esempi: di, a, da, in, con, su, per, tra, fra.
 UD usa ADP, “adposition”, categoria generale che include preposizioni e postposizioni. ([Dipendenze Universali][5])
 
-Preposizione articolata
-→ ADP + DET se scomposta
+Preposizione articolata → ADP + DET se scomposta  
 Esempi: del = di + il; alla = a + la; nello = in + lo.
 Se non viene scomposta dal tokenizer, può comparire come token unico, ma concettualmente contiene una preposizione e un articolo.
 
-Congiunzione coordinante
-→ CCONJ
+Congiunzione coordinante → CCONJ  
 Esempi: e, o, ma, però, né.
 
-Congiunzione subordinante
-→ SCONJ
+Congiunzione subordinante → SCONJ  
 Esempi: che, se, perché, quando, mentre, benché, affinché.
 Attenzione: alcune parole, come che, se, quando, possono avere tag diversi secondo la funzione nella frase.
 
-Interiezione
-→ INTJ
+Interiezione → INTJ  
 Esempi: ah, oh, ahi, ehi, boh, mah.
 
-Numerale
-→ NUM se cardinale
+Numerale   
+* → NUM se cardinale  
 Esempi: uno, due, tre, cento.
-→ ADJ se ordinale in UD italiano
+* → ADJ se ordinale in UD italiano  
 Esempi: primo, secondo, terzo.
 
-Simbolo
-→ SYM
+Simbolo → SYM  
 Esempi: %, €, $, +, =.
 Non è una parte del discorso scolastica tradizionale, ma è utile nel tagging NLP.
 
-Punteggiatura
-→ PUNCT
+Punteggiatura → PUNCT  
 Esempi: punto, virgola, punto interrogativo, punto esclamativo, parentesi.
 Non è una categoria lessicale tradizionale, ma è un tag UPOS.
 
-Elemento altro / non classificato
-→ X
+Elemento altro / non classificato → X  
 Esempi: parole straniere non analizzate, errori, frammenti, token non classificabili.
 
-Particella
-→ PART
+Particella → PART  
 Categoria da usare con prudenza.
 In UD il tag PART è residuale e va usato solo quando non è adatto un altro tag più specifico. Non tutte le “particelle” della grammatica tradizionale italiana diventano PART in UPOS. Per esempio, le particelle pronominali italiane sono normalmente PRON, non PART.
 

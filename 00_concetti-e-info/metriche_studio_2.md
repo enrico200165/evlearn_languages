@@ -197,4 +197,4 @@ Una buona parola core dovrebbe avere:
 * utilità comunicativa.
 
 
-
+read: 2

@@ -24,24 +24,30 @@ Questi obiettivi sono ridondanti e a complessità molto alta,  superiore anche a
 Tutto ciò che segue deve essere applicato in modo ortogonale.
 
 #### Presenza in altri decks
-In tutte le generazione di decks dovrebbe essere possibile scegliere se avere
-- vocali non già presenti in una lista di altri decks. 
-  - La lista deve essere individuabile tramite un'espressione regolare sul nome o includere tutti i decks.  
+In tutte le generazione di decks dovrebbe essere possibile scegliere se avere vocali non già presenti in una lista di altri decks. 
+- La lista dei decks deve essere individuabile tramite un'espressione regolare sul nome o includere tutti i decks.  
 Ciò richiede una registrazione centralizzata, indipendente dal singolo deck, della presenza di una data entry nei vari decks.
-    - probabilmente si implementerà come relazione 1:N "è presente" fra entry e deck, relazione con un attributo: una stringa di descrizione opaca  
+- probabilmente si implementerà come relazione 1:N "è presente" fra entry e deck, relazione con un attributo: una stringa di descrizione opaca  
 
 #### Range di frequenze
-- entries con frequenze fra m+1 e n con riferimento a informazioni di frequenze. Ciò richiede
-  - necessità di definire un formato standard per le frequenze 
-  - passare le informazioni di frequenza come input alla generazione del deck  
-    - per il momento per le informazioni sulla frequenza si ipotizza un file di testo letto direttamente in RAM (in una hash table) dato che le entries non saranno più di qualche migliaio
+entries con frequenze fra m+1 e n con riferimento a informazioni di frequenza passate come parametro (che potrà avere un valore di default). Ciò richiede
+- necessità di definire un formato standard per le frequenze 
+- passare le informazioni di frequenza come input alla generazione del deck  
+  - per il momento per le informazioni sulla frequenza si ipotizza un file di testo letto direttamente in RAM (in una hash table) dato che le entries non saranno più di qualche migliaio
 
-#### Molteplici input 
-Quando in una directory si trova più di un file di input dello stesso tipo si genererà un deck top level con un sottodeck per ogni file. 
+I casi di entries per cui le informazioni di frequenza non sono reperibili verranno loggati come errori.
+
+#### Molteplici input simili
+Quando in una directory si trova più di un file di input dello stesso tipo tutti i files verranno processati. 
+Se ciò porta alla generazione di un deck si genererà un deck top level con un sottodeck per ogni file. 
 Solo i sotto-deck conterranno entries, quelle del file a cui sono relative
+
+Va quindi tracciato per ogni entry l'input di appartenenza e trovato un criterio di scelta nel caso la stessa entry sia presente in più inputs. Al momento si ipotizza di inserire tali entries nel deck radice.
 
 ## Obiettivi: fonti contenuti  
 
+
+Dovrà essere possibile produrre:
 
 - decks **da documenti di testo**  
 
@@ -78,37 +84,31 @@ Contiene, per ogni tipo di entry (sostantivo, aggettivo, preposizione)
 #### obiettivo:  
 Fungere da reference linguistica e operativa
 - linguistica  
-Conterra le informazioni relative ad un lemma (flessione sostantivi tedeschi, coniugazione verbi, frasi di esempio)
+  - tipologia sostantivo, verbo ...
+  - relative ad un lemma (flessione sostantivi tedeschi, coniugazione verbi, frasi di esempio)
 - operativa  
   - sapere in quali decks è eventualmente presente un'entry
-  - Evitare ripetizioni chiamate remote o elaborazioni lente/costose per procurarsi informazioni linguistiche (prima si consulta il DB, se non ha già le informazioni queste vengono ottenute e memorizzate nel DB)
-
-
-Tipologie informazioni identificate finora 
-(esempi, analisi precisa in sezione dedicata al DB):  
-- informazioni relative all'entry  
-  - tipologia sostantivo, verbo ...
-    - informazioni relative alla tipologia ...
-- presenza entry in decks (come rel. 1:N fra entry e deck, con attributo testo opaco)
-- frequenza entry in un determinato contesto (relazione 1:n fra entry e contesto, con attributo testo opaco)
-- ...  
+  - Evitare ripetizioni chiamate remote o elaborazioni lente/costose per procurarsi informazioni linguistiche (prima si consulta il DB, se non ha già le informazioni queste vengono ottenute e memorizzate nel DB)  
+  - frequenza entry in un determinato contesto (relazione 1:n fra entry e contesto, con attributo testo opaco)
+ 
 
 Il sw cerca le info nel database e fa chiamate solo se le informazioni non sono presenti, con le informazioni popola il database
 
 #### Flag completezza entry
 
-Si ipotizza popolamento incrementale,  può essere utile sapere se un'entry è completa, potrebbe essere quindi utile un flag di completezza per evitare un'analisi di completezza.
-Dato che il concetto di completezza può variare nel tempo si ipotizza di utilizzare un campo timestamp contenente il timestamp dell'ultimo completamento
+Si ipotizza popolamento incrementale,  può essere utile sapere se un'entry è completa, potrebbe essere quindi utile un flag (o più flags o uno score) di completezza per evitare di ripetere ogni volta un'analisi di completezza.
+Dato che il concetto di completezza può variare nel tempo si ipotizza di memorizzare timestamp dell'ultimo "completamento".
 
 
 #### Requisiti tecnici HL (da migrare in sezione dedicata quando sarà sviluppata)
 
 Il codice che procura informazioni linguistiche deve loggare, almeno su files, 
 - quali informazioni prende (ex. flessione sostantivo Artz)
-- quale sorgente (ex. chatGPT, PONS Online Dictionary API)
+- quando (timestamp/logging) e da quale sorgente le prende (ex. chatGPT, PONS Online Dictionary API)
 
 #### Popolamento reference DB, requisiti funzionali HL 
-liste di tokens, in generale raw input
+
+Come input si assumono liste di tokens e, in generale, raw input.
 
 il programma di popolamento 
 - normalizza l'input
@@ -124,12 +124,24 @@ Sono utili più tipologie di deck, perché l’apprendimento linguistico non rig
 Una prima distinzione fondamentale è tra deck orientati ai lemmi e deck orientati alle frasi.
 
 ### **deck orientati ai lemmi**  
-hanno come unità principale la parola o il lemma. 
-Servono a costruire progressivamente il vocabolario di base e possono contenere informazioni come significato, categoria grammaticale, frequenza, pronuncia, forme principali, traduzione, esempi brevi e note grammaticali essenziali. Questa tipologia è particolarmente utile per organizzare il lessico secondo criteri di frequenza, livello, lingua, argomento o difficoltà.
+Servono a costruire progressivamente il vocabolario di base e possono contenere informazioni come   
+- significato, 
+- categoria grammaticale,  
+- frequenza (o frequenze, relativamente a contesti), 
+- pronuncia, 
+- forme principali, 
+- traduzione, 
+- frasi di esempio
+- eventuali altri esempi brevi
+- note grammaticali essenziali. 
+- presenza in eventuali livelli di corso (rel 1:N con i corsi)
+
+Questa tipologia è particolarmente utile per organizzare il lessico secondo criteri di frequenza, livello, lingua, argomento o difficoltà.
 
 ### **deck orientati alle frasi**   
-Hanno invece come unità principale una frase completa, ho gruppi di poche frasi tipicament usate assieme come singola interazione comunicativa.
-Servono a mostrare le parole nel loro contesto reale d’uso e permettono di allenare comprensione, sintassi, collocazioni, reggenze, ordine delle parole, particelle, preposizioni e costruzioni idiomatiche. Le frasi consentono di evitare che il lessico venga appreso in modo troppo astratto o isolato.
+Hanno invece come unità principale una frase completa o gruppi di poche frasi tipicament usate assieme come singola interazione comunicativa.
+Servono a mostrare le parole nel loro contesto reale d’uso e permettono di allenare comprensione, sintassi, collocazioni, reggenze, ordine delle parole, particelle, preposizioni e costruzioni idiomatiche. 
+Le frasi consentono di evitare che il lessico venga appreso in modo troppo astratto o isolato.
 
 ### **deck orientati alle strutture grammaticali o ai pattern**. 
 non sono centrati su una singola parola né su una frase generica, ma su una costruzione linguistica ricorrente. Possono riguardare, per esempio, una reggenza verbale, l’uso di una particella, la posizione del verbo, una forma verbale, una costruzione con ausiliare o un pattern sintattico.
@@ -197,7 +209,7 @@ Per l'header si potrà invece valutare in futuro una struttura simile al frontma
 
 I file dovranno essere elaborabili anche senza headerper sviluppare passi di pipeline in grado di prendere in input anche files non prodotti dalla pipeline, quindi l'header è:  
 - opzionale per files esterni ma 
-- obbligatorio per i file prodotti dalla pipelien. 
+- obbligatorio per i file prodotti dalla pipeline. 
 
 L'header non deve forzare una struttura globale ma essere composto di singole linee, opzionali, utilizzabili autonomamente.  
 
@@ -311,11 +323,15 @@ In sintesi, il sistema dovrà supportare due livelli:
 Questa scelta permette di mantenere semplice l’uso iniziale, ma lascia spazio a informazioni più ricche quando saranno necessarie.
 
 ### Passi della pipeline  
-#### Fase 10: Identificazione di fonti e input  
+#### Fase 10: Identificazione di fonti e di input  
 
-Ricerca di siti e input (video, corpus, files di testo Etc. )
+Esempio: 
+- fonte: https://www.dwds.de/ Digitales Wörterbuch der deutschen Sprache  
+- inputs: 
+  - https://www-dwds-de.translate.goog/d/korpora/kern21?_x_tr_sl=en&_x_tr_tl=it&_x_tr_hl=en&_x_tr_pto=wapp 
+  - https://www-dwds-de.translate.goog/d/korpora/zeit?_x_tr_sl=en&_x_tr_tl=it&_x_tr_hl=en&_x_tr_pto=wapp 
 
-La fonte iniziale potrà essere costituita da 
+Ricerca di siti e input (video, corpus, files di testo Etc. ). La fonte iniziale potrà essere costituita da 
 - file audio, 
 - file video, 
 - dati testuali:
@@ -341,8 +357,8 @@ In questa fase il sistema dovrà solo
 #### Fase 30: estrazione dati e metadati
 
 ##### Obiettivo:  
-L’obiettivo 
-- non è ancora generare direttamente contenuti didattici per l'utente finale. 
+
+- L’obiettivo **non** è generare direttamente contenuti didattici per l'utente finale. 
 - è preparare dati di input di buona qualità, niente di più. 
 
 ##### Azioni  
@@ -361,54 +377,65 @@ Nel software che elabora la pipeline eventuale aggiornamento di struttura du mem
 
 Tentativo di identificare primitive riusabili
 
-- se presente video 
-  - se non presente audio 
-    - estrarre audio da video
-
-- se presente audio o video
-  - se non presenti sottotitoli l2 
-    - da audio generare sottotitoli l2
-  - produrre sottotitoli l1 relativi a dialoghi atomici
-  - se non presenti sottotitoli l1
-    - da sottotitoli l1 generare sottotitoli l2
-
 def. dialogo atomico:
 - singola frase oppure 
 - più frasi che hanno senso didattico studiato assieme, come singolo "scambio" di comunicazione
 In pratica si tratterò di files di sottotitoli dove più fasi sono aggregate quando ha senso
 - Va analizzato quale formato di sottotitoli si presta meglio a questo, utile un formato che consenta commenti 
 produzione dialoghi atomici
-  - da uno o più files, anche in lungue parallete estrazione di dialoghi atomici
+  - da uno o più files, anche in lungue parallele estrazione di dialoghi atomici
     - viene prodotto un nuovo file di sottotitoli
     - per produrre dialoghi atomici per il momento verranno usati solo files di sottotitoli, non normali files di testo
-Nomi file per brani testuali:  
-    probabilmente **&lt;nome file audio&gt;_&lt;timestamp&gt;_&lt;primi 20 caratteri testo&gt;**
+Nomi files  
 
+per brani testuali:  
+    probabilmente **&lt;nome file audio&gt;_&lt;timestamp&gt;_&lt;primi 20 caratteri testo&gt;**
+per sottotitoli di dialoghi atomici  
+    suffisso _DA sullo stem originario
+
+
+```
+- se presente video 
+  - se non presente audio con stesso stem del video
+    - estrarre audio da video
+
+- se presente audio o video
+  - se non presenti sottotitoli l2 
+    - da audio generare sottotitoli l2
+  - se non presenti sottotitoli l1
+    - da sottotitoli l1 generare sottotitoli l2
+
+- se richiesto 
+  - generare sottotitoli DA (dialoghi atomici) per l1 e l2
 
 - se richiesti fotogrammi AND presenti video AND presenti sottotitoli l2:
-  - da video estrarre fotogrammi, in coincidenza di uno specifico file di sottotitoli, default l2
+  - da video estrarre fotogrammi, in coincidenza di uno specifico file di sottotitoli passato come parametro
 
 - se richiesti brani atomici in file e disponibili file di sottotitoli/dialoghi atomici:
   - da file di sottotitoli/scambi-a estrarre testo entry in un file dedicato
   - da file audio estrarre testo entry in un file dedicato
 
+```
 
 #### Fase 40: Normalizzazione dati 
 
 ##### Applicabilità:
-Testi prodotti dalla pipeline
 
-Bisogna distinguere fra parole singole e frasi
+Molti ma non tutti i testi prodotti dalla pipeline.
+Da analizzare quali.
 
 Serve a rendere il testo più stabile e più adatto alle elaborazioni successive.
 
-La normalizzazione può includere: 
+Bisogna distinguere fra parole singole e frasi e probabilmente è specifica alle varie lingue.
+
+Esempi: La normalizzazione può includere: 
 - la conversione coerente degli spazi, 
 - la rimozione di elementi tecnici non linguistici, 
 - la gestione degli a-capo, 
 - la normalizzazione Unicode, 
 - l’eliminazione di markup residuo e 
 - la correzione di artefatti tipici dei sottotitoli o dell’OCR, se presenti.
+- ...
 
 Per il giapponese: 
 occorre particolare attenzione alla normalizzazione Unicode, alla punteggiatura, agli spazi eventualmente introdotti artificialmente e alla successiva segmentazione in token.  
@@ -429,27 +456,43 @@ La rimozione o il filtraggio delle stopword potrà essere eventualmente previsto
 
 L’unità principale sarà la frase o un segmento testuale equivalente.  
 
-Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti.  
-Questa elaborazione peerò potrebbe essere parte della costruzione delle interazioni linguistiche nel passo di arricchimento.
-
 L’obiettivo è produrre unità abbastanza complete da avere senso come esempi didattici.
+
+Una stessa frase può assumere molte forme a seconda della presenza o assenza di parole secondarie o anche dell'ordine, va trovato un modo di identificare le frasi per evitare molteplici inclusioni.
+- ipotesi attuale: 
+  - eliminare stopwords
+  - calcolare valori numerici per ogni parola, in modo semplice e che potrebbe dare falsi positivi. Calcolare
+    - un numero che dipende dall'ordine delle parole (ex. sequenza valori delle parole) 
+    - un numero che non dipende dall'ordine delle parole (ex. somma dei valori delle parole con numero d'ordine prefisso) 
+  - si confrontano entrambi i numeri, se uguali si confrontano le parole, non in ordine poi in ordine
+
+Nei sottotitoli non sempre una riga corrisponde a una frase completa; quindi occorre prevedere una fase di ricostruzione o almeno di controllo dei segmenti.  
+Questa elaborazione però potrebbe essere parte della costruzione delle interazioni linguistiche nel passo di arricchimento.
 
 
 #### Fase 50:Arricchimento
 
-##### Fase 50: arricchimento lemmi  
-Per i deck di lemmi, il formato iniziale può essere un file UTF-8 con un elemento per riga.  
-Ogni riga rappresenta un token, una parola o un lemma candidato. 
-In questa fase il file contiene solo i target lessicali, non ancora informazioni arricchite. Per esempio, non contiene ancora traduzioni, frequenze, esempi, coniugazioni o spiegazioni grammaticali.
+Da valutare se questa frase avrà un tipo file dedicato come inpute in che casi.
 
+##### Fase 50: arricchimento lemmi  
+
+Per i deck di lemmi, il formato iniziale può essere un file UTF-8 con un elemento per riga.  
+
+In questa fase il file contiene solo i target lessicali, non ancora informazioni arricchite. 
+Per esempio, non contiene ancora traduzioni, frequenze, esempi, coniugazioni o spiegazioni grammaticali.
 
 ##### Fase 50: arricchimento frasi  
+
+Input:  
 Per i deck di frasi, il formato iniziale può essere un file UTF-8 con una frase o un segmento per riga. 
-Ogni riga rappresenta una frase candidata per la generazione di carte. Anche in questo caso la frase non contiene ancora necessariamente informazioni arricchite, come traduzione, analisi grammaticale, parole chiave o note didattiche.
-Va tenuta presente la possibilità di generare piccoli files audio corrispondenti a ogni frase di testo, il nome file potrebbe essere uno dei metadati che seguono il marker.
+
+Ogni riga rappresenta una frase candidata per la generazione di carte.  
+Anche in questo caso la frase non contiene ancora necessariamente informazioni arricchite, come traduzione, analisi grammaticale, parole chiave o note didattiche.
+Va tenuta presente la possibilità di generare piccoli files audio memorizzati nel reference DB o corrispondenti a ogni frase di testo,  
+il nome file potrebbe essere uno dei metadati che seguono il marker.
+
+Per i futuri deck grammaticali o strutturali, il sistema dovrà prevedere la possibilità di estrarre pattern o costruzioni ricorrenti. 
+In questa fase non è necessario implementare completamente tale funzione, ma l’architettura non deve impedirla. Per questo motivo è importante conservare, quando possibile, il legame tra frase, fonte, posizione nel testo ed eventuali metadati.
 
 
-Per i futuri deck grammaticali o strutturali, il sistema dovrà prevedere la possibilità di estrarre pattern o costruzioni ricorrenti. In questa fase non è necessario implementare completamente tale funzione, ma l’architettura non deve impedirla. Per questo motivo è importante conservare, quando possibile, il legame tra frase, fonte, posizione nel testo ed eventuali metadati.
-
-
-letto: 3
+letto: 4

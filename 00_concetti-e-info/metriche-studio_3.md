@@ -1196,3 +1196,6 @@ I passi successivi possono essere:
 * costruire una pipeline da corpora a liste core;
 * creare livelli Core 1000, Core 2000 e Core 3000;
 * aggiungere deck plug-in per lavoro, tecnologia, sport, salute, attualità e interessi personali.
+
+
+read: 2
