@@ -4,11 +4,11 @@ Destinatari:
 programmatori esperti che devono progettare strumenti di generazione, parsing, conversione, traduzione, sincronizzazione e visualizzazione di sottotitoli.
 
 Obiettivo:  
-scegliere il formato corretto non in base all’estensione del file, ma in base al modello dati che si vuole conservare.
+scegliere il formato corretto in base al modello dati che si vuole conservare, cioè in base alle funzionalità che si vuole avere la possibilità di di implementare.
 
 ---
 
-## 1. Il problema non è “quale estensione usare”
+## Contenuti/funzionalità files sottotitoli    
 
 Un file di sottotitoli non contiene solo testo. Può contenere, a seconda del formato:
 
@@ -28,7 +28,7 @@ Un file di sottotitoli non contiene solo testo. Può contenere, a seconda del fo
 Per progettare una pipeline software occorre distinguere tre livelli:
 
 1. Formato sorgente/interno  
-   Deve conservare più informazione possibile.
+   Deve contenere/conservare più informazione possibile. E' il master data.
 
 2. Formato di editing
    Deve essere comodo da correggere e sincronizzare.
@@ -38,7 +38,8 @@ Per progettare una pipeline software occorre distinguere tre livelli:
   
 
 
-Errore comune: usare SRT come formato interno principale.
+Errore comune:  
+usare SRT come formato interno principale.  
 È comodo, ma perde quasi tutte le informazioni strutturate.
 
 ---
@@ -54,15 +55,21 @@ Per un sistema moderno, soprattutto se orientato ad apprendimento linguistico, i
 5. JSON/TSV strutturato, in particolare output Whisper o formato interno custom
 
 Il quinto non è un formato “classico” da player video, ma è spesso il più importante lato programmazione.  
+
 Serve come formato intermedio ricco, da cui esportare poi SRT, VTT, ASS o TTML.
 
 ---
 
-### WebVTT (.vtt)
+## WebVTT (.vtt)  
 
-WebVTT è il formato più adatto quando il target è web, HTML5, applicazioni didattiche, player custom o ambienti in cui servono tracce temporizzate diverse.
+WebVTT è il formato più adatto quando il target è
 
-Un file WebVTT inizia con:
+* web e HTML5;
+* applicazioni didattiche;
+* player custom;
+* ambienti in cui servono più tracce temporizzate associate allo stesso audio o video.
+
+Un file WebVTT inizia con l’intestazione `WEBVTT`, seguita da uno o più cue temporizzati:
 
 ```
 WEBVTT
@@ -71,9 +78,11 @@ WEBVTT
 Hello, how are you?
 ```
 
+Fonte: MDN - https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format
+
 #### WebVTT: Modello dati
 
-WebVTT lavora con **cue** temporizzati.  
+WebVTT lavora con cue temporizzati.
 Un cue è un blocco associato a un intervallo temporale.
 
 Rispetto a SRT, WebVTT può gestire meglio:
@@ -96,34 +105,145 @@ WEBVTT
 <v John>Hello, how are you?
 ```
 
+L’indicazione `<v John>` segnala che il cue è pronunciato dal parlante John. Questa informazione può essere usata dal browser, dal player o da codice JavaScript/CSS, ma non tutti i player la mostrano nello stesso modo.
+
 ### Uso da parte di piattaforme e tool
 
-WebVTT è usato nel web tramite l’elemento **HTML track**.  
-Un video HTML può avere più track, per esempio una per inglese, una per italiano, una per tedesco, una per captions e una per metadati.  
-  
+WebVTT è usato nel web tramite l’elemento HTML `<track>`.
 
-MDN documenta l’uso di WebVTT per sottotitoli, captions, capitoli e tracce temporizzate.  
-Fonte: MDN - [https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format)
+Un elemento `<track>` non è il file dei sottotitoli. È un tag HTML inserito dentro `<video>` o `<audio>` per collegare il media a una traccia testuale temporizzata.
 
-Vimeo supporta SRT e WebVTT e raccomanda WebVTT.  
-Fonte: Vimeo Help - [https://help.vimeo.com/hc/en-us/articles/21956884955537-How-to-add-captions-or-subtitles-to-my-video](https://help.vimeo.com/hc/en-us/articles/21956884955537-How-to-add-captions-or-subtitles-to-my-video)
+Nella forma più comune, il tag `<track>` punta a un file esterno `.vtt` tramite l’attributo `src`.
 
-YouTube supporta WebVTT, ma con limitazioni rispetto allo styling.  
-Fonte: YouTube Help - [https://support.google.com/youtube/answer/2734698?hl=en](https://support.google.com/youtube/answer/2734698?hl=en)
+Esempio minimo:
+
+```
+<video controls src="lezione.mp4">
+    <track
+        kind="subtitles"
+        src="sottotitoli-it.vtt"
+        srclang="it"
+        label="Italiano"
+        default>
+</video>
+```
+
+In questo esempio:
+
+* `lezione.mp4` è il file video;
+* `sottotitoli-it.vtt` è il file WebVTT esterno;
+* `<track>` è l’elemento HTML che collega il video alla traccia di sottotitoli;
+* `kind="subtitles"` indica che la traccia contiene sottotitoli;
+* `srclang="it"` indica la lingua della traccia;
+* `label="Italiano"` è il nome mostrato all’utente nel menu del player;
+* `default` indica la traccia da attivare automaticamente, salvo preferenze diverse dell’utente.
+
+Esempio di file `sottotitoli-it.vtt`:
+
+```
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+Benvenuti alla lezione.
+
+00:00:03.000 --> 00:00:06.000
+In questo video si parla di sottotitoli WebVTT.
+```
+
+Un video HTML può avere più elementi `<track>`, per esempio uno per l’italiano, uno per l’inglese, uno per il tedesco, uno per captions accessibili e uno per metadati temporizzati.
+
+Esempio con più lingue:
+
+```
+<video controls src="lezione.mp4">
+    <track
+        kind="subtitles"
+        src="sottotitoli-it.vtt"
+        srclang="it"
+        label="Italiano"
+        default>
+
+    <track
+        kind="subtitles"
+        src="subtitles-en.vtt"
+        srclang="en"
+        label="English">
+
+    <track
+        kind="subtitles"
+        src="untertitel-de.vtt"
+        srclang="de"
+        label="Deutsch">
+</video>
+```
+
+In questo caso il video è uno solo, ma le tracce testuali sono tre file separati.
+
+Esempio con captions:
+
+```
+<video controls src="intervista.mp4">
+    <track
+        kind="captions"
+        src="captions-it.vtt"
+        srclang="it"
+        label="Italiano per non udenti"
+        default>
+</video>
+```
+
+`kind="subtitles"` si usa di norma per sottotitoli destinati a chi sente l’audio ma non capisce la lingua.
+
+`kind="captions"` si usa per trascrizioni più complete, spesso nella stessa lingua dell’audio, che possono includere anche indicazioni come `[musica]`, `[applausi]`, `[rumore di porta]`.
+
+Esempio con metadati:
+
+```
+<video controls src="lezione.mp4">
+    <track
+        kind="metadata"
+        src="capitoli.vtt"
+        label="Capitoli">
+</video>
+```
+
+Una traccia `metadata` normalmente non viene mostrata come sottotitolo. Può però essere letta via JavaScript per sincronizzare eventi con il video, per esempio mostrare titoli di capitoli, immagini, quiz o note.
+
+Il fatto che HTML usi `<track>` non significa che ogni piattaforma esponga sempre un file `.vtt` separato all’utente. Nel caso standard HTML/WebVTT, la traccia è normalmente un file esterno indicato con `src`. Piattaforme video più complesse possono invece gestire sottotitoli e captions internamente, tramite interfacce proprie, API o sistemi di conversione.
+
+MDN documenta l’uso di WebVTT per sottotitoli, captions, capitoli e tracce temporizzate.
+Fonte: MDN - https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format
+
+MDN documenta anche l’elemento HTML `<track>`, usato dentro `<video>` e `<audio>` per associare al media una o più tracce testuali temporizzate.
+Fonte: MDN - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/track
+
+Vimeo supporta file SRT e WebVTT per captions e sottotitoli, e raccomanda WebVTT.
+Fonte: Vimeo Help - https://help.vimeo.com/hc/en-us/articles/21956884955537-How-to-add-captions-or-subtitles-to-my-video
+
+YouTube supporta WebVTT, ma con limitazioni rispetto allo styling: il posizionamento è supportato, mentre lo styling è limitato.
+Fonte: YouTube Help - https://support.google.com/youtube/answer/2734698?hl=en
 
 ### Librerie Python
 
-Librerie utili:
+Librerie e strumenti utili:
 
 * webvtt-py;
 * pycaption;
 * pysubs2;
-* librerie custom basate su parsing testuale;
-* Whisper/OpenAI Whisper per generazione diretta in VTT.
+* parser custom basati su parsing testuale;
+* Whisper e strumenti di speech-to-text capaci di esportare trascrizioni in VTT.
 
-Nota importante: alcune librerie supportano solo un sottoinsieme di WebVTT.  
-Per esempio pysubs2 supporta WebVTT come formato time-based simile a SubRip, ma non implementa pienamente tutte le feature specifiche come styling e alignment.
-Fonte: pysubs2 - [https://pysubs2.readthedocs.io/en/latest/supported-formats.html](https://pysubs2.readthedocs.io/en/latest/supported-formats.html)
+`webvtt-py` è una libreria Python specifica per leggere, scrivere e convertire file WebVTT.
+Fonte: webvtt-py - https://webvtt-py.readthedocs.io/
+
+`pycaption` è una libreria Python orientata alla conversione tra formati di caption e sottotitoli. Supporta WebVTT, ma alcune informazioni di styling possono essere perse o semplificate durante la conversione.
+Fonte: pycaption - https://pycaption.readthedocs.io/en/stable/supported_formats.html
+
+`pysubs2` supporta WebVTT come formato time-based simile a SubRip, ma non implementa pienamente tutte le feature specifiche di WebVTT, come styling e alignment.
+Fonte: pysubs2 - https://pysubs2.readthedocs.io/en/latest/supported-formats.html
+
+Whisper può generare output in formato VTT, ma è uno strumento di trascrizione speech-to-text, non una libreria specializzata nella manipolazione completa di WebVTT.
+Fonte: OpenAI Whisper CLI - https://openai-whisper.mintlify.app/guides/cli-usage
 
 ### Vantaggi per programmatori
 
@@ -131,13 +251,13 @@ WebVTT è ottimo se si vuole:
 
 * integrare sottotitoli in un player web;
 * manipolare tracce via JavaScript;
-* associare **più tracce allo stesso video**;
+* associare più tracce allo stesso video;
 * creare metadati temporizzati;
-* costruire **esercizi linguistici sincronizzati con audio/video**.
+* costruire esercizi linguistici sincronizzati con audio/video.
 
 ### Limiti
 
-Il singolo file WebVTT non è il modo più pulito per contenere molte lingue parallele nello stesso documento.  
+Il singolo file WebVTT non è il modo più pulito per contenere molte lingue parallele nello stesso documento.
 Il modello naturale è: più file, uno per traccia.
 
 Per esempio:
@@ -151,13 +271,24 @@ video_glossary.vtt
 
 Il player o l’applicazione devono poi decidere cosa mostrare.
 
+In HTML standard, questo significa associare più elementi `<track>` allo stesso video:
+
+```
+<video controls src="video.mp4">
+    <track kind="subtitles" src="video_en.vtt" srclang="en" label="English">
+    <track kind="subtitles" src="video_it.vtt" srclang="it" label="Italiano">
+    <track kind="subtitles" src="video_de.vtt" srclang="de" label="Deutsch">
+    <track kind="metadata" src="video_glossary.vtt" label="Glossario">
+</video>
+```
+
 ### Valutazione
 
-WebVTT è il formato migliore per applicazioni web didattiche multilingua.
+WebVTT è il formato migliore per applicazioni web didattiche multilingua, soprattutto quando servono più tracce sincronizzate con lo stesso audio o video, integrazione con player HTML5 e possibilità di usare JavaScript per costruire attività interattive.
 
 ---
 
-## 4. ASS/SSA (.ass, .ssa)
+## ASS/SSA (.ass, .ssa)
 
 ASS/SSA è il formato più potente per  
 - layout grafico,  
@@ -260,7 +391,7 @@ ASS/SSA è il **formato migliore per mostrare due o più lingue contemporaneamen
 
 ---
 
-## 5. SRT / SubRip (.srt)
+## SRT / SubRip (.srt)
 
 SRT è il formato **più diffuso e più semplice**.  
 È utile come formato di esportazione universale, **non è utile come formato interno ricco**.
@@ -360,7 +491,7 @@ SRT è il formato migliore per compatibilità, ma non per ricchezza informativa.
 
 ---
 
-## 6. TTML / IMSC (.ttml, .dfxp, .xml)
+## TTML / IMSC (.ttml, .dfxp, .xml)
 
 TTML è un formato XML per timed text.  
 IMSC è un profilo TTML pensato per interoperabilità professionale nella consegna di sottotitoli e captions.  
@@ -452,7 +583,7 @@ TTML/IMSC è il formato migliore per interoperabilità professionale e archiviaz
 
 ---
 
-## 7. JSON / TSV strutturato come formato intermedio
+## JSON / TSV strutturato come formato intermedio
 
 Questo non è un formato standard di sottotitoli per player, ma è spesso la scelta migliore come formato interno per programmatori esperti.
 
@@ -587,7 +718,7 @@ JSON/TSV strutturato è il miglior formato interno per pipeline software, soprat
 
 ---
 
-## 8. Confronto architetturale
+## Confronto architetturale
 
 | Formato   | Ruolo migliore                | Punti forti                                           | Punti deboli                  | Uso consigliato               |
 | --------- | ----------------------------- | ----------------------------------------------------- | ----------------------------- | ----------------------------- |
@@ -785,4 +916,4 @@ deep-translator
 [https://deep-translator.readthedocs.io/en/stable/README.html](https://deep-translator.readthedocs.io/en/stable/README.html)
 
 
-read 2
+read 3
