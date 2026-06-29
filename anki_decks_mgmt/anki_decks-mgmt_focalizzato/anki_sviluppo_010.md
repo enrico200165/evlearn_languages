@@ -168,13 +168,7 @@ col = mw.col
 Schema:
 
 ```
-Anki aperto
-    ->
-add-on
-    ->
-mw.col
-    ->
-collezione corrente
+Anki aperto -> add-on -> mw.col -> collezione corrente  
 ```
 
 Questa modalità è utile solo quando serve:
@@ -226,8 +220,7 @@ note.flush()
 
 Questa somiglianza permette di scrivere codice riutilizzabile.
 
-Il codice migliore non dovrebbe dipendere direttamente da `mw`.
-
+Il codice migliore non dovrebbe dipendere direttamente da `mw`.  
 Dovrebbe ricevere una collezione come parametro.
 
 Esempio:
@@ -270,25 +263,17 @@ https://addon-docs.ankiweb.net/editor-setup.html
 
 La documentazione Anki indica che i pacchetti Python precompilati possono essere usati anche per creare script da riga di comando che modificano file `.anki2` tramite le librerie Python di Anki.
 
-Riferimento:
+Riferimento: https://github.com/ankitects/anki/blob/main/docs/development.md  
 
-https://github.com/ankitects/anki/blob/main/docs/development.md
-
-Nota importante:
-
-installare `anki` o `aqt` non significa avere Anki desktop aperto.
-
-Significa avere accesso alle librerie Python necessarie per lavorare su una collezione.
+Nota importante:  
+installare `anki` o `aqt` non significa avere Anki desktop aperto.  
+Significa avere accesso alle librerie Python necessarie per lavorare su una collezione.  
 
 ---
 
 ## Aprire una collezione Anki fuori da Anki
 
-Una collezione Anki si trova normalmente nel file:
-
-```
-collection.anki2
-```
+Una collezione Anki si trova normalmente nel file: `collection.anki2`
 
 Esempio Windows:
 
@@ -296,8 +281,7 @@ Esempio Windows:
 C:\Users\NOME_UTENTE\AppData\Roaming\Anki2\NOME_PROFILO\collection.anki2
 ```
 
-Durante lo sviluppo non conviene aprire direttamente la collezione reale.
-
+Durante lo sviluppo non conviene aprire direttamente la collezione reale.  
 Conviene creare una copia.
 
 Esempio:
@@ -690,11 +674,7 @@ La pipeline può fare due cose diverse.
 Esempio:
 
 ```
-parola nuova
-    ->
-generare contenuti
-    ->
-creare nuova nota
+parola nuova -> generare contenuti -> creare nuova nota
 ```
 
 ## Caso B - Aggiornare note esistenti
@@ -702,13 +682,8 @@ creare nuova nota
 Esempio:
 
 ```
-nota già esistente
-    ->
-campo Esempi vuoto
-    ->
-generare esempi
-    ->
-popolare campo Esempi
+nota già esistente -> campo Esempi vuoto ->  
+generare esempi -> popolare campo Esempi
 ```
 
 La logica deve distinguere bene:
@@ -957,22 +932,19 @@ Le API specifiche verranno trattate dopo.
 
 ## Alcuni riferimenti
 
-Writing Anki Add-ons - The anki Module
-
+Writing Anki Add-ons - The anki Module  
 https://addon-docs.ankiweb.net/the-anki-module.html
 
-Writing Anki Add-ons - Editor Setup
-
+Writing Anki Add-ons - Editor Setup  
 https://addon-docs.ankiweb.net/editor-setup.html
 
-Writing Anki Add-ons - Add-on Config
-
+Writing Anki Add-ons - Add-on Config  
 https://addon-docs.ankiweb.net/addon-config.html
 
-Anki development documentation - pre-built Python wheels
-
+Anki development documentation - pre-built Python wheels  
 https://github.com/ankitects/anki/blob/main/docs/development.md
 
-Anki Python API documentation
-
+Anki Python API documentation  
 https://dev-docs.ankiweb.net/en/latest/api-python-modules.html
+
+read: 1

@@ -1,4 +1,3 @@
-Versione completa e rifinita della Lezione 3. Ho mantenuto riferimenti ufficiali aggiornati per Anki, Google Cloud Translation e OpenAI Responses API. ([Google Cloud Documentation][1])
 
 # Lezione 3 - Generare contenuti linguistici con filtri, Google Translate e ChatGPT
 
@@ -2200,3 +2199,6 @@ Wiktionary Frequency Lists
 [https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists)
 
 [1]: https://docs.cloud.google.com/translate/docs/reference/rest?utm_source=chatgpt.com "Cloud Translation API"
+
+
+evread: 1
