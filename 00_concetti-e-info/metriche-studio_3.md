@@ -317,7 +317,8 @@ Questo contesto è essenziale per l’autonomia comunicativa. Le parole più imp
 
 Prima di mappare i contesti in macro-aree lessicali, è necessario chiarire il significato di “categoria lessicale”.
 
-In grammatica italiana tradizionale, le parole vengono classificate in parti del discorso. Le principali sono:
+In grammatica italiana tradizionale, le parole vengono classificate in parti del discorso.  
+Le principali sono:
 
 * nome o sostantivo;
 * articolo;
@@ -344,6 +345,8 @@ Per esempio:
 * ah è una interiezione.
 
 Queste categorie non hanno tutte lo stesso peso nella costruzione di un deck Core 3000.
+
+Per la costruzione di un deck è necessario anche prendere in considerazione le UPOS di UD.  
 
 ---
 
@@ -389,7 +392,7 @@ Questa distinzione è importante per un sistema software, perché le parole vari
 
 Per esempio, in italiano andare, vado, vai, andiamo, andato sono forme diverse riconducibili allo stesso lemma andare.
 
-In un deck Core 3000, di solito conviene contare i lemmi, non tutte le forme flesse.  
+In un deck Core 3000, **di solito conviene contare i lemmi**, non tutte le forme flesse.  
 Tuttavia, per le lingue con forte flessione, come tedesco, latino, russo o greco, è necessario collegare ogni lemma alle principali forme grammaticali.
 
 ---
@@ -1199,4 +1202,4 @@ I passi successivi possono essere:
 * aggiungere deck plug-in per lavoro, tecnologia, sport, salute, attualità e interessi personali.  
 
 
-read: 3
+read: 4

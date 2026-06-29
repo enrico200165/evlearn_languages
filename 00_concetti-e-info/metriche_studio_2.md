@@ -21,7 +21,7 @@
 No. Due parole con la stessa frequenza possono avere utilità molto diversa.
 
 Esempio:  
-progetto e aerostazione potrebbero avere frequenze simili in alcuni corpora.  
+progetto e aerostazione potrebbero avere frequenze simili **in alcuni corpora**.  
 Tuttavia progetto è utilizzabile in moltissimi contesti, aerostazione in molti meno.
 
 ---
@@ -201,4 +201,4 @@ Se fosse necessario scegliere un solo obiettivo iniziale, la scelta più ragione
 
 
 
-read: 3
+read: 4
