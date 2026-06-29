@@ -41,7 +41,7 @@ Questo principio è sorprendentemente stabile tra lingue molto diverse.
 
 ---
 
-## Cosa significa realmente "parola"
+## Cosa significa realmente "parola" (token, forma lessicale, lemma, stem ...)
 
 Esistono diversi modi di contare il vocabolario.
 
@@ -84,7 +84,7 @@ Forme possibili: `gehen gehe gehst geht ging gegangen gehend`
 In questo approccio ogni forma viene contata separatamente.
 
 
-Consideriamo il verbo Giappinese: `食べる`.  
+Consideriamo il verbo Giapponese: `食べる`.  
 Forme: `食べる 食べます 食べた 食べない 食べて 食べよう 食べられる`  
 
 Anche qui ogni forma viene contata come elemento distinto.
@@ -107,12 +107,12 @@ Il lemma è la forma di dizionario.
 Tutte le forme grammaticali vengono ricondotte a una singola voce.
 
 
-Esempi: 
-Tedesco: le forme: `gehen gehe gehst geht ging gegangen` vengono ricondotte a: `gehen` 
+Esempi:  
+Tedesco: le forme: `gehen gehe gehst geht ging gegangen` vengono ricondotte a: `gehen`  
 Conteggio: 1 lemma  
 
 Giapponese: le forme: `食べる 食べます 食べた 食べない 食べて 食べよう 食べられる` diventano: `食べる`  
-Conteggio: 1 lemma
+Conteggio: 1 lemma  
 
 Quando la ricerca scientifica afferma:
 *conoscere N parole* quasi sempre si riferisce a *N lemmi*
@@ -124,8 +124,8 @@ Quando la ricerca scientifica afferma:
 Si raggruppano parole che condividono una stessa radice.
 
 Esempio:  
-inglese `teach teacher teaching taught` possono essere considerate parte della stessa famiglia.
-tedesco `lernen Lerner Lernende Lernprozess` possono essere considerate una famiglia lessicale.
+inglese `teach teacher teaching taught` possono essere considerate parte della stessa famiglia.  
+tedesco `lernen Lerner Lernende Lernprozess` possono essere considerate una famiglia lessicale.  
 
 La famiglia lessicale è utilizzata soprattutto negli studi sulla `copertura lessicale` ovvero sulla percentuale di testo **comprensibile** da un lettore.
 
@@ -142,7 +142,7 @@ Sapere che: gehen significa andare
 
 #### Livello 2 - Riconoscimento delle forme  
 
-Capire automaticamente: ging gegangen senza dover consultare un dizionario.
+Capire automaticamente: `ging gegangen` senza dover consultare un dizionario.
 
 
 #### Livello 3 - Produzione
@@ -165,14 +165,14 @@ Saper usare correttamente:
 
 # Tipi di parole vengono contati?
 
-Tutti. Quando si parla di: 2000 lemmi si intendono normalmente tutte le categorie grammaticali.
+Tutti. Quando si parla di: 2000 lemmi si intendono normalmente **tutte le categorie grammaticali**:  
 Sostantivi, Verbi, Aggettivi, Avverbi, Pronomi, Preposizioni, Congiunzioni
 
 le parole più frequenti di una lingua sono spesso:
 articoli; pronomi; preposizioni; verbi molto comuni; connettivi.
 
-Esempio: in tedesco:
-`der, die, das, und, oder, aber, weil, dass, mit, für`  
+Esempio:  
+in tedesco: `der, die, das, und, oder, aber, weil, dass, mit, für`  
 sono tra gli elementi più importanti dell'intera lingua.
 
 ---
@@ -225,4 +225,4 @@ e per la maggior parte delle lingue supportate dal sistema.
 ---
 
 
-read: 3
+read: 4
