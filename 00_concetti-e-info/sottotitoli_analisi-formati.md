@@ -1,8 +1,10 @@
 ## Formati di sottotitoli per pipeline software e apprendimento linguistico
 
-Destinatari: programmatori esperti che devono progettare strumenti di generazione, parsing, conversione, traduzione, sincronizzazione e visualizzazione di sottotitoli.
+Destinatari:  
+programmatori esperti che devono progettare strumenti di generazione, parsing, conversione, traduzione, sincronizzazione e visualizzazione di sottotitoli.
 
-Obiettivo: scegliere il formato corretto non in base all’estensione del file, ma in base al modello dati che si vuole conservare.
+Obiettivo:  
+scegliere il formato corretto non in base all’estensione del file, ma in base al modello dati che si vuole conservare.
 
 ---
 
@@ -25,7 +27,7 @@ Un file di sottotitoli non contiene solo testo. Può contenere, a seconda del fo
 
 Per progettare una pipeline software occorre distinguere tre livelli:
 
-1. Formato sorgente/intermedio
+1. Formato sorgente/interno  
    Deve conservare più informazione possibile.
 
 2. Formato di editing
@@ -33,6 +35,8 @@ Per progettare una pipeline software occorre distinguere tre livelli:
 
 3. Formato di distribuzione
    Deve funzionare nei player, nei browser o nelle piattaforme finali.
+  
+
 
 Errore comune: usare SRT come formato interno principale.
 È comodo, ma perde quasi tutte le informazioni strutturate.
@@ -54,7 +58,7 @@ Serve come formato intermedio ricco, da cui esportare poi SRT, VTT, ASS o TTML.
 
 ---
 
-## 3. WebVTT (.vtt)
+### WebVTT (.vtt)
 
 WebVTT è il formato più adatto quando il target è web, HTML5, applicazioni didattiche, player custom o ambienti in cui servono tracce temporizzate diverse.
 
@@ -67,9 +71,10 @@ WEBVTT
 Hello, how are you?
 ```
 
-### Modello dati
+#### WebVTT: Modello dati
 
-WebVTT lavora con cue temporizzati. Un cue è un blocco associato a un intervallo temporale.
+WebVTT lavora con **cue** temporizzati.  
+Un cue è un blocco associato a un intervallo temporale.
 
 Rispetto a SRT, WebVTT può gestire meglio:
 
@@ -93,13 +98,17 @@ WEBVTT
 
 ### Uso da parte di piattaforme e tool
 
-WebVTT è usato nel web tramite l’elemento HTML track. Un video HTML può avere più track, per esempio una per inglese, una per italiano, una per tedesco, una per captions e una per metadati. MDN documenta l’uso di WebVTT per sottotitoli, captions, capitoli e tracce temporizzate.
+WebVTT è usato nel web tramite l’elemento **HTML track**.  
+Un video HTML può avere più track, per esempio una per inglese, una per italiano, una per tedesco, una per captions e una per metadati.  
+  
+
+MDN documenta l’uso di WebVTT per sottotitoli, captions, capitoli e tracce temporizzate.  
 Fonte: MDN - [https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format)
 
-Vimeo supporta SRT e WebVTT e raccomanda WebVTT.
+Vimeo supporta SRT e WebVTT e raccomanda WebVTT.  
 Fonte: Vimeo Help - [https://help.vimeo.com/hc/en-us/articles/21956884955537-How-to-add-captions-or-subtitles-to-my-video](https://help.vimeo.com/hc/en-us/articles/21956884955537-How-to-add-captions-or-subtitles-to-my-video)
 
-YouTube supporta WebVTT, ma con limitazioni rispetto allo styling.
+YouTube supporta WebVTT, ma con limitazioni rispetto allo styling.  
 Fonte: YouTube Help - [https://support.google.com/youtube/answer/2734698?hl=en](https://support.google.com/youtube/answer/2734698?hl=en)
 
 ### Librerie Python
@@ -112,7 +121,8 @@ Librerie utili:
 * librerie custom basate su parsing testuale;
 * Whisper/OpenAI Whisper per generazione diretta in VTT.
 
-Nota importante: alcune librerie supportano solo un sottoinsieme di WebVTT. Per esempio pysubs2 supporta WebVTT come formato time-based simile a SubRip, ma non implementa pienamente tutte le feature specifiche come styling e alignment.
+Nota importante: alcune librerie supportano solo un sottoinsieme di WebVTT.  
+Per esempio pysubs2 supporta WebVTT come formato time-based simile a SubRip, ma non implementa pienamente tutte le feature specifiche come styling e alignment.
 Fonte: pysubs2 - [https://pysubs2.readthedocs.io/en/latest/supported-formats.html](https://pysubs2.readthedocs.io/en/latest/supported-formats.html)
 
 ### Vantaggi per programmatori
@@ -121,9 +131,9 @@ WebVTT è ottimo se si vuole:
 
 * integrare sottotitoli in un player web;
 * manipolare tracce via JavaScript;
-* associare più tracce allo stesso video;
+* associare **più tracce allo stesso video**;
 * creare metadati temporizzati;
-* costruire esercizi linguistici sincronizzati con audio/video.
+* costruire **esercizi linguistici sincronizzati con audio/video**.
 
 ### Limiti
 
@@ -149,12 +159,16 @@ WebVTT è il formato migliore per applicazioni web didattiche multilingua.
 
 ## 4. ASS/SSA (.ass, .ssa)
 
-ASS/SSA è il formato più potente per layout grafico, sottotitoli sovrapposti, doppia lingua visibile contemporaneamente e karaoke.
+ASS/SSA è il formato più potente per  
+- layout grafico,  
+- sottotitoli sovrapposti,  
+- doppia lingua visibile contemporaneamente e  
+- karaoke.  
 
-È il formato naturale di Aegisub, tool gratuito e open source per creare, sincronizzare e stilizzare sottotitoli.
+È il formato naturale di Aegisub, tool gratuito e open source per creare, sincronizzare e stilizzare sottotitoli.  
 Fonte: Aegisub - [https://aegisub.org/](https://aegisub.org/)
 
-pysubs2 documenta ASS/SSA come formato nativo e indica supporto a rich text formatting, animazioni e grafica vettoriale.
+pysubs2 documenta ASS/SSA come formato nativo e indica supporto a rich text formatting, animazioni e grafica vettoriale.  
 Fonte: pysubs2 - [https://pysubs2.readthedocs.io/en/latest/supported-formats.html](https://pysubs2.readthedocs.io/en/latest/supported-formats.html)
 
 ### Modello dati
@@ -200,7 +214,8 @@ ASS/SSA è molto usato in:
 * video con sottotitoli hardcoded;
 * pipeline FFmpeg.
 
-Non è però il formato ideale per piattaforme web standard o social media. Molte piattaforme ignorano lo styling o richiedono conversione.
+Non è però il formato ideale per piattaforme web standard o social media.  
+Molte piattaforme ignorano lo styling o richiedono conversione.  
 
 ### Librerie Python
 
@@ -219,12 +234,11 @@ Con pysubs2 si può:
 
 ASS/SSA è ideale se si vuole produrre un output finale visivamente ricco:
 
-* lingua originale in alto;
-* traduzione in basso;
-* parole evidenziate;
-* colori diversi per parti del discorso;
+* **lingua originale in alto traduzione in basso**;  
+* **parole evidenziate**;
+* **colori diversi per parti del discorso**;
 * karaoke sillabico;
-* note grammaticali laterali;
+* **note grammaticali laterali**;
 * parlanti con stili diversi;
 * sovrapposizioni controllate.
 
@@ -242,13 +256,14 @@ La conversione da ASS a SRT è fortemente lossy:
 
 ### Valutazione
 
-ASS/SSA è il formato migliore per mostrare due o più lingue contemporaneamente in un singolo file di sottotitoli.
+ASS/SSA è il **formato migliore per mostrare due o più lingue contemporaneamente in un singolo file di sottotitoli**.
 
 ---
 
 ## 5. SRT / SubRip (.srt)
 
-SRT è il formato più diffuso e più semplice. È utile come formato di esportazione universale, non come formato interno ricco.
+SRT è il formato **più diffuso e più semplice**.  
+È utile come formato di esportazione universale, **non è utile come formato interno ricco**.
 
 YouTube raccomanda SRT come formato base per chi inizia, ma precisa che viene supportata solo la versione semplice, in UTF-8 e senza riconoscimento dello stile.
 Fonte: YouTube Help - [https://support.google.com/youtube/answer/2734698?hl=en](https://support.google.com/youtube/answer/2734698?hl=en)
@@ -301,10 +316,10 @@ Librerie utili:
 * pysubs2;
 * pycaption.
 
-La libreria srt è molto semplice e adatta a parsing, modifica, compose, sorting e reindexing.
+La libreria srt è molto semplice e adatta a parsing, modifica, compose, sorting e reindexing.  
 Fonte: srt documentation - [https://srt.readthedocs.io/en/latest/api.html](https://srt.readthedocs.io/en/latest/api.html)
 
-OpenAI Whisper può produrre direttamente SRT.
+OpenAI Whisper può produrre direttamente SRT.  
 Fonte: OpenAI Whisper - [https://github.com/openai/whisper](https://github.com/openai/whisper)
 
 ### Vantaggi per programmatori
@@ -347,9 +362,10 @@ SRT è il formato migliore per compatibilità, ma non per ricchezza informativa.
 
 ## 6. TTML / IMSC (.ttml, .dfxp, .xml)
 
-TTML è un formato XML per timed text. IMSC è un profilo TTML pensato per interoperabilità professionale nella consegna di sottotitoli e captions.
+TTML è un formato XML per timed text.  
+IMSC è un profilo TTML pensato per interoperabilità professionale nella consegna di sottotitoli e captions.  
 
-W3C descrive IMSC come profilo per subtitle e caption delivery, con profili text-only e image-only.
+W3C descrive IMSC come profilo per subtitle e caption delivery, con profili text-only e image-only.  
 Fonte: W3C IMSC - [https://www.w3.org/TR/ttml-imsc1.1/](https://www.w3.org/TR/ttml-imsc1.1/)
 
 ### Modello dati
@@ -393,8 +409,8 @@ TTML/IMSC è adatto a:
 * consegna a servizi che richiedono standard formali;
 * conversione fra formati professionali.
 
-YouTube supporta TTML in modo parziale, con supporto a styling e positioning.
-Fonte: YouTube Help - [https://support.google.com/youtube/answer/2734698?hl=en](https://support.google.com/youtube/answer/2734698?hl=en)
+YouTube supporta TTML in modo parziale, con supporto a styling e positioning.  
+Fonte: YouTube Help - [https://support.google.com/youtube/answer/2734698?hl=en](https://support.google.com/youtube/answer/2734698?hl=en)  
 
 ### Librerie Python
 
@@ -406,10 +422,10 @@ Librerie utili:
 * xml.etree.ElementTree;
 * validatori XML/TTML specifici.
 
-pycaption legge e scrive DFXP/TTML e documenta supporto a più lingue.
+pycaption legge e scrive DFXP/TTML e documenta supporto a più lingue.  
 Fonte: pycaption - [https://pycaption.readthedocs.io/en/stable/supported_formats.html](https://pycaption.readthedocs.io/en/stable/supported_formats.html)
 
-pysubs2 supporta TTML, ma avverte che il formato è complesso e che l’advanced styling non è completamente supportato dal parser.
+pysubs2 supporta TTML, ma avverte che il formato è complesso e che l’advanced styling non è completamente supportato dal parser.  
 Fonte: pysubs2 - [https://pysubs2.readthedocs.io/en/latest/supported-formats.html](https://pysubs2.readthedocs.io/en/latest/supported-formats.html)
 
 ### Vantaggi per programmatori
@@ -427,7 +443,8 @@ TTML/IMSC è utile quando servono:
 
 Per una piattaforma didattica custom è spesso troppo pesante.
 
-Inoltre, il supporto delle librerie Python non è sempre completo. Manipolare TTML direttamente come XML è possibile, ma bisogna conoscere il profilo esatto.
+Inoltre, il supporto delle librerie Python non è sempre completo.  
+Manipolare TTML direttamente come XML è possibile, ma bisogna conoscere il profilo esatto.  
 
 ### Valutazione
 
@@ -439,8 +456,8 @@ TTML/IMSC è il formato migliore per interoperabilità professionale e archiviaz
 
 Questo non è un formato standard di sottotitoli per player, ma è spesso la scelta migliore come formato interno per programmatori esperti.
 
-OpenAI Whisper supporta output JSON e TSV oltre a SRT e VTT.
-Fonte: OpenAI Whisper - [https://github.com/openai/whisper/blob/main/whisper/transcribe.py](https://github.com/openai/whisper/blob/main/whisper/transcribe.py)
+OpenAI Whisper supporta output JSON e TSV oltre a SRT e VTT.  
+Fonte: OpenAI Whisper - [https://github.com/openai/whisper/blob/main/whisper/transcribe.py](https://github.com/openai/whisper/blob/main/whisper/transcribe.py)  
 
 ### Perché includerlo tra i 5 formati più adatti
 
@@ -714,9 +731,9 @@ Classifica pratica:
 
 Scelta consigliata:
 
-* usare JSON/SQLite come formato interno;
+* usare **JSON/SQLite come formato interno**;
 * esportare WebVTT per applicazione web;
-* esportare ASS quando serve doppia lingua visuale;
+* esportare **ASS quando serve doppia lingua visuale**;
 * esportare SRT per compatibilità;
 * esportare TTML/IMSC solo se richiesto da workflow professionali.
 
@@ -766,3 +783,6 @@ Argos Translate
 
 deep-translator
 [https://deep-translator.readthedocs.io/en/stable/README.html](https://deep-translator.readthedocs.io/en/stable/README.html)
+
+
+read 2
